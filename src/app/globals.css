@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-purple: #7B5EA7;
+  --color-purple-light: #9B7EC8;
+  --color-purple-dark: #5A3D82;
+  --color-yellow: #F5C542;
+  --color-yellow-light: #FFF3D0;
+  --color-charcoal: #2D2D2D;
+  --color-charcoal-light: #4A4A4A;
+  --color-gray-soft: #F8F7FC;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-charcoal);
+  background: #ffffff;
+}
+
+/* Fade in on scroll animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Staggered delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+
+/* Blob animation */
+@keyframes blobFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(10px, -15px) scale(1.02); }
+  66% { transform: translate(-5px, 10px) scale(0.98); }
+}
+
+.animate-blob {
+  animation: blobFloat 8s ease-in-out infinite;
+}
+
+.animate-blob-delayed {
+  animation: blobFloat 8s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+/* Section visibility for intersection observer */
+.section-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
