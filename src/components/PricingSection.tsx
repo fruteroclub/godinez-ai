@@ -7,15 +7,12 @@ export default function PricingSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-manrope)] text-3xl sm:text-4xl md:text-5xl font-semibold text-charcoal mb-4">
-            {content.pricing.headline}
-          </h2>
-          <p className="text-lg sm:text-xl text-charcoal-light">
             {content.pricing.headlinePrefix}
-            <span className="font-[family-name:var(--font-playfair)] italic text-purple bg-yellow-light px-2 rounded-lg font-semibold">
+            <span className="font-[family-name:var(--font-playfair)] italic text-purple bg-yellow-light px-2 rounded-lg">
               {content.pricing.headlineAccent}
             </span>
             {content.pricing.headlineSuffix}
-          </p>
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
