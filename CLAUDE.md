@@ -26,8 +26,8 @@ Landing page for Godínez.AI — AI employee for Latin American SMBs. Built with
 
 | Ticket | Name | Status | Branch |
 |--------|------|--------|--------|
-| 1.1 | globals.css + animations | ⬜ | feat/1.1-globals |
-| 1.2 | Hero redesign | ⬜ | feat/1.2-hero |
+| 1.1 | globals.css + animations | ✅ | main (5ce3ff3) |
+| 1.2 | Hero redesign | ✅ | main |
 | 1.3 | ProblemSection + SVG icons | ⬜ | feat/1.3-problem |
 | 1.4 | WhatIsSection redesign | ⬜ | feat/1.4-whatis |
 | 1.5 | CapabilitiesSection + illustrations | ⬜ | feat/1.5-capabilities |
