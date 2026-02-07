@@ -5,9 +5,9 @@ export default function ProblemSection() {
   return (
     <AnimatedSection className="py-20 sm:py-28 bg-gray-soft">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl font-bold text-center text-charcoal mb-16">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-charcoal mb-16">
           {content.problem.headline}{" "}
-          <span className="italic text-purple bg-yellow-light px-2 rounded-lg">
+          <span className="font-[family-name:var(--font-playfair)] italic text-purple bg-yellow-light px-2 rounded-lg">
             {content.problem.headlineAccent}
           </span>
           {content.problem.headlineSuffix}
@@ -22,7 +22,7 @@ export default function ProblemSection() {
               <div className="w-16 h-16 bg-purple/10 rounded-2xl flex items-center justify-center text-3xl mb-6">
                 {card.emoji}
               </div>
-              <h3 className="font-[family-name:var(--font-playfair)] text-xl font-bold text-charcoal mb-3">
+              <h3 className="text-xl font-bold text-charcoal mb-3">
                 {card.title}
               </h3>
               <p className="text-charcoal-light leading-relaxed">

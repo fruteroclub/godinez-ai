@@ -6,12 +6,12 @@ export default function PricingSection() {
     <AnimatedSection id="planes" className="py-20 sm:py-28 bg-gray-soft">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal mb-4">
             {content.pricing.headline}
           </h2>
           <p className="text-lg sm:text-xl text-charcoal-light">
             {content.pricing.headlinePrefix}
-            <span className="italic text-purple bg-yellow-light px-2 rounded-lg font-semibold">
+            <span className="font-[family-name:var(--font-playfair)] italic text-purple bg-yellow-light px-2 rounded-lg font-semibold">
               {content.pricing.headlineAccent}
             </span>
             {content.pricing.headlineSuffix}
@@ -37,14 +37,14 @@ export default function PricingSection() {
               )}
 
               <div className="text-center mb-6">
-                <h3 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-charcoal mb-2">
+                <h3 className="text-2xl font-bold text-charcoal mb-2">
                   {plan.name}
                 </h3>
                 <p className="text-sm text-charcoal-light mb-4">
                   {plan.idealFor}
                 </p>
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="font-[family-name:var(--font-playfair)] text-4xl font-bold text-purple">
+                  <span className="text-4xl font-bold text-purple">
                     {plan.price}
                   </span>
                   <span className="text-sm text-charcoal-light">

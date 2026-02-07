@@ -15,9 +15,9 @@ export default function Hero() {
           🤖💼
         </div>
 
-        <h1 className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-charcoal leading-tight mb-6">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-charcoal leading-tight mb-6">
           {content.hero.headline.split("nunca falta")[0]}
-          <span className="text-purple italic">nunca falta</span>
+          <span className="font-[family-name:var(--font-playfair)] text-purple italic">nunca falta</span>
           {" al trabajo"}
         </h1>
 

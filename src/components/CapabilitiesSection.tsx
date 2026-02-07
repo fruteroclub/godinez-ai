@@ -5,7 +5,7 @@ export default function CapabilitiesSection() {
   return (
     <AnimatedSection id="capacidades" className="py-20 sm:py-28">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl font-bold text-center text-charcoal mb-16">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-charcoal mb-16">
           {content.capabilities.headline}
         </h2>
 

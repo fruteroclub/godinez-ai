@@ -9,7 +9,7 @@ export default function WhatIsSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal mb-6">
             {content.whatIs.headline}
           </h2>
           <p className="text-lg sm:text-xl text-charcoal-light max-w-3xl mx-auto leading-relaxed">
@@ -26,7 +26,7 @@ export default function WhatIsSection() {
               <div className="w-16 h-16 bg-yellow/20 rounded-2xl flex items-center justify-center text-3xl mb-6">
                 {card.emoji}
               </div>
-              <h3 className="font-[family-name:var(--font-playfair)] text-xl font-bold text-charcoal mb-3">
+              <h3 className="text-xl font-bold text-charcoal mb-3">
                 {card.title}
               </h3>
               <p className="text-charcoal-light leading-relaxed">
