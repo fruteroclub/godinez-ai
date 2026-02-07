@@ -1,6 +1,5 @@
 import HomePage from "@/components/HomePage";
 
 export default function Home() {
-  // Default to Manrope for the main page
-  return <HomePage fontVar="--font-manrope" />;
+  return <HomePage fontVar="--font-plus-jakarta" />;
 }

@@ -8,7 +8,7 @@ export default function PricingSection() {
         <div className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-charcoal mb-4">
             {content.pricing.headlinePrefix}
-            <span className="font-[family-name:var(--font-playfair)] italic text-purple bg-yellow-light px-2 rounded-lg">
+            <span className="font-[family-name:var(--font-playfair)] italic font-semibold text-purple bg-yellow-light px-2 rounded-lg">
               {content.pricing.headlineAccent}
             </span>
             {content.pricing.headlineSuffix}

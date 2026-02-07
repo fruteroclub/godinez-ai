@@ -1,26 +1,19 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Plus_Jakarta_Sans, Manrope } from "next/font/google";
+import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { content } from "@/lib/content";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400", "700", "900"],
+  weight: ["400", "600", "700"],
   display: "swap",
 });
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -42,8 +35,8 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${playfair.variable} ${plusJakarta.variable} ${manrope.variable} antialiased`}
-        style={{ fontFamily: "var(--font-manrope)" }}
+        className={`${playfair.variable} ${plusJakarta.variable} antialiased`}
+        style={{ fontFamily: "var(--font-plus-jakarta)" }}
       >
         {children}
       </body>
