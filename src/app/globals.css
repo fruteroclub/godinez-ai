@@ -1,22 +1,39 @@
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────
+   Godínez.AI — Design System Tokens (Tailwind v4)
+   ───────────────────────────────────────────── */
 @theme inline {
+  /* Brand Colors */
   --color-magenta: #E91E8C;
   --color-magenta-light: #FF4DA6;
   --color-magenta-dark: #C4177A;
   --color-violet: #8B5CF6;
   --color-violet-light: #A78BFA;
+  --color-violet-dark: #7C3AED;
   --color-gold: #FFB800;
   --color-gold-light: #FFF0C2;
-  --color-black: #0A0A0A;
+  --color-dark: #0A0A0A;
   --color-charcoal: #1A1A1A;
   --color-charcoal-light: #3A3A3A;
   --color-cream: #FFF9F5;
   --color-cream-dark: #FFF0E8;
+
+  /* Typography */
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  /* Animations (registers as animate-* utilities) */
+  --animate-glitch: glitch 0.4s ease-in-out;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-gradient-shift: gradient-shift 4s ease infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-in-up: fadeInUp 0.6s ease-out forwards;
 }
 
+/* ─────────────────────────────────────────────
+   Base Styles
+   ───────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
 }
@@ -27,7 +44,71 @@ body {
   background: #ffffff;
 }
 
-/* Fade in on scroll animation */
+/* ─────────────────────────────────────────────
+   Keyframes — glitch
+   Subtle text displacement for headers
+   ───────────────────────────────────────────── */
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+  20% {
+    transform: translate(-2px, 1px);
+    text-shadow: 2px 0 var(--color-magenta), -2px 0 var(--color-violet);
+  }
+  40% {
+    transform: translate(2px, -1px);
+    text-shadow: -2px 0 var(--color-violet), 2px 0 var(--color-magenta);
+  }
+  60% {
+    transform: translate(-1px, -1px);
+    text-shadow: 1px 0 var(--color-gold), -1px 0 var(--color-magenta);
+  }
+  80% {
+    transform: translate(1px, 1px);
+    text-shadow: -1px 0 var(--color-magenta), 1px 0 var(--color-violet);
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Keyframes — pulse-glow
+   Soft pulsing glow for CTA buttons
+   ───────────────────────────────────────────── */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(233, 30, 140, 0.3),
+                0 0 24px rgba(233, 30, 140, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(233, 30, 140, 0.5),
+                0 0 48px rgba(233, 30, 140, 0.2);
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Keyframes — gradient-shift
+   Moving gradient for backgrounds and borders
+   ───────────────────────────────────────────── */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ─────────────────────────────────────────────
+   Keyframes — float
+   Gentle floating for illustrations
+   ───────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ─────────────────────────────────────────────
+   Keyframes — fadeInUp
+   Scroll-triggered entrance
+   ───────────────────────────────────────────── */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -39,11 +120,69 @@ body {
   }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
+/* ─────────────────────────────────────────────
+   Utility — Gradient Backgrounds
+   ───────────────────────────────────────────── */
+.bg-gradient-brand {
+  background: linear-gradient(135deg, var(--color-magenta), var(--color-violet));
 }
 
-/* Staggered delays */
+.bg-gradient-brand-wide {
+  background: linear-gradient(135deg, var(--color-magenta), var(--color-violet), var(--color-gold));
+  background-size: 200% 200%;
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(180deg, var(--color-dark) 0%, var(--color-charcoal) 100%);
+}
+
+/* ─────────────────────────────────────────────
+   Utility — Gradient Text
+   ───────────────────────────────────────────── */
+.text-gradient-brand {
+  background: linear-gradient(135deg, var(--color-magenta), var(--color-violet));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─────────────────────────────────────────────
+   Utility — Gradient Borders
+   ───────────────────────────────────────────── */
+.border-gradient-brand {
+  border: 1px solid transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-image:
+    linear-gradient(var(--color-dark), var(--color-dark)),
+    linear-gradient(135deg, var(--color-magenta), var(--color-violet));
+}
+
+/* ─────────────────────────────────────────────
+   Utility — Glow Effects
+   ───────────────────────────────────────────── */
+.glow-magenta {
+  box-shadow: 0 0 20px rgba(233, 30, 140, 0.3);
+}
+
+.glow-violet {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px rgba(255, 184, 0, 0.3);
+}
+
+/* ─────────────────────────────────────────────
+   Staggered Animation Delays
+   ───────────────────────────────────────────── */
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
@@ -53,23 +192,9 @@ body {
 .delay-700 { animation-delay: 0.7s; }
 .delay-800 { animation-delay: 0.8s; }
 
-/* Blob animation */
-@keyframes blobFloat {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(10px, -15px) scale(1.02); }
-  66% { transform: translate(-5px, 10px) scale(0.98); }
-}
-
-.animate-blob {
-  animation: blobFloat 8s ease-in-out infinite;
-}
-
-.animate-blob-delayed {
-  animation: blobFloat 8s ease-in-out infinite;
-  animation-delay: 3s;
-}
-
-/* Section visibility for intersection observer */
+/* ─────────────────────────────────────────────
+   Section Visibility (Intersection Observer)
+   ───────────────────────────────────────────── */
 .section-hidden {
   opacity: 0;
   transform: translateY(30px);
