@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { content } from "@/lib/content";
 import AnimatedSection from "./AnimatedSection";
-import { BlobYellow } from "./BlobSVG";
 
 export default function WaitlistForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -50,11 +49,11 @@ export default function WaitlistForm() {
     return (
       <AnimatedSection
         id="lista-de-espera"
-        className="relative py-20 sm:py-28 bg-purple/5 overflow-hidden"
+        className="relative py-20 sm:py-28 bg-gradient-to-br from-magenta to-violet overflow-hidden"
       >
         <div className="max-w-2xl mx-auto px-4 text-center">
           <div className="text-7xl mb-6">🎉</div>
-          <p className="text-2xl font-bold text-charcoal">
+          <p className="text-2xl font-bold text-white">
             {content.waitlist.success}
           </p>
         </div>
@@ -65,24 +64,22 @@ export default function WaitlistForm() {
   return (
     <AnimatedSection
       id="lista-de-espera"
-      className="relative py-20 sm:py-28 bg-purple/5 overflow-hidden"
+      className="relative py-20 sm:py-28 bg-gradient-to-br from-magenta to-violet overflow-hidden"
     >
-      <BlobYellow className="absolute -right-20 -bottom-20 w-72 h-72 opacity-15" />
-
       <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-center text-charcoal mb-12">
+        <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-center text-white mb-12">
           {content.waitlist.headline}
         </h2>
 
         <form
           onSubmit={handleSubmit}
-          className="bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-purple/10 space-y-6"
+          className="bg-white rounded-2xl p-8 sm:p-10 shadow-2xl space-y-6"
         >
           {/* Name */}
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-charcoal mb-2"
+              className="block text-sm font-medium text-black mb-2"
             >
               {fields.name.label}
             </label>
@@ -92,7 +89,7 @@ export default function WaitlistForm() {
               name="name"
               required
               placeholder={fields.name.placeholder}
-              className="w-full px-4 py-3 rounded-xl border border-purple/20 focus:border-purple focus:ring-2 focus:ring-purple/20 outline-none transition-all text-charcoal"
+              className="w-full px-4 py-3 rounded-xl border border-black/10 focus:border-magenta focus:ring-2 focus:ring-magenta/20 outline-none transition-all text-black"
             />
           </div>
 
@@ -100,7 +97,7 @@ export default function WaitlistForm() {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-charcoal mb-2"
+              className="block text-sm font-medium text-black mb-2"
             >
               {fields.email.label}
             </label>
@@ -110,7 +107,7 @@ export default function WaitlistForm() {
               name="email"
               required
               placeholder={fields.email.placeholder}
-              className="w-full px-4 py-3 rounded-xl border border-purple/20 focus:border-purple focus:ring-2 focus:ring-purple/20 outline-none transition-all text-charcoal"
+              className="w-full px-4 py-3 rounded-xl border border-black/10 focus:border-magenta focus:ring-2 focus:ring-magenta/20 outline-none transition-all text-black"
             />
           </div>
 
@@ -118,7 +115,7 @@ export default function WaitlistForm() {
           <div>
             <label
               htmlFor="company"
-              className="block text-sm font-medium text-charcoal mb-2"
+              className="block text-sm font-medium text-black mb-2"
             >
               {fields.company.label}
             </label>
@@ -127,7 +124,7 @@ export default function WaitlistForm() {
               id="company"
               name="company"
               placeholder={fields.company.placeholder}
-              className="w-full px-4 py-3 rounded-xl border border-purple/20 focus:border-purple focus:ring-2 focus:ring-purple/20 outline-none transition-all text-charcoal"
+              className="w-full px-4 py-3 rounded-xl border border-black/10 focus:border-magenta focus:ring-2 focus:ring-magenta/20 outline-none transition-all text-black"
             />
           </div>
 
@@ -135,7 +132,7 @@ export default function WaitlistForm() {
           <div>
             <label
               htmlFor="tasks"
-              className="block text-sm font-medium text-charcoal mb-2"
+              className="block text-sm font-medium text-black mb-2"
             >
               {fields.tasks.label}
             </label>
@@ -144,7 +141,7 @@ export default function WaitlistForm() {
               name="tasks"
               rows={3}
               placeholder={fields.tasks.placeholder}
-              className="w-full px-4 py-3 rounded-xl border border-purple/20 focus:border-purple focus:ring-2 focus:ring-purple/20 outline-none transition-all resize-none text-charcoal"
+              className="w-full px-4 py-3 rounded-xl border border-black/10 focus:border-magenta focus:ring-2 focus:ring-magenta/20 outline-none transition-all resize-none text-black"
             />
           </div>
 
@@ -152,7 +149,7 @@ export default function WaitlistForm() {
           <div>
             <label
               htmlFor="teamSize"
-              className="block text-sm font-medium text-charcoal mb-2"
+              className="block text-sm font-medium text-black mb-2"
             >
               {fields.teamSize.label}
             </label>
@@ -160,7 +157,7 @@ export default function WaitlistForm() {
               id="teamSize"
               name="teamSize"
               required
-              className="w-full px-4 py-3 rounded-xl border border-purple/20 focus:border-purple focus:ring-2 focus:ring-purple/20 outline-none transition-all bg-white text-charcoal"
+              className="w-full px-4 py-3 rounded-xl border border-black/10 focus:border-magenta focus:ring-2 focus:ring-magenta/20 outline-none transition-all bg-white text-black"
             >
               {fields.teamSize.options.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -177,7 +174,7 @@ export default function WaitlistForm() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-purple hover:bg-purple-dark text-white font-semibold py-4 rounded-full text-lg transition-all hover:shadow-lg hover:shadow-purple/30 disabled:opacity-60 disabled:cursor-not-allowed"
+            className="w-full bg-black hover:bg-charcoal text-white font-semibold py-4 rounded-full text-lg transition-all hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {isLoading ? "Enviando..." : content.waitlist.submit}
           </button>

@@ -7,13 +7,13 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-purple/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-black/5">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a
             href="#"
-            className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-purple"
+            className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-magenta"
           >
             🤖 {content.nav.logo}
           </a>
@@ -24,7 +24,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-charcoal-light hover:text-purple transition-colors font-medium text-sm"
+                className="text-charcoal-light hover:text-magenta transition-colors font-medium text-sm"
               >
                 {link.label}
               </a>
@@ -33,7 +33,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 text-charcoal"
+            className="md:hidden p-2 text-black"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -65,12 +65,12 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-purple/10 py-4 px-4">
+        <div className="md:hidden bg-cream border-t border-black/5 py-4 px-4">
           {content.nav.links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="block py-3 text-charcoal-light hover:text-purple transition-colors font-medium"
+              className="block py-3 text-charcoal-light hover:text-magenta transition-colors font-medium"
               onClick={() => setIsOpen(false)}
             >
               {link.label}

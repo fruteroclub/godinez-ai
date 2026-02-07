@@ -2,12 +2,12 @@ import { content } from "@/lib/content";
 
 export default function Footer() {
   return (
-    <footer className="bg-charcoal text-white py-12">
+    <footer className="bg-black text-white py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo & tagline */}
           <div className="text-center md:text-left">
-            <p className="font-[family-name:var(--font-playfair)] text-xl font-bold mb-1">
+            <p className="font-[family-name:var(--font-playfair)] text-xl font-bold text-magenta mb-1">
               🤖 {content.footer.logo}
             </p>
             <p className="text-white/60 text-sm">{content.footer.tagline}</p>
@@ -19,7 +19,7 @@ export default function Footer() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-white/60 hover:text-white transition-colors text-sm"
+                className="text-white/60 hover:text-magenta transition-colors text-sm"
               >
                 {link.label}
               </a>
