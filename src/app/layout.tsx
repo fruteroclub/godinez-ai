@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Playfair_Display, DM_Sans, Plus_Jakarta_Sans, Space_Grotesk, Manrope } from "next/font/google";
 import "./globals.css";
 import { content } from "@/lib/content";
 
@@ -10,8 +10,29 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
@@ -35,8 +56,8 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${playfair.variable} ${inter.variable} antialiased`}
-        style={{ fontFamily: "var(--font-inter)" }}
+        className={`${playfair.variable} ${dmSans.variable} ${plusJakarta.variable} ${spaceGrotesk.variable} ${manrope.variable} antialiased`}
+        style={{ fontFamily: "var(--font-dm-sans)" }}
       >
         {children}
       </body>

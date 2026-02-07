@@ -70,7 +70,7 @@ export default function WaitlistForm() {
       <BlobYellow className="absolute -right-20 -bottom-20 w-72 h-72 opacity-15" />
 
       <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-charcoal mb-12">
+        <h2 className="font-[family-name:var(--font-plus-jakarta)] text-3xl sm:text-4xl md:text-5xl font-semibold text-center text-charcoal mb-12">
           {content.waitlist.headline}
         </h2>
 
