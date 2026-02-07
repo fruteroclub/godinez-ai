@@ -5,7 +5,7 @@ export default function ProblemSection() {
   return (
     <AnimatedSection className="py-20 sm:py-28 bg-gray-soft">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-[family-name:var(--font-plus-jakarta)] text-3xl sm:text-4xl md:text-5xl font-semibold text-center text-charcoal mb-16">
+        <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-center text-charcoal mb-16">
           {content.problem.headline}{" "}
           <span className="font-[family-name:var(--font-playfair)] italic text-purple bg-yellow-light px-2 rounded-lg">
             {content.problem.headlineAccent}

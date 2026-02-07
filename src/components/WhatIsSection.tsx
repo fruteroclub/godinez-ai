@@ -9,7 +9,7 @@ export default function WhatIsSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-[family-name:var(--font-space-grotesk)] text-3xl sm:text-4xl md:text-5xl font-medium text-charcoal mb-6">
+          <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-charcoal mb-6">
             {content.whatIs.headline}
           </h2>
           <p className="text-lg sm:text-xl text-charcoal-light max-w-3xl mx-auto leading-relaxed">
