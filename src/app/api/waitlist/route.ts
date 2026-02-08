@@ -1,34 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
+import { ConvexHttpClient } from "convex/browser";
 
-const DATA_FILE = path.join(process.cwd(), "data", "waitlist.json");
+// Initialize Convex client if configured
+const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL;
+const convex = convexUrl ? new ConvexHttpClient(convexUrl) : null;
 
 interface WaitlistEntry {
   name: string;
   email: string;
-  company: string;
-  tasks: string;
-  teamSize: string;
-  timestamp: string;
-}
-
-async function ensureDataDir() {
-  const dir = path.dirname(DATA_FILE);
-  try {
-    await fs.access(dir);
-  } catch {
-    await fs.mkdir(dir, { recursive: true });
-  }
-}
-
-async function readEntries(): Promise<WaitlistEntry[]> {
-  try {
-    const data = await fs.readFile(DATA_FILE, "utf-8");
-    return JSON.parse(data);
-  } catch {
-    return [];
-  }
+  company?: string;
+  tasks?: string;
+  teamSize?: string;
+  source?: string;
 }
 
 export async function POST(request: NextRequest) {
@@ -38,10 +21,10 @@ export async function POST(request: NextRequest) {
     const entry: WaitlistEntry = {
       name: body.name || "",
       email: body.email || "",
-      company: body.company || "",
-      tasks: body.tasks || "",
-      teamSize: body.teamSize || "",
-      timestamp: body.timestamp || new Date().toISOString(),
+      company: body.company || undefined,
+      tasks: body.tasks || undefined,
+      teamSize: body.teamSize || undefined,
+      source: "landing",
     };
 
     if (!entry.name || !entry.email) {
@@ -51,12 +34,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    await ensureDataDir();
-    const entries = await readEntries();
-    entries.push(entry);
-    await fs.writeFile(DATA_FILE, JSON.stringify(entries, null, 2));
-
-    return NextResponse.json({ success: true });
+    if (convex) {
+      // Use Convex
+      const { api } = await import("../../../../convex/_generated/api");
+      const result = await convex.mutation(api.waitlist.add, entry);
+      return NextResponse.json(result);
+    } else {
+      // Fallback: log to console (Vercel logs)
+      console.log("[WAITLIST]", JSON.stringify(entry));
+      return NextResponse.json({ success: true, fallback: true });
+    }
   } catch (error) {
     console.error("Waitlist error:", error);
     return NextResponse.json(

@@ -53,28 +53,28 @@ export default function WaitlistForm() {
     setError("");
 
     const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get("name") as string,
-      email: formData.get("email") as string,
-      company: formData.get("company") as string,
-      tasks: formData.get("tasks") as string,
-      teamSize: formData.get("teamSize") as string,
-      timestamp: new Date().toISOString(),
-    };
 
     try {
+      // Use API route (works with both Convex and fallback)
       const response = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          company: formData.get("company"),
+          tasks: formData.get("tasks"),
+          teamSize: formData.get("teamSize"),
+        }),
       });
 
-      if (response.ok) {
-        setIsSubmitted(true);
-      } else {
-        setError(content.waitlist.error);
+      if (!response.ok) {
+        throw new Error("API error");
       }
-    } catch {
+
+      setIsSubmitted(true);
+    } catch (err) {
+      console.error("Waitlist error:", err);
       setError(content.waitlist.error);
     } finally {
       setIsLoading(false);
