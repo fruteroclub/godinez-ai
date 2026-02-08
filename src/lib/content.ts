@@ -57,21 +57,22 @@ export const content = {
       "Un Godínez es tu empleado AI que atiende clientes por WhatsApp, agenda citas, genera reportes, y responde emails — todo en español, 24/7, desde tu propia instancia.",
     highlights: [
       {
-        emoji: "💬",
-        title: "Siempre disponible",
-        description: "Responde a las 2am cuando tú duermes",
+        emoji: "🤖",
+        title: "Tu Asistente AI",
+        description: "Siempre disponible, 24/7",
+      },
+      {
+        emoji: "⚙️",
+        title: "Adaptado a ti",
+        description: "Tu infraestructura, tus flujos de trabajo",
       },
       {
         emoji: "🧠",
         title: "Aprende de ti",
-        description: "Recuerda contexto, preferencias, historial",
-      },
-      {
-        emoji: "🔐",
-        title: "Tu instancia, tu control",
-        description: "Configuración dedicada para tu negocio",
+        description: "Contexto, preferencias, conversaciones",
       },
     ],
+    formula: "LLM + Canal + Skills",
     cards: [
       {
         emoji: "💬",

@@ -143,6 +143,15 @@ export default function WhatIsSection() {
             {content.whatIs.description}
           </p>
           
+          {/* Formula */}
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-charcoal border border-white/10 mb-10">
+            <span className="text-violet font-mono font-bold">LLM</span>
+            <span className="text-white/30">+</span>
+            <span className="text-magenta font-mono font-bold">Canal</span>
+            <span className="text-white/30">+</span>
+            <span className="text-gold font-mono font-bold">Skills</span>
+          </div>
+
           {/* Highlights */}
           <div className="flex flex-wrap justify-center gap-6 sm:gap-10">
             {content.whatIs.highlights.map((highlight, index) => (
