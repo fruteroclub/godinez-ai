@@ -52,7 +52,7 @@ export default function Navbar() {
             <span className="text-xl">
               <span className="font-[family-name:var(--font-plus-jakarta)] font-medium text-violet">Godínez</span>
               <span className="text-gold">.</span>
-              <span className="font-[family-name:var(--font-playfair)] italic font-bold text-magenta">AI</span>
+              <span className="font-[family-name:var(--font-playfair)] italic font-bold text-magenta" style={{ fontStyle: 'oblique 8deg' }}>AI</span>
             </span>
           </a>
 
