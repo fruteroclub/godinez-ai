@@ -17,31 +17,43 @@ export default function AnimatedSection({
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Fallback: show after delay if IntersectionObserver fails
+    const fallbackTimer = setTimeout(() => {
+      setIsVisible(true);
+    }, 1000);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          clearTimeout(fallbackTimer);
           setIsVisible(true);
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.1 }
+      { 
+        threshold: 0,
+        rootMargin: "50px 0px 50px 0px"
+      }
     );
 
     if (ref.current) {
       observer.observe(ref.current);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(fallbackTimer);
+      observer.disconnect();
+    };
   }, []);
 
   return (
     <section
       ref={ref}
       id={id}
-      className={`${className} transition-all duration-700 ease-out ${
+      className={`${className} transition-all duration-500 ease-out ${
         isVisible
           ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-8"
+          : "opacity-0 translate-y-4"
       }`}
     >
       {children}

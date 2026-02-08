@@ -27,49 +27,38 @@ export const content = {
   },
 
   problem: {
-    headline: "Tu negocio necesita",
-    headlineAccent: "más manos",
-    headlineSuffix: "... sin más nómina",
-    cards: [
+    headline: "Crece sin agotarte...",
+    headlineAccent: "ni contratar más",
+    items: [
       {
-        emoji: "💸",
         title: "Contratar es caro",
         description: "IMSS, aguinaldo, vacaciones, capacitación...",
       },
       {
-        emoji: "😴",
         title: "Tu equipo duerme",
-        description:
-          "Pero tus clientes no. Pierdes oportunidades a las 2am.",
+        description: "Pero tus clientes no. Pierdes oportunidades a las 2am.",
       },
       {
-        emoji: "📋",
-        title: "Tareas repetitivas",
-        description:
-          "Tu talento humano debería crear, no copiar y pegar.",
+        title: "5 suscripciones de IA",
+        description: "Pagas ChatGPT, Notion AI, Jasper... y el trabajo sigue fragmentado.",
       },
     ],
   },
 
   whatIs: {
     headline: "¿Qué es un Godínez?",
-    description:
-      "Un Godínez es un agente de IA que vive en tu infraestructura, habla español, y hace el trabajo que nadie quiere hacer.",
     cards: [
       {
-        emoji: "💬",
-        title: "WhatsApp / Telegram / Email",
-        description: "Atiende clientes donde están",
+        title: "Siempre disponible",
+        description: "Tu propio asistente, en cualquier dispositivo, siempre en español",
       },
       {
-        emoji: "📊",
-        title: "Reportes y análisis",
-        description: "Genera informes sin que se lo pidas",
+        title: "Aprende de ti",
+        description: "Memoria persistente: contexto, preferencias, conversaciones",
       },
       {
-        emoji: "🔄",
-        title: "Automatización",
-        description: "Facturación, seguimiento, CRM, lo que necesites",
+        title: "Personalizado",
+        description: "Configuración dedicada para tu infraestructura y flujos de trabajo",
       },
     ],
     poweredBy: "Powered by OpenClaw",
@@ -172,7 +161,8 @@ export const content = {
   },
 
   waitlist: {
-    headline: "Sé de los primeros en tener tu Godínez",
+    headline: "Deja de perder clientes a las 2am",
+    subheadline: "Únete a +200 negocios que ya reservaron su Godínez",
     fields: {
       name: { label: "Nombre", placeholder: "Tu nombre" },
       email: { label: "Email", placeholder: "tu@email.com" },

@@ -25,10 +25,9 @@ function CheckIcon({ className }: { className?: string }) {
 export default function PricingSection() {
   return (
     <AnimatedSection id="planes" className="relative py-24 sm:py-32 bg-dark overflow-hidden">
-      {/* Background elements */}
+      {/* Subtle background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-0 w-[500px] h-[500px] rounded-full bg-violet/5 blur-3xl" />
-        <div className="absolute bottom-1/4 right-0 w-[600px] h-[600px] rounded-full bg-magenta/5 blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-magenta/3 blur-[120px]" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,7 +35,7 @@ export default function PricingSection() {
         <div className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-4">
             {content.pricing.headlinePrefix}
-            <span className="text-gradient-brand font-[family-name:var(--font-playfair)] italic font-semibold">
+            <span className="text-magenta font-[family-name:var(--font-playfair)] italic font-black">
               {content.pricing.headlineAccent}
             </span>
             {content.pricing.headlineSuffix}
@@ -84,7 +83,7 @@ export default function PricingSection() {
                     {plan.idealFor}
                   </p>
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className={`text-4xl sm:text-5xl font-bold ${plan.popular ? "text-gradient-brand" : "text-magenta"}`}>
+                    <span className="text-4xl sm:text-5xl font-bold text-magenta">
                       {plan.price}
                     </span>
                     <span className="text-sm text-white/40">
@@ -111,7 +110,7 @@ export default function PricingSection() {
                     href="#lista-de-espera"
                     className={`block text-center py-3.5 px-6 rounded-full font-semibold transition-all duration-300 ${
                       plan.popular
-                        ? "bg-gradient-to-r from-magenta to-violet text-white hover:shadow-lg hover:shadow-magenta/30 hover:-translate-y-0.5"
+                        ? "bg-magenta text-white hover:bg-magenta-dark hover:shadow-lg hover:shadow-magenta/30 hover:-translate-y-0.5"
                         : "bg-white/5 text-white/80 hover:bg-white/10 hover:text-white border border-white/10"
                     }`}
                   >

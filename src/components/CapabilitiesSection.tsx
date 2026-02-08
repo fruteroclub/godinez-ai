@@ -78,17 +78,16 @@ const capabilityIcons = [
 export default function CapabilitiesSection() {
   return (
     <AnimatedSection id="capacidades" className="relative py-24 sm:py-32 bg-dark overflow-hidden">
-      {/* Background gradient */}
+      {/* Subtle background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full bg-magenta/5 blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-gold/5 blur-3xl" />
+        <div className="absolute top-1/2 right-1/3 w-[400px] h-[400px] rounded-full bg-violet/3 blur-[120px]" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-center text-white mb-16">
-          {content.capabilities.headline.split("Godínez")[0]}
-          <span className="text-gradient-brand font-[family-name:var(--font-playfair)] italic font-semibold">
+          ¿Qué puede hacer tu{" "}
+          <span className="text-violet font-[family-name:var(--font-playfair)] italic font-black">
             Godínez
           </span>
           ?
@@ -107,7 +106,7 @@ export default function CapabilitiesSection() {
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-magenta/10 to-violet/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
                 {/* Icon */}
-                <div className="relative w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-magenta/20 to-violet/20 flex items-center justify-center text-magenta group-hover:text-white group-hover:from-magenta group-hover:to-violet transition-all duration-300">
+                <div className="relative w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-4 rounded-xl bg-charcoal border border-white/10 flex items-center justify-center text-magenta group-hover:border-magenta/30 group-hover:bg-magenta/10 transition-all duration-300">
                   <IconComponent />
                 </div>
 
