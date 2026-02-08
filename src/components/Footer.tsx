@@ -1,15 +1,21 @@
 import { content } from "@/lib/content";
 
-// Small robot logo for footer
-function FooterRobot() {
+// Robot logo icon (matches Navbar)
+function FooterRobotIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" aria-hidden="true">
-      <rect x="4" y="8" width="16" height="12" rx="3" fill="#111111" stroke="#8B5CF6" strokeWidth="1" />
-      <rect x="7" y="11" width="10" height="5" rx="1.5" fill="#0A0A0A" />
-      <circle cx="9.5" cy="13.5" r="1" fill="#E91E8C" />
-      <circle cx="14.5" cy="13.5" r="1" fill="#8B5CF6" />
-      <line x1="12" y1="8" x2="12" y2="5" stroke="#8B5CF6" strokeWidth="1" />
-      <circle cx="12" cy="4" r="1.5" fill="#E91E8C" />
+    <svg
+      viewBox="0 0 28 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-7 h-7"
+      aria-hidden="true"
+    >
+      <rect x="2" y="6" width="24" height="18" rx="6" fill="#1A1A1A" stroke="#8B5CF6" strokeWidth="1.5" />
+      <circle cx="10" cy="14" r="2.5" fill="#E91E8C" />
+      <circle cx="18" cy="14" r="2.5" fill="#E91E8C" />
+      <path d="M10.5 19 Q14 22 17.5 19" stroke="#FFB800" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+      <line x1="14" y1="6" x2="14" y2="2" stroke="#8B5CF6" strokeWidth="1.5" />
+      <circle cx="14" cy="1" r="1.5" fill="#FFB800" />
     </svg>
   );
 }
@@ -25,7 +31,7 @@ export default function Footer() {
           {/* Logo & tagline */}
           <div className="text-center md:text-left">
             <a href="#" className="inline-flex items-center gap-2 mb-2 group">
-              <FooterRobot />
+              <FooterRobotIcon />
               <span className="text-xl">
                 <span className="font-[family-name:var(--font-plus-jakarta)] font-medium text-white">Godínez</span>
                 <span className="text-gold">.</span>

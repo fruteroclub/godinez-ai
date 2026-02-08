@@ -3,20 +3,22 @@
 import { useState, useEffect } from "react";
 import { content } from "@/lib/content";
 
-// Small robot logo
+// Robot logo icon
 function RobotLogo() {
   return (
-    <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8" aria-hidden="true">
-      <rect x="6" y="10" width="20" height="16" rx="4" fill="#111111" stroke="#8B5CF6" strokeWidth="1.5" />
-      <rect x="10" y="14" width="12" height="7" rx="2" fill="#0A0A0A" />
-      <circle cx="13" cy="17" r="1.5" fill="#E91E8C">
-        <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="19" cy="17" r="1.5" fill="#8B5CF6">
-        <animate attributeName="opacity" values="1;0.5;1" dur="2s" begin="0.3s" repeatCount="indefinite" />
-      </circle>
-      <line x1="16" y1="10" x2="16" y2="6" stroke="#8B5CF6" strokeWidth="1.5" />
-      <circle cx="16" cy="4" r="2" fill="#E91E8C" />
+    <svg
+      viewBox="0 0 28 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-7 h-7"
+      aria-hidden="true"
+    >
+      <rect x="2" y="6" width="24" height="18" rx="6" fill="#1A1A1A" stroke="#8B5CF6" strokeWidth="1.5" />
+      <circle cx="10" cy="14" r="2.5" fill="#E91E8C" />
+      <circle cx="18" cy="14" r="2.5" fill="#E91E8C" />
+      <path d="M10.5 19 Q14 22 17.5 19" stroke="#FFB800" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+      <line x1="14" y1="6" x2="14" y2="2" stroke="#8B5CF6" strokeWidth="1.5" />
+      <circle cx="14" cy="1" r="1.5" fill="#FFB800" />
     </svg>
   );
 }

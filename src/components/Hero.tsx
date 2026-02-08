@@ -2,65 +2,85 @@
 
 import { content } from "@/lib/content";
 
-function HeroIllustration() {
+function GodinezIllustration({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 400 320"
+      viewBox="0 0 400 400"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-full max-w-md mx-auto animate-float"
+      className={className}
       aria-hidden="true"
     >
-      {/* Main body — rounded bot silhouette */}
-      <rect x="120" y="80" width="160" height="160" rx="32" fill="#1A1A1A" stroke="#8B5CF6" strokeWidth="2" />
-
-      {/* Screen / face area */}
-      <rect x="144" y="104" width="112" height="72" rx="12" fill="#0A0A0A" />
-
-      {/* Eyes — gradient glow */}
-      <circle cx="176" cy="140" r="10" fill="#E91E8C">
-        <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="224" cy="140" r="10" fill="#8B5CF6">
-        <animate attributeName="opacity" values="1;0.5;1" dur="3s" begin="0.5s" repeatCount="indefinite" />
-      </circle>
-
-      {/* Mouth — small smile */}
-      <path d="M184 160 Q200 172 216 160" stroke="#FFB800" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-
+      {/* Head — rounded rectangle with screen face */}
+      <rect x="130" y="60" width="140" height="120" rx="24" fill="#1A1A1A" stroke="#8B5CF6" strokeWidth="2" />
+      {/* Screen face inner glow */}
+      <rect x="145" y="75" width="110" height="80" rx="12" fill="#0A0A0A" />
+      {/* Eyes — glowing dots */}
+      <circle cx="175" cy="110" r="8" fill="#E91E8C" />
+      <circle cx="225" cy="110" r="8" fill="#E91E8C" />
+      <circle cx="175" cy="110" r="4" fill="#FF4DA6" />
+      <circle cx="225" cy="110" r="4" fill="#FF4DA6" />
+      {/* Smile */}
+      <path d="M185 130 Q200 145 215 130" stroke="#FFB800" strokeWidth="3" strokeLinecap="round" fill="none" />
       {/* Antenna */}
-      <line x1="200" y1="80" x2="200" y2="52" stroke="#8B5CF6" strokeWidth="2" />
-      <circle cx="200" cy="46" r="6" fill="#E91E8C">
-        <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite" />
-      </circle>
+      <line x1="200" y1="60" x2="200" y2="38" stroke="#8B5CF6" strokeWidth="2" />
+      <circle cx="200" cy="32" r="6" fill="#FFB800" />
+
+      {/* Neck */}
+      <rect x="185" y="180" width="30" height="16" rx="4" fill="#1A1A1A" stroke="#3A3A3A" strokeWidth="1" />
+
+      {/* Body — torso with tie */}
+      <rect x="120" y="196" width="160" height="120" rx="20" fill="#1A1A1A" stroke="#8B5CF6" strokeWidth="2" />
+      {/* Tie */}
+      <polygon points="200,206 192,226 200,246 208,226" fill="#E91E8C" />
+      {/* Shirt collar lines */}
+      <line x1="185" y1="196" x2="195" y2="216" stroke="#3A3A3A" strokeWidth="1.5" />
+      <line x1="215" y1="196" x2="205" y2="216" stroke="#3A3A3A" strokeWidth="1.5" />
+      {/* Chest badge — "G.AI" */}
+      <rect x="225" y="230" width="36" height="18" rx="4" fill="#0A0A0A" stroke="#FFB800" strokeWidth="1" />
+      <text x="243" y="243" textAnchor="middle" fill="#FFB800" fontSize="10" fontFamily="monospace" fontWeight="bold">G.AI</text>
 
       {/* Arms */}
-      <rect x="84" y="120" width="36" height="12" rx="6" fill="#1A1A1A" stroke="#E91E8C" strokeWidth="1.5" />
-      <rect x="280" y="120" width="36" height="12" rx="6" fill="#1A1A1A" stroke="#E91E8C" strokeWidth="1.5" />
+      {/* Left arm */}
+      <rect x="85" y="206" width="35" height="80" rx="12" fill="#1A1A1A" stroke="#8B5CF6" strokeWidth="2" />
+      {/* Left hand holding coffee */}
+      <rect x="80" y="280" width="44" height="14" rx="7" fill="#1A1A1A" stroke="#3A3A3A" strokeWidth="1.5" />
+      <rect x="72" y="268" width="24" height="20" rx="4" fill="#3A3A3A" stroke="#FFB800" strokeWidth="1" />
+      <path d="M72 274 Q64 278 72 282" stroke="#FFB800" strokeWidth="1.5" fill="none" />
+      {/* Steam */}
+      <path d="M78 264 Q80 256 84 260" stroke="#8B5CF6" strokeWidth="1" opacity="0.5" fill="none" />
+      <path d="M86 262 Q88 254 92 258" stroke="#E91E8C" strokeWidth="1" opacity="0.5" fill="none" />
 
-      {/* Briefcase in right hand */}
-      <rect x="296" y="108" width="28" height="22" rx="4" fill="#FFB800" />
-      <path d="M304 108 V102 Q304 98 308 98 H314 Q318 98 318 102 V108" stroke="#0A0A0A" strokeWidth="2" fill="none" />
+      {/* Right arm */}
+      <rect x="280" y="206" width="35" height="80" rx="12" fill="#1A1A1A" stroke="#8B5CF6" strokeWidth="2" />
+      {/* Right hand with thumbs up */}
+      <rect x="282" y="280" width="30" height="14" rx="7" fill="#1A1A1A" stroke="#3A3A3A" strokeWidth="1.5" />
+      <rect x="294" y="268" width="8" height="16" rx="4" fill="#1A1A1A" stroke="#FFB800" strokeWidth="1.5" />
 
-      {/* Floating data particles */}
-      <circle cx="80" cy="200" r="3" fill="#E91E8C" opacity="0.6">
-        <animate attributeName="cy" values="200;180;200" dur="4s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="320" cy="100" r="2.5" fill="#8B5CF6" opacity="0.5">
-        <animate attributeName="cy" values="100;80;100" dur="3.5s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="340" cy="220" r="2" fill="#FFB800" opacity="0.5">
-        <animate attributeName="cy" values="220;200;220" dur="5s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="60" cy="120" r="2" fill="#FFB800" opacity="0.4">
-        <animate attributeName="cy" values="120;100;120" dur="4.5s" repeatCount="indefinite" />
-      </circle>
+      {/* Legs */}
+      <rect x="145" y="316" width="40" height="50" rx="10" fill="#1A1A1A" stroke="#3A3A3A" strokeWidth="1.5" />
+      <rect x="215" y="316" width="40" height="50" rx="10" fill="#1A1A1A" stroke="#3A3A3A" strokeWidth="1.5" />
+      {/* Shoes */}
+      <rect x="138" y="358" width="52" height="16" rx="8" fill="#0A0A0A" stroke="#E91E8C" strokeWidth="1.5" />
+      <rect x="210" y="358" width="52" height="16" rx="8" fill="#0A0A0A" stroke="#E91E8C" strokeWidth="1.5" />
 
-      {/* Base / feet */}
-      <rect x="152" y="240" width="96" height="16" rx="8" fill="#1A1A1A" stroke="#3A3A3A" strokeWidth="1.5" />
-
-      {/* Shadow */}
-      <ellipse cx="200" cy="276" rx="60" ry="8" fill="#8B5CF6" opacity="0.1" />
+      {/* Floating elements around the robot */}
+      {/* Gear */}
+      <circle cx="60" cy="120" r="14" stroke="#8B5CF6" strokeWidth="1.5" fill="none" opacity="0.4" />
+      <circle cx="60" cy="120" r="6" stroke="#8B5CF6" strokeWidth="1" fill="none" opacity="0.4" />
+      {/* Data nodes */}
+      <circle cx="340" cy="100" r="4" fill="#FFB800" opacity="0.5" />
+      <circle cx="355" cy="130" r="3" fill="#E91E8C" opacity="0.5" />
+      <circle cx="330" cy="150" r="5" fill="#8B5CF6" opacity="0.4" />
+      <line x1="340" y1="100" x2="355" y2="130" stroke="#FFB800" strokeWidth="0.5" opacity="0.3" />
+      <line x1="355" y1="130" x2="330" y2="150" stroke="#E91E8C" strokeWidth="0.5" opacity="0.3" />
+      {/* Chat bubble */}
+      <rect x="310" y="190" width="60" height="30" rx="8" fill="none" stroke="#FFB800" strokeWidth="1" opacity="0.4" />
+      <circle cx="325" cy="205" r="2" fill="#FFB800" opacity="0.4" />
+      <circle cx="337" cy="205" r="2" fill="#FFB800" opacity="0.4" />
+      <circle cx="349" cy="205" r="2" fill="#FFB800" opacity="0.4" />
+      {/* Lightning bolt */}
+      <path d="M50 220 L56 238 L52 238 L58 258" stroke="#FFB800" strokeWidth="1.5" fill="none" opacity="0.4" />
     </svg>
   );
 }
@@ -84,10 +104,10 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left — Copy */}
-          <div className="text-center lg:text-left">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          {/* Text content */}
+          <div className="flex-1 text-center lg:text-left">
             <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-magenta/30 bg-magenta/10">
               <span className="text-magenta text-sm font-medium tracking-wide">
                 AI para PyMEs de LATAM
@@ -102,14 +122,14 @@ export default function Hero() {
               {" todo"}
             </h1>
 
-            <p className="text-lg sm:text-xl text-white/60 max-w-xl mb-10 leading-relaxed">
+            <p className="text-lg sm:text-xl text-white/60 max-w-xl mb-10 leading-relaxed mx-auto lg:mx-0">
               {content.hero.subtitle}
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 lg:justify-start justify-center">
               <a
                 href="#lista-de-espera"
-                className="inline-block bg-magenta hover:bg-magenta-dark text-white font-semibold px-8 py-4 rounded-full text-lg transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-magenta/30"
+                className="inline-block bg-magenta hover:bg-magenta-dark text-white font-semibold px-8 py-4 rounded-full text-lg transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-magenta/30 cursor-pointer"
               >
                 {content.hero.cta} →
               </a>
@@ -124,22 +144,56 @@ export default function Hero() {
               >
                 Conoce más
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </a>
             </div>
+
+            {/* Social proof */}
+            <div className="mt-10 flex items-center gap-3 justify-center lg:justify-start text-white/30 text-sm">
+              <div className="flex -space-x-2">
+                {[...Array(4)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="w-8 h-8 rounded-full border-2 border-dark"
+                    style={{
+                      background: `linear-gradient(135deg, ${
+                        ["#E91E8C", "#8B5CF6", "#FFB800", "#E91E8C"][i]
+                      }40, ${["#8B5CF6", "#FFB800", "#E91E8C", "#8B5CF6"][i]}40)`,
+                    }}
+                  />
+                ))}
+              </div>
+              <span>+200 en lista de espera</span>
+            </div>
           </div>
 
-          {/* Right — SVG Illustration */}
-          <div className="hidden lg:block">
-            <HeroIllustration />
+          {/* SVG Illustration */}
+          <div className="flex-1 flex justify-center lg:justify-end">
+            <div className="relative">
+              {/* Glow behind illustration */}
+              <div className="absolute inset-0 bg-magenta/10 blur-[60px] rounded-full scale-75" />
+              <GodinezIllustration className="relative w-72 sm:w-80 md:w-96 h-auto animate-float" />
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* Mobile illustration — smaller, below CTA */}
-        <div className="lg:hidden mt-12 max-w-xs mx-auto">
-          <HeroIllustration />
-        </div>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg
+          className="w-6 h-6 text-magenta/40"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
       </div>
     </section>
   );
