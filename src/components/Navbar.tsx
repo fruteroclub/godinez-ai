@@ -50,7 +50,7 @@ export default function Navbar() {
           >
             <RobotLogo />
             <span className="text-xl">
-              <span className="font-[family-name:var(--font-plus-jakarta)] font-medium text-violet">Godínez</span>
+              <span className="font-[family-name:var(--font-plus-jakarta)] font-medium text-white">Godínez</span>
               <span className="text-gold">.</span>
               <span className="font-[family-name:var(--font-playfair)] italic font-bold text-magenta inline-block" style={{ transform: 'skewX(6deg)' }}>AI</span>
             </span>
