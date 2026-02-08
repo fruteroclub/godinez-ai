@@ -120,13 +120,13 @@ export default function WaitlistForm() {
       <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-center text-white mb-4">
-          Recupera{" "}
+          Delega lo que{" "}
           <span className="text-magenta font-[family-name:var(--font-playfair)] italic font-black">
-            tu tiempo
+            te quita energía
           </span>
         </h2>
         <p className="text-center text-white/50 mb-12 text-lg">
-          Para tu negocio. Para ti. Para lo que importa.
+          Tu Godínez se encarga. Tú decides qué hacer con tu tiempo.
         </p>
 
         {/* Form card */}
