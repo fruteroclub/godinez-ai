@@ -120,7 +120,11 @@ export default function WaitlistForm() {
       <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-center text-white mb-4">
-          {content.waitlist.headline}
+          Deja de{" "}
+          <span className="text-magenta font-[family-name:var(--font-playfair)] italic font-black">
+            perder clientes
+          </span>
+          {" "}a las 2am
         </h2>
         <p className="text-center text-white/50 mb-12 text-lg">
           {content.waitlist.subheadline}

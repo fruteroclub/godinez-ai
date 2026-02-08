@@ -106,7 +106,7 @@ export default function CapabilitiesSection() {
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-magenta/10 to-violet/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
                 {/* Icon */}
-                <div className="relative w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-4 rounded-xl bg-charcoal border border-white/10 flex items-center justify-center text-white group-hover:border-magenta/30 group-hover:text-magenta transition-all duration-300">
+                <div className="relative w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-4 rounded-xl bg-charcoal border border-white/10 flex items-center justify-center text-magenta group-hover:border-magenta/30 group-hover:bg-magenta/10 transition-all duration-300">
                   <IconComponent />
                 </div>
 
