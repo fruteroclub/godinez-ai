@@ -26,9 +26,9 @@ export default function TestimonialsSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-4">
-            Lo que dicen nuestros{" "}
+            Otros ya{" "}
             <span className="text-gold font-[family-name:var(--font-playfair)] italic font-black">
-              usuarios
+              lo lograron
             </span>
           </h2>
         </div>
