@@ -29,7 +29,7 @@ export default function Footer() {
               <span className="text-xl">
                 <span className="font-[family-name:var(--font-plus-jakarta)] font-medium text-violet">Godínez</span>
                 <span className="text-gold">.</span>
-                <span className="font-[family-name:var(--font-playfair)] italic font-bold text-magenta" style={{ fontStyle: 'oblique 8deg' }}>AI</span>
+                <span className="font-[family-name:var(--font-playfair)] italic font-bold text-magenta inline-block" style={{ transform: 'skewX(6deg)' }}>AI</span>
               </span>
             </a>
             <p className="text-white/40 text-sm">{content.footer.tagline}</p>
