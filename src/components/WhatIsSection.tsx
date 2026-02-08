@@ -132,8 +132,12 @@ export default function WhatIsSection() {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-magenta mb-6">
-            {content.whatIs.headline}
+          <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">
+            ¿Qué es un{" "}
+            <span className="text-violet font-[family-name:var(--font-playfair)] italic font-black">
+              Godínez
+            </span>
+            ?
           </h2>
           <p className="text-lg sm:text-xl text-white/50 max-w-3xl mx-auto leading-relaxed">
             {content.whatIs.description}

@@ -96,7 +96,7 @@ export default function Hero() {
 
             <h1 className="font-[family-name:var(--font-heading)] text-4xl sm:text-5xl md:text-6xl font-medium text-white leading-[1.1] mb-6">
               El asistente AI al que{" "}
-              <span className="text-magenta font-[family-name:var(--font-playfair)] italic font-black">
+              <span className="text-gold font-[family-name:var(--font-playfair)] italic font-black">
                 le delegas
               </span>
               {" todo"}
