@@ -89,9 +89,9 @@ export default function WaitlistForm() {
         id="lista-de-espera"
         className="relative py-24 sm:py-32 bg-dark overflow-hidden"
       >
-        {/* Background */}
+        {/* Subtle background glow */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-magenta/20 to-violet/20 blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-violet/5 blur-[120px]" />
         </div>
 
         <div className="relative z-10 max-w-2xl mx-auto px-4 text-center">
@@ -112,10 +112,9 @@ export default function WaitlistForm() {
       id="lista-de-espera"
       className="relative py-24 sm:py-32 bg-dark overflow-hidden"
     >
-      {/* Background gradient */}
+      {/* Subtle background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-magenta/10 blur-3xl" />
-        <div className="absolute -bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-violet/10 blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-violet/5 blur-[120px]" />
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -235,7 +234,7 @@ export default function WaitlistForm() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-gradient-to-r from-magenta to-violet hover:from-magenta-dark hover:to-violet text-white font-semibold py-4 rounded-full text-lg transition-all hover:shadow-lg hover:shadow-magenta/30 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+              className="w-full bg-magenta hover:bg-magenta-dark text-white font-semibold py-4 rounded-full text-lg transition-all hover:shadow-lg hover:shadow-magenta/30 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
             >
               {isLoading ? (
                 <span className="inline-flex items-center gap-2">

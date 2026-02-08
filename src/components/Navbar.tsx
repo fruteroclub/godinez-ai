@@ -49,8 +49,9 @@ export default function Navbar() {
             className="flex items-center gap-2 group"
           >
             <RobotLogo />
-            <span className="font-[family-name:var(--font-playfair)] text-xl font-bold text-gradient-brand">
-              {content.nav.logo}
+            <span className="text-xl text-white">
+              <span className="font-[family-name:var(--font-plus-jakarta)] font-medium">Godinez.</span>
+              <span className="font-[family-name:var(--font-playfair)] italic font-bold">AI</span>
             </span>
           </a>
 

@@ -113,10 +113,10 @@ const icons = [ChatIcon, ChartIcon, AutomationIcon];
 
 export default function WhatIsSection() {
   return (
-    <AnimatedSection id="que-es" className="relative py-24 sm:py-32 bg-gradient-to-b from-dark via-[#0D0D0D] to-dark overflow-hidden">
-      {/* Background elements */}
+    <AnimatedSection id="que-es" className="relative py-24 sm:py-32 bg-dark overflow-hidden">
+      {/* Subtle background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-violet/3 blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-violet/5 blur-[120px]" />
       </div>
 
       {/* Grid pattern */}

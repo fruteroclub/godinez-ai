@@ -16,7 +16,7 @@ function FooterRobot() {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#050505] text-white py-16 overflow-hidden">
+    <footer className="relative bg-dark text-white py-16 overflow-hidden">
       {/* Subtle gradient line at top */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-magenta/30 to-transparent" />
 
@@ -26,8 +26,9 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <a href="#" className="inline-flex items-center gap-2 mb-2 group">
               <FooterRobot />
-              <span className="font-[family-name:var(--font-playfair)] text-xl font-bold text-gradient-brand">
-                {content.footer.logo}
+              <span className="text-xl text-white">
+                <span className="font-[family-name:var(--font-plus-jakarta)] font-medium">Godinez.</span>
+                <span className="font-[family-name:var(--font-playfair)] italic font-bold">AI</span>
               </span>
             </a>
             <p className="text-white/40 text-sm">{content.footer.tagline}</p>

@@ -66,11 +66,10 @@ function HeroIllustration() {
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 bg-dark">
-      {/* Animated background gradients */}
+      {/* Subtle background glow */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] rounded-full bg-magenta/8 blur-3xl animate-float" />
-        <div className="absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] rounded-full bg-violet/8 blur-3xl animate-float delay-300" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-gold/5 blur-3xl" />
+        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-violet/5 blur-[120px]" />
+        <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-magenta/5 blur-[120px]" />
       </div>
 
       {/* Grid pattern overlay */}
@@ -95,7 +94,7 @@ export default function Hero() {
 
             <h1 className="font-[family-name:var(--font-heading)] text-4xl sm:text-5xl md:text-6xl font-medium text-white leading-[1.1] mb-6">
               {content.hero.headline.split("nunca falta")[0]}
-              <span className="text-magenta font-[family-name:var(--font-playfair)] italic font-black">
+              <span className="text-violet font-[family-name:var(--font-playfair)] italic font-black">
                 nunca falta
               </span>
               {" al trabajo"}
@@ -108,7 +107,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-center gap-4 lg:justify-start justify-center">
               <a
                 href="#lista-de-espera"
-                className="inline-block bg-magenta hover:bg-magenta-dark text-white font-semibold px-8 py-4 rounded-full text-lg transition-all hover:-translate-y-0.5 animate-pulse-glow"
+                className="inline-block bg-magenta hover:bg-magenta-dark text-white font-semibold px-8 py-4 rounded-full text-lg transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-magenta/30"
               >
                 {content.hero.cta} →
               </a>
