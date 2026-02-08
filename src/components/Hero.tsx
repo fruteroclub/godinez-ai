@@ -92,7 +92,7 @@ export default function Hero() {
   const displayCount = waitlistCount ?? 0;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 bg-dark">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-20 lg:pt-16 bg-dark">
       {/* Subtle background glow */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-violet/5 blur-[120px]" />
