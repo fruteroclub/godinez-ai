@@ -15,7 +15,7 @@ export default function TestimonialsSection() {
   return (
     <AnimatedSection
       id="testimonios"
-      className="relative py-24 sm:py-32 bg-dark overflow-hidden"
+      className="relative py-24 bg-dark overflow-hidden"
     >
       {/* Subtle background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

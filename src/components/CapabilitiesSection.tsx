@@ -77,7 +77,7 @@ const capabilityIcons = [
 
 export default function CapabilitiesSection() {
   return (
-    <AnimatedSection id="capacidades" className="relative py-24 sm:py-32 bg-dark overflow-hidden">
+    <AnimatedSection id="capacidades" className="relative py-24 bg-dark overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 right-1/3 w-[400px] h-[400px] rounded-full bg-violet/3 blur-[120px]" />

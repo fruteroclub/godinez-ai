@@ -24,7 +24,7 @@ function CheckIcon({ className }: { className?: string }) {
 
 export default function PricingSection() {
   return (
-    <AnimatedSection id="planes" className="relative py-24 sm:py-32 bg-dark overflow-hidden">
+    <AnimatedSection id="planes" className="relative py-24 bg-dark overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-magenta/3 blur-[120px]" />
@@ -47,9 +47,8 @@ export default function PricingSection() {
           {content.pricing.plans.map((plan, index) => (
             <div
               key={index}
-              className={`group relative rounded-2xl transition-all duration-300 ${
-                plan.popular ? "md:-mt-4 md:mb-4" : ""
-              }`}
+              className={`group relative rounded-2xl transition-all duration-300 ${plan.popular ? "md:-mt-4 md:mb-4" : ""
+                }`}
             >
               {/* Gradient border wrapper for popular */}
               {plan.popular && (
@@ -58,11 +57,10 @@ export default function PricingSection() {
 
               {/* Card content */}
               <div
-                className={`relative h-full bg-[#111111] rounded-2xl p-8 border transition-all duration-300 ${
-                  plan.popular
-                    ? "border-transparent"
-                    : "border-white/5 hover:border-white/10"
-                }`}
+                className={`relative h-full bg-[#111111] rounded-2xl p-8 border transition-all duration-300 ${plan.popular
+                  ? "border-transparent"
+                  : "border-white/5 hover:border-white/10"
+                  }`}
               >
                 {/* Popular badge */}
                 {plan.popular && (
@@ -76,7 +74,7 @@ export default function PricingSection() {
 
                 {/* Plan header */}
                 <div className="text-center mb-8 pt-2">
-                  <h3 className="text-2xl font-semibold text-white mb-2">
+                  <h3 className="text-3xl font-semibold text-white mb-2 font-[family-name:var(--font-playfair)] font-medium">
                     {plan.name}
                   </h3>
                   <p className="text-sm text-white/40 mb-6">
@@ -97,7 +95,7 @@ export default function PricingSection() {
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <CheckIcon className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-white/60 text-sm leading-relaxed">
+                      <span className="text-white/75 text-sm leading-relaxed">
                         {feature}
                       </span>
                     </li>
@@ -108,11 +106,10 @@ export default function PricingSection() {
                 <div className="mt-auto">
                   <a
                     href="#lista-de-espera"
-                    className={`block text-center py-3.5 px-6 rounded-full font-semibold transition-all duration-300 ${
-                      plan.popular
-                        ? "bg-magenta text-white hover:bg-magenta-dark hover:shadow-lg hover:shadow-magenta/30 hover:-translate-y-0.5"
-                        : "bg-white/5 text-white/80 hover:bg-white/10 hover:text-white border border-white/10"
-                    }`}
+                    className={`block text-center py-3.5 px-6 rounded-full font-semibold transition-all duration-300 ${plan.popular
+                      ? "bg-magenta text-white hover:bg-magenta-dark hover:shadow-lg hover:shadow-magenta/30 hover:-translate-y-0.5"
+                      : "bg-white/5 text-white/80 hover:bg-white/10 hover:text-white border border-white/10"
+                      }`}
                   >
                     Empezar
                   </a>

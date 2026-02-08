@@ -87,7 +87,7 @@ export default function WaitlistForm() {
     return (
       <AnimatedSection
         id="lista-de-espera"
-        className="relative py-24 sm:py-32 bg-dark overflow-hidden"
+        className="relative py-24 bg-dark overflow-hidden"
       >
         {/* Subtle background glow */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -110,7 +110,7 @@ export default function WaitlistForm() {
   return (
     <AnimatedSection
       id="lista-de-espera"
-      className="relative py-24 sm:py-32 bg-dark overflow-hidden"
+      className="relative py-24 bg-dark overflow-hidden"
     >
       {/* Subtle background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -123,8 +123,8 @@ export default function WaitlistForm() {
           Recupera{" "}
           <span className="text-gold font-[family-name:var(--font-playfair)] italic font-black">
             tu tiempo
-          </span>
-          . Delega el resto.
+          </span><br />
+          Delega el resto
         </h2>
         <p className="text-center text-white/50 mb-12 text-lg">
           Tu Godínez se encarga de lo que te quita energía, para que tú hagas lo que te llena.
