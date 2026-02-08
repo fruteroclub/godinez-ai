@@ -131,7 +131,7 @@ export default function WhatIsSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">
             ¿Qué es un{" "}
             <span className="text-violet font-[family-name:var(--font-playfair)] italic font-black">
@@ -139,9 +139,22 @@ export default function WhatIsSection() {
             </span>
             ?
           </h2>
-          <p className="text-lg sm:text-xl text-white/50 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-white/50 max-w-3xl mx-auto leading-relaxed mb-10">
             {content.whatIs.description}
           </p>
+          
+          {/* Highlights */}
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-10">
+            {content.whatIs.highlights.map((highlight, index) => (
+              <div key={index} className="flex items-center gap-3">
+                <span className="text-2xl">{highlight.emoji}</span>
+                <div className="text-left">
+                  <p className="text-white font-semibold text-sm">{highlight.title}</p>
+                  <p className="text-white/40 text-xs">{highlight.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Cards */}

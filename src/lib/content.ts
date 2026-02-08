@@ -54,7 +54,24 @@ export const content = {
   whatIs: {
     headline: "¿Qué es un Godínez?",
     description:
-      "Un Godínez es un agente de IA que vive en tu infraestructura, habla español, y hace el trabajo que te drena para que tú hagas el que te llena.",
+      "Un Godínez es tu empleado AI que atiende clientes por WhatsApp, agenda citas, genera reportes, y responde emails — todo en español, 24/7, desde tu propia instancia.",
+    highlights: [
+      {
+        emoji: "💬",
+        title: "Siempre disponible",
+        description: "Responde a las 2am cuando tú duermes",
+      },
+      {
+        emoji: "🧠",
+        title: "Aprende de ti",
+        description: "Recuerda contexto, preferencias, historial",
+      },
+      {
+        emoji: "🔐",
+        title: "Tu instancia, tu control",
+        description: "Configuración dedicada para tu negocio",
+      },
+    ],
     cards: [
       {
         emoji: "💬",
