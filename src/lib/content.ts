@@ -54,7 +54,7 @@ export const content = {
   whatIs: {
     headline: "¿Qué es un Godínez?",
     description:
-      "Un Godínez es un agente de IA que vive en tu infraestructura, habla español, y hace el trabajo que nadie quiere hacer.",
+      "Un Godínez es un agente de IA que vive en tu infraestructura, habla español, y hace el trabajo que te drena para que tú hagas el que te llena.",
     cards: [
       {
         emoji: "💬",

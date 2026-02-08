@@ -95,11 +95,11 @@ export default function Hero() {
             </div>
 
             <h1 className="font-[family-name:var(--font-heading)] text-4xl sm:text-5xl md:text-6xl font-medium text-white leading-[1.1] mb-6">
-              {content.hero.headline.split("nunca falta")[0]}
+              El asistente AI al que{" "}
               <span className="text-violet font-[family-name:var(--font-playfair)] italic font-black">
-                nunca falta
+                le delegas
               </span>
-              {" al trabajo"}
+              {" todo"}
             </h1>
 
             <p className="text-lg sm:text-xl text-white/60 max-w-xl mb-10 leading-relaxed">
