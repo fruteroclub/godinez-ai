@@ -127,7 +127,7 @@ export default function WaitlistForm() {
           . Delega el resto.
         </h2>
         <p className="text-center text-white/50 mb-12 text-lg">
-          Tu Godínez se encarga. Tú decides qué hacer con tu tiempo.
+          Tu Godínez se encarga de lo que te quita energía, para que tú hagas lo que te llena.
         </p>
 
         {/* Form card */}
@@ -238,7 +238,7 @@ export default function WaitlistForm() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-magenta hover:bg-magenta-dark text-white font-semibold py-4 rounded-full text-lg transition-all hover:shadow-lg hover:shadow-magenta/30 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+              className="w-full bg-magenta hover:bg-magenta-dark text-white font-semibold py-4 rounded-full text-lg transition-all hover:shadow-lg hover:shadow-magenta/30 hover:-translate-y-0.5 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
             >
               {isLoading ? (
                 <span className="inline-flex items-center gap-2">
