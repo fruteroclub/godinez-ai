@@ -1,0 +1,21 @@
+{
+  "name": "Godínez.AI",
+  "short_name": "Godínez.AI",
+  "description": "Tu asistente AI que nunca falta al trabajo",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#E91E8C",
+  "icons": [
+    {
+      "src": "/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
