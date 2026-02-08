@@ -1,5 +1,7 @@
 "use client";
 
+import { useQuery } from "convex/react";
+import { api } from "../../convex/_generated/api";
 import { content } from "@/lib/content";
 
 function GodinezIllustration({ className }: { className?: string }) {
@@ -86,6 +88,9 @@ function GodinezIllustration({ className }: { className?: string }) {
 }
 
 export default function Hero() {
+  const waitlistCount = useQuery(api.waitlist.count);
+  const displayCount = waitlistCount ?? 0;
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 bg-dark">
       {/* Subtle background glow */}
@@ -157,7 +162,7 @@ export default function Hero() {
                   />
                 ))}
               </div>
-              <span>+200 en lista de espera</span>
+              <span>+{displayCount} en lista de espera</span>
             </div>
           </div>
 
