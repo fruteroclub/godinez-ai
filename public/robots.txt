@@ -1,0 +1,5 @@
+# Godínez.AI Robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://godinez.ai/sitemap.xml

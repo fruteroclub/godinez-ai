@@ -3,7 +3,7 @@ import AnimatedSection from "./AnimatedSection";
 
 export default function ProblemSection() {
   return (
-    <AnimatedSection className="relative py-24 sm:py-32 bg-dark overflow-hidden">
+    <AnimatedSection className="relative py-24 bg-dark overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/3 w-[400px] h-[400px] rounded-full bg-magenta/3 blur-[120px]" />
@@ -30,7 +30,7 @@ export default function ProblemSection() {
               <div className="flex-shrink-0 w-10 h-10 rounded-full bg-magenta/10 border border-magenta/30 flex items-center justify-center">
                 <span className="text-magenta font-bold">{index + 1}</span>
               </div>
-              
+
               {/* Content */}
               <div className="flex-1 min-w-0">
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-1">

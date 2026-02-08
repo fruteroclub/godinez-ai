@@ -37,11 +37,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? "bg-dark/95 backdrop-blur-lg border-b border-white/5"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -111,7 +110,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="block py-3 text-white/60 hover:text-magenta transition-colors font-medium border-b border-white/5 last:border-0"
+              className="block py-3 text-white/75 hover:text-magenta transition-colors font-medium border-b border-white/5 last:border-0"
               onClick={() => setIsOpen(false)}
             >
               {link.label}

@@ -108,21 +108,15 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Text content */}
           <div className="flex-1 text-center lg:text-left">
-            <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-magenta/30 bg-magenta/10">
-              <span className="text-magenta text-sm font-medium tracking-wide">
-                AI para PyMEs de LATAM
-              </span>
-            </div>
 
             <h1 className="font-[family-name:var(--font-heading)] text-4xl sm:text-5xl md:text-6xl font-medium text-white leading-[1.1] mb-6">
-              El asistente AI al que{" "}
+              El asistente al que le<br />
               <span className="text-gold font-[family-name:var(--font-playfair)] italic font-black">
-                le delegas
+                delegas todo
               </span>
-              {" todo"}
             </h1>
 
-            <p className="text-lg sm:text-xl text-white/60 max-w-xl mb-10 leading-relaxed mx-auto lg:mx-0">
+            <p className="text-lg sm:text-xl text-white/75 max-w-xl mb-10 leading-relaxed mx-auto lg:mx-0">
               {content.hero.subtitle}
             </p>
 
@@ -157,9 +151,8 @@ export default function Hero() {
                     key={i}
                     className="w-8 h-8 rounded-full border-2 border-dark"
                     style={{
-                      background: `linear-gradient(135deg, ${
-                        ["#E91E8C", "#8B5CF6", "#FFB800", "#E91E8C"][i]
-                      }40, ${["#8B5CF6", "#FFB800", "#E91E8C", "#8B5CF6"][i]}40)`,
+                      background: `linear-gradient(135deg, ${["#E91E8C", "#8B5CF6", "#FFB800", "#E91E8C"][i]
+                        }40, ${["#8B5CF6", "#FFB800", "#E91E8C", "#8B5CF6"][i]}40)`,
                     }}
                   />
                 ))}
