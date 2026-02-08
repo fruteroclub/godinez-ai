@@ -27,26 +27,20 @@ export const content = {
   },
 
   problem: {
-    headline: "Crece sin",
-    headlineAccent: "agotarte",
-    headlineSuffix: "... ni contratar más",
-    cards: [
+    headline: "Crece sin agotarte",
+    headlineAccent: "... ni contratar más",
+    items: [
       {
-        emoji: "💸",
         title: "Contratar es caro",
         description: "IMSS, aguinaldo, vacaciones, capacitación...",
       },
       {
-        emoji: "😴",
         title: "Tu equipo duerme",
-        description:
-          "Pero tus clientes no. Pierdes oportunidades a las 2am.",
+        description: "Pero tus clientes no. Pierdes oportunidades a las 2am.",
       },
       {
-        emoji: "📋",
-        title: "Tareas repetitivas",
-        description:
-          "Tu talento humano debería crear, no copiar y pegar.",
+        title: "5 suscripciones de IA",
+        description: "Pagas ChatGPT, Notion AI, Jasper... y el trabajo sigue fragmentado.",
       },
     ],
   },
