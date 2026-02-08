@@ -89,8 +89,7 @@ function GodinezIllustration({ className }: { className?: string }) {
 
 export default function Hero() {
   const waitlistCount = useQuery(api.waitlist.count);
-  // Show count with a base of 200 (existing signups) + live count
-  const displayCount = waitlistCount !== undefined ? 200 + waitlistCount : 200;
+  const displayCount = waitlistCount ?? 0;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 bg-dark">
