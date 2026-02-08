@@ -122,8 +122,8 @@ export default function WaitlistForm() {
         <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-center text-white mb-4">
           {content.waitlist.headline}
         </h2>
-        <p className="text-center text-white/40 mb-12">
-          Sé de los primeros en automatizar tu negocio
+        <p className="text-center text-white/50 mb-12 text-lg">
+          {content.waitlist.subheadline}
         </p>
 
         {/* Form card */}

@@ -1,3 +1,5 @@
+"use client";
+
 import { content } from "@/lib/content";
 
 function HeroIllustration() {
@@ -114,7 +116,11 @@ export default function Hero() {
 
               <a
                 href="#que-es"
-                className="inline-flex items-center gap-2 text-white/50 hover:text-white transition-colors text-sm font-medium"
+                className="inline-flex items-center gap-2 text-white/50 hover:text-white transition-colors text-sm font-medium px-4 py-3 -mx-4 -my-3"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('que-es')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 Conoce más
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

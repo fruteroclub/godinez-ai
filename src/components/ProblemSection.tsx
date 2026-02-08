@@ -103,7 +103,7 @@ export default function ProblemSection() {
           <span className="text-magenta font-[family-name:var(--font-playfair)] italic font-black">
             {content.problem.headlineAccent}
           </span>
-          <span className="text-white/60">{content.problem.headlineSuffix}</span>
+          <span className="text-white">{content.problem.headlineSuffix}</span>
         </h2>
 
         {/* Cards grid */}
@@ -119,7 +119,7 @@ export default function ProblemSection() {
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-magenta/10 via-transparent to-violet/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                 
                 {/* Icon container */}
-                <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-magenta/20 to-violet/20 flex items-center justify-center mb-6 group-hover:animate-pulse-glow">
+                <div className="relative w-16 h-16 rounded-2xl bg-charcoal border border-white/10 flex items-center justify-center mb-6 group-hover:border-magenta/30 transition-colors">
                   <IconComponent />
                 </div>
 

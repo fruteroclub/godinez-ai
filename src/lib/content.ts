@@ -172,7 +172,8 @@ export const content = {
   },
 
   waitlist: {
-    headline: "Sé de los primeros en tener tu Godínez",
+    headline: "Deja de perder clientes a las 2am",
+    subheadline: "Únete a +200 negocios que ya reservaron su Godínez",
     fields: {
       name: { label: "Nombre", placeholder: "Tu nombre" },
       email: { label: "Email", placeholder: "tu@email.com" },

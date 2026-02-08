@@ -153,7 +153,7 @@ export default function WhatIsSection() {
                 <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-br from-magenta/20 via-transparent to-violet/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm -z-10" />
 
                 {/* Icon */}
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet/20 to-magenta/10 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 rounded-2xl bg-charcoal border border-white/10 flex items-center justify-center mb-6 group-hover:scale-105 group-hover:border-magenta/30 transition-all duration-300">
                   <IconComponent />
                 </div>
 
