@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { content } from "@/lib/content";
+import ConvexClientProvider from "@/components/ConvexClientProvider";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -85,7 +86,7 @@ export default function RootLayout({
         className={`${playfair.variable} ${plusJakarta.variable} antialiased`}
         style={{ fontFamily: "var(--font-plus-jakarta)" }}
       >
-        {children}
+        <ConvexClientProvider>{children}</ConvexClientProvider>
       </body>
     </html>
   );

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useMutation } from "convex/react";
+import { api } from "../../convex/_generated/api";
 import { content } from "@/lib/content";
 import AnimatedSection from "./AnimatedSection";
 
@@ -47,6 +49,8 @@ export default function WaitlistForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const addToWaitlist = useMutation(api.waitlist.add);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
@@ -55,22 +59,14 @@ export default function WaitlistForm() {
     const formData = new FormData(e.currentTarget);
 
     try {
-      // Use API route (works with both Convex and fallback)
-      const response = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.get("name"),
-          email: formData.get("email"),
-          company: formData.get("company"),
-          tasks: formData.get("tasks"),
-          teamSize: formData.get("teamSize"),
-        }),
+      await addToWaitlist({
+        name: formData.get("name") as string,
+        email: formData.get("email") as string,
+        company: (formData.get("company") as string) || undefined,
+        tasks: (formData.get("tasks") as string) || undefined,
+        teamSize: (formData.get("teamSize") as string) || undefined,
+        source: "landing-page",
       });
-
-      if (!response.ok) {
-        throw new Error("API error");
-      }
 
       setIsSubmitted(true);
     } catch (err) {
