@@ -20,6 +20,13 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: content.meta.title,
   description: content.meta.description,
+  icons: {
+    icon: [
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/logo-192.png",
+  },
   openGraph: {
     title: content.meta.title,
     description: content.meta.description,
