@@ -27,8 +27,8 @@ export const content = {
   },
 
   problem: {
-    headline: "Crece sin agotarte",
-    headlineAccent: "... ni contratar más",
+    headline: "Crece sin agotarte...",
+    headlineAccent: "ni contratar más",
     items: [
       {
         title: "Contratar es caro",

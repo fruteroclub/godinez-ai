@@ -13,6 +13,7 @@ export default function ProblemSection() {
         {/* Section header */}
         <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-center mb-16 text-white">
           {content.problem.headline}
+          <br />
           <span className="text-magenta font-[family-name:var(--font-playfair)] italic font-black">
             {content.problem.headlineAccent}
           </span>
