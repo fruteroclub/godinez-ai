@@ -1,8 +1,8 @@
 import { content } from "@/lib/content";
 import AnimatedSection from "./AnimatedSection";
 
-// Custom SVG icons for WhatIs cards
-function ChatIcon() {
+// Icon: Chat/Available
+function AvailableIcon() {
   return (
     <svg
       viewBox="0 0 48 48"
@@ -11,33 +11,34 @@ function ChatIcon() {
       className="w-8 h-8"
       aria-hidden="true"
     >
-      {/* Main chat bubble */}
+      {/* Chat bubble */}
       <path
         d="M8 12C8 9.79 9.79 8 12 8H36C38.21 8 40 9.79 40 12V28C40 30.21 38.21 32 36 32H18L10 40V32H12C9.79 32 8 30.21 8 28V12Z"
-        fill="#E91E8C"
+        fill="#8B5CF6"
         opacity="0.2"
       />
       <path
         d="M8 12C8 9.79 9.79 8 12 8H36C38.21 8 40 9.79 40 12V28C40 30.21 38.21 32 36 32H18L10 40V32H12C9.79 32 8 30.21 8 28V12Z"
-        stroke="#E91E8C"
+        stroke="#8B5CF6"
         strokeWidth="2"
         fill="none"
       />
-      {/* Chat dots */}
-      <circle cx="18" cy="20" r="2" fill="#E91E8C">
+      {/* 24/7 dots */}
+      <circle cx="18" cy="20" r="2" fill="#8B5CF6">
         <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite" />
       </circle>
       <circle cx="24" cy="20" r="2" fill="#8B5CF6">
         <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" begin="0.2s" repeatCount="indefinite" />
       </circle>
-      <circle cx="30" cy="20" r="2" fill="#FFB800">
+      <circle cx="30" cy="20" r="2" fill="#8B5CF6">
         <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" begin="0.4s" repeatCount="indefinite" />
       </circle>
     </svg>
   );
 }
 
-function ChartIcon() {
+// Icon: Brain/Memory
+function MemoryIcon() {
   return (
     <svg
       viewBox="0 0 48 48"
@@ -46,26 +47,31 @@ function ChartIcon() {
       className="w-8 h-8"
       aria-hidden="true"
     >
-      {/* Chart background */}
-      <rect x="6" y="6" width="36" height="36" rx="4" fill="#8B5CF6" opacity="0.2" />
-      {/* Bars */}
-      <rect x="12" y="28" width="6" height="10" rx="1" fill="#E91E8C" />
-      <rect x="21" y="20" width="6" height="18" rx="1" fill="#8B5CF6" />
-      <rect x="30" y="14" width="6" height="24" rx="1" fill="#FFB800" />
-      {/* Trend line */}
+      {/* Brain outline */}
       <path
-        d="M10 30L18 24L27 18L38 10"
+        d="M24 8C16 8 10 14 10 22C10 30 16 38 24 40C32 38 38 30 38 22C38 14 32 8 24 8Z"
+        fill="#E91E8C"
+        opacity="0.2"
+      />
+      <path
+        d="M24 8C16 8 10 14 10 22C10 30 16 38 24 40C32 38 38 30 38 22C38 14 32 8 24 8Z"
         stroke="#E91E8C"
         strokeWidth="2"
-        strokeLinecap="round"
-        strokeDasharray="4 2"
-        opacity="0.6"
+        fill="none"
       />
+      {/* Neural connections */}
+      <circle cx="18" cy="18" r="2" fill="#E91E8C" />
+      <circle cx="30" cy="18" r="2" fill="#E91E8C" />
+      <circle cx="24" cy="26" r="2" fill="#E91E8C" />
+      <path d="M18 18L24 26M30 18L24 26" stroke="#E91E8C" strokeWidth="1.5" opacity="0.6" />
+      <circle cx="24" cy="34" r="1.5" fill="#E91E8C" opacity="0.5" />
+      <path d="M24 26V34" stroke="#E91E8C" strokeWidth="1.5" opacity="0.4" />
     </svg>
   );
 }
 
-function AutomationIcon() {
+// Icon: Settings/Personalized
+function PersonalizedIcon() {
   return (
     <svg
       viewBox="0 0 48 48"
@@ -74,42 +80,24 @@ function AutomationIcon() {
       className="w-8 h-8"
       aria-hidden="true"
     >
-      {/* Circular arrows */}
-      <circle cx="24" cy="24" r="16" stroke="#8B5CF6" strokeWidth="2" strokeDasharray="6 4" opacity="0.3" />
+      {/* Palette shape */}
+      <circle cx="24" cy="24" r="16" fill="#FFB800" opacity="0.2" stroke="#FFB800" strokeWidth="2" />
+      {/* Color dots */}
+      <circle cx="18" cy="18" r="3" fill="#E91E8C" />
+      <circle cx="30" cy="18" r="3" fill="#8B5CF6" />
+      <circle cx="24" cy="30" r="3" fill="#FFB800" />
+      {/* Brush stroke */}
       <path
-        d="M24 8C32.84 8 40 15.16 40 24"
-        stroke="#8B5CF6"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
-      <path
-        d="M40 24L36 20M40 24L36 28"
-        stroke="#8B5CF6"
+        d="M32 28L36 32"
+        stroke="#FFB800"
         strokeWidth="2"
         strokeLinecap="round"
-        strokeLinejoin="round"
       />
-      <path
-        d="M24 40C15.16 40 8 32.84 8 24"
-        stroke="#E91E8C"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
-      <path
-        d="M8 24L12 28M8 24L12 20"
-        stroke="#E91E8C"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      {/* Center gear */}
-      <circle cx="24" cy="24" r="6" fill="#FFB800" />
-      <circle cx="24" cy="24" r="3" fill="#0A0A0A" />
     </svg>
   );
 }
 
-const icons = [ChatIcon, ChartIcon, AutomationIcon];
+const icons = [AvailableIcon, MemoryIcon, PersonalizedIcon];
 
 export default function WhatIsSection() {
   return (
@@ -139,31 +127,17 @@ export default function WhatIsSection() {
             </span>
             ?
           </h2>
-          <p className="text-lg sm:text-xl text-white/50 max-w-3xl mx-auto leading-relaxed mb-10">
-            {content.whatIs.description}
+          <p className="text-lg sm:text-xl text-white/50 max-w-3xl mx-auto leading-relaxed">
+            Un{" "}
+            <span className="text-gold font-[family-name:var(--font-playfair)] italic font-semibold">
+              Godínez
+            </span>
+            {" "}es un{" "}
+            <span className="text-magenta font-[family-name:var(--font-playfair)] italic font-semibold">
+              Agente IA
+            </span>
+            {" "}que hace el trabajo que te drena para que tú hagas el que te llena. Atiende clientes por WhatsApp, agenda citas, genera reportes, y responde emails. Todo en español, 24/7, personalizado.
           </p>
-          
-          {/* Formula */}
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-charcoal border border-white/10 mb-10">
-            <span className="text-violet font-mono font-bold">LLM</span>
-            <span className="text-white/30">+</span>
-            <span className="text-magenta font-mono font-bold">Canal</span>
-            <span className="text-white/30">+</span>
-            <span className="text-gold font-mono font-bold">Skills</span>
-          </div>
-
-          {/* Highlights */}
-          <div className="flex flex-wrap justify-center gap-6 sm:gap-10">
-            {content.whatIs.highlights.map((highlight, index) => (
-              <div key={index} className="flex items-center gap-3">
-                <span className="text-2xl">{highlight.emoji}</span>
-                <div className="text-left">
-                  <p className="text-white font-semibold text-sm">{highlight.title}</p>
-                  <p className="text-white/40 text-xs">{highlight.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Cards */}
