@@ -101,7 +101,7 @@ export default function ProblemSection() {
         {/* Section header */}
         <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-center mb-16 text-white">
           {content.problem.headline}{" "}
-          <span className="text-gradient-brand font-[family-name:var(--font-playfair)] italic font-semibold">
+          <span className="text-magenta font-[family-name:var(--font-playfair)] italic font-black">
             {content.problem.headlineAccent}
           </span>
           <span className="text-white/60">{content.problem.headlineSuffix}</span>

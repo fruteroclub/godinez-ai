@@ -95,7 +95,7 @@ export default function Hero() {
 
             <h1 className="font-[family-name:var(--font-heading)] text-4xl sm:text-5xl md:text-6xl font-medium text-white leading-[1.1] mb-6">
               {content.hero.headline.split("nunca falta")[0]}
-              <span className="text-gradient-brand font-[family-name:var(--font-playfair)] italic font-semibold">
+              <span className="text-magenta font-[family-name:var(--font-playfair)] italic font-black">
                 nunca falta
               </span>
               {" al trabajo"}

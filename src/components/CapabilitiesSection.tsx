@@ -88,7 +88,7 @@ export default function CapabilitiesSection() {
         {/* Header */}
         <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-center text-white mb-16">
           {content.capabilities.headline.split("Godínez")[0]}
-          <span className="text-gradient-brand font-[family-name:var(--font-playfair)] italic font-semibold">
+          <span className="text-magenta font-[family-name:var(--font-playfair)] italic font-black">
             Godínez
           </span>
           ?

@@ -36,7 +36,7 @@ export default function PricingSection() {
         <div className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-4">
             {content.pricing.headlinePrefix}
-            <span className="text-gradient-brand font-[family-name:var(--font-playfair)] italic font-semibold">
+            <span className="text-magenta font-[family-name:var(--font-playfair)] italic font-black">
               {content.pricing.headlineAccent}
             </span>
             {content.pricing.headlineSuffix}
@@ -84,7 +84,7 @@ export default function PricingSection() {
                     {plan.idealFor}
                   </p>
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className={`text-4xl sm:text-5xl font-bold ${plan.popular ? "text-gradient-brand" : "text-magenta"}`}>
+                    <span className="text-4xl sm:text-5xl font-bold text-magenta">
                       {plan.price}
                     </span>
                     <span className="text-sm text-white/40">
