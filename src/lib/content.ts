@@ -27,9 +27,9 @@ export const content = {
   },
 
   problem: {
-    headline: "Tu negocio necesita",
-    headlineAccent: "más manos",
-    headlineSuffix: "... sin más nómina",
+    headline: "Crece sin",
+    headlineAccent: "agotarte",
+    headlineSuffix: "... ni contratar más",
     cards: [
       {
         emoji: "💸",
