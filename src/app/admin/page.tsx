@@ -21,17 +21,29 @@ interface WaitlistEntry {
 }
 
 const tierLabels: Record<string, string> = {
-  intern: "🌱 Intern",
+  becario: "🌱 Becario",
+  intern: "🌱 Becario", // legacy
   assistant: "⚡ Assistant",
   agent: "🚀 Agent",
 };
 
 const industryLabels: Record<string, string> = {
-  developers: "💻 Desarrolladores",
+  finanzas: "💰 Finanzas",
+  salud: "🏥 Salud",
+  ventas: "📈 Ventas",
+  founder: "🚀 Founder",
+  estudiante: "🎓 Estudiante",
+  remoto: "🏠 Trabajo Remoto",
+  freelancer: "🎯 Freelancer",
+  creativo: "🎬 Creativo",
+  desarrollador: "💻 Desarrollador",
+  administracion: "📊 Administración",
+  // legacy values
+  developers: "💻 Desarrollador",
   remote: "🏠 Trabajo Remoto",
-  creators: "🎬 Creadores",
+  creators: "🎬 Creativo",
   realestate: "🏢 Real Estate",
-  freelancers: "🎯 Freelancers",
+  freelancers: "🎯 Freelancer",
   sales: "📈 Ventas",
   legal: "⚖️ Legal",
   consulting: "🧩 Consultoría",
@@ -132,9 +144,9 @@ export default function AdminPage() {
             </p>
           </div>
           <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-            <p className="text-white/50 text-sm">🌱 Intern</p>
+            <p className="text-white/50 text-sm">🌱 Becario</p>
             <p className="text-2xl font-bold text-green-400">
-              {waitlistEntries?.filter(e => e.tier === "intern").length ?? 0}
+              {waitlistEntries?.filter(e => e.tier === "becario" || e.tier === "intern").length ?? 0}
             </p>
           </div>
           <div className="bg-white/5 border border-white/10 rounded-xl p-4">

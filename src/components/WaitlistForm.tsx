@@ -315,7 +315,7 @@ export default function WaitlistForm() {
                 className="w-full pl-4 pr-10 py-3.5 rounded-xl bg-white/5 border border-white/10 focus:border-magenta focus:ring-2 focus:ring-magenta/20 outline-none transition-all text-white/30 appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%23ffffff%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22m6%208%204%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.5rem] bg-[right_0.5rem_center] bg-no-repeat"
               >
                 <option value="" className="bg-[#111111] text-white/30">Selecciona un tier</option>
-                <option value="intern" className="bg-[#111111] text-white">🌱 Godínez Intern</option>
+                <option value="becario" className="bg-[#111111] text-white">🌱 Godínez Becario</option>
                 <option value="assistant" className="bg-[#111111] text-white">⚡ Godínez Assistant</option>
                 <option value="agent" className="bg-[#111111] text-white">🚀 Godínez Agent</option>
               </select>
@@ -336,15 +336,16 @@ export default function WaitlistForm() {
                 className="w-full pl-4 pr-10 py-3.5 rounded-xl bg-white/5 border border-white/10 focus:border-magenta focus:ring-2 focus:ring-magenta/20 outline-none transition-all text-white/30 appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%23ffffff%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22m6%208%204%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.5rem] bg-[right_0.5rem_center] bg-no-repeat"
               >
                 <option value="" className="bg-[#111111] text-white/30">Selecciona tu industria</option>
-                <option value="developers" className="bg-[#111111] text-white">💻 Desarrolladores</option>
-                <option value="remote" className="bg-[#111111] text-white">🏠 Trabajo Remoto</option>
-                <option value="creators" className="bg-[#111111] text-white">🎬 Creadores</option>
-                <option value="realestate" className="bg-[#111111] text-white">🏢 Real Estate</option>
-                <option value="freelancers" className="bg-[#111111] text-white">🎯 Freelancers</option>
-                <option value="sales" className="bg-[#111111] text-white">📈 Ventas</option>
-                <option value="legal" className="bg-[#111111] text-white">⚖️ Legal</option>
-                <option value="consulting" className="bg-[#111111] text-white">🧩 Consultoría</option>
-                <option value="marketing" className="bg-[#111111] text-white">📣 Marketing</option>
+                <option value="finanzas" className="bg-[#111111] text-white">💰 Finanzas</option>
+                <option value="salud" className="bg-[#111111] text-white">🏥 Salud</option>
+                <option value="ventas" className="bg-[#111111] text-white">📈 Ventas</option>
+                <option value="founder" className="bg-[#111111] text-white">🚀 Founder</option>
+                <option value="estudiante" className="bg-[#111111] text-white">🎓 Estudiante</option>
+                <option value="remoto" className="bg-[#111111] text-white">🏠 Trabajo Remoto</option>
+                <option value="freelancer" className="bg-[#111111] text-white">🎯 Freelancer</option>
+                <option value="creativo" className="bg-[#111111] text-white">🎬 Creativo</option>
+                <option value="desarrollador" className="bg-[#111111] text-white">💻 Desarrollador</option>
+                <option value="administracion" className="bg-[#111111] text-white">📊 Administración</option>
               </select>
             </div>
 

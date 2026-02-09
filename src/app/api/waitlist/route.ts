@@ -26,8 +26,8 @@ export async function POST(request: NextRequest) {
       company: body.company || undefined,
       tasks: body.tasks || undefined,
       teamSize: body.teamSize || undefined,
-      tier: body.tier || "intern",
-      industry: body.industry || "remote",
+      tier: body.tier || "becario",
+      industry: body.industry || "remoto",
       source: "landing",
     };
 

@@ -8,8 +8,8 @@ export default defineSchema({
     company: v.optional(v.string()),
     tasks: v.optional(v.string()),
     teamSize: v.optional(v.string()),
-    tier: v.string(), // "intern" | "assistant" | "agent"
-    industry: v.string(), // "developers" | "remote" | "creators" | "realestate" | "freelancers" | "sales" | "legal" | "consulting" | "marketing"
+    tier: v.string(), // "becario" | "assistant" | "agent"
+    industry: v.string(), // "finanzas" | "salud" | "ventas" | "founder" | "estudiante" | "remoto" | "freelancer" | "creativo" | "desarrollador" | "administracion"
     createdAt: v.number(),
     source: v.optional(v.string()),
   })
