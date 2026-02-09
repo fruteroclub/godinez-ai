@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 
-const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "frutero2026";
+const ADMIN_PASSWORD = (process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "frutero2026").trim();
 
 interface WaitlistEntry {
   _id: string;
@@ -63,14 +63,11 @@ export default function AdminPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Debug: log password info (remove after fixing)
-    console.log("Input:", password, "Expected length:", ADMIN_PASSWORD?.length, "Input length:", password.length);
-    
     if (password === ADMIN_PASSWORD) {
       setIsAuthenticated(true);
       setError("");
     } else {
-      setError(`Contraseña incorrecta (debug: expected ${ADMIN_PASSWORD?.length || 'undefined'} chars)`);
+      setError("Contraseña incorrecta");
     }
   };
 
