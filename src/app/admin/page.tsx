@@ -22,9 +22,12 @@ interface WaitlistEntry {
 
 const tierLabels: Record<string, string> = {
   becario: "🌱 Becario",
-  intern: "🌱 Becario", // legacy
-  assistant: "⚡ Assistant",
-  agent: "🚀 Agent",
+  asistente: "⚡ Asistente",
+  agente: "🚀 Agente",
+  // legacy
+  intern: "🌱 Becario",
+  assistant: "⚡ Asistente",
+  agent: "🚀 Agente",
 };
 
 const industryLabels: Record<string, string> = {
@@ -150,9 +153,9 @@ export default function AdminPage() {
             </p>
           </div>
           <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-            <p className="text-white/50 text-sm">🚀 Agent</p>
+            <p className="text-white/50 text-sm">🚀 Agente</p>
             <p className="text-2xl font-bold text-violet">
-              {waitlistEntries?.filter(e => e.tier === "agent").length ?? 0}
+              {waitlistEntries?.filter(e => e.tier === "agente" || e.tier === "agent").length ?? 0}
             </p>
           </div>
         </div>

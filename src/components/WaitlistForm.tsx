@@ -315,9 +315,9 @@ export default function WaitlistForm() {
                 className="w-full pl-4 pr-10 py-3.5 rounded-xl bg-white/5 border border-white/10 focus:border-magenta focus:ring-2 focus:ring-magenta/20 outline-none transition-all text-white/30 appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%23ffffff%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22m6%208%204%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.5rem] bg-[right_0.5rem_center] bg-no-repeat"
               >
                 <option value="" className="bg-[#111111] text-white/30">Selecciona un tier</option>
-                <option value="becario" className="bg-[#111111] text-white">🌱 Godínez Becario</option>
-                <option value="assistant" className="bg-[#111111] text-white">⚡ Godínez Assistant</option>
-                <option value="agent" className="bg-[#111111] text-white">🚀 Godínez Agent</option>
+                <option value="becario" className="bg-[#111111] text-white">🌱 Becario</option>
+                <option value="asistente" className="bg-[#111111] text-white">⚡ Asistente</option>
+                <option value="agente" className="bg-[#111111] text-white">🚀 Agente</option>
               </select>
             </div>
 
