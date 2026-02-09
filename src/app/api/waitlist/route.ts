@@ -11,6 +11,8 @@ interface WaitlistEntry {
   company?: string;
   tasks?: string;
   teamSize?: string;
+  tier: string;
+  industry: string;
   source?: string;
 }
 
@@ -24,12 +26,14 @@ export async function POST(request: NextRequest) {
       company: body.company || undefined,
       tasks: body.tasks || undefined,
       teamSize: body.teamSize || undefined,
+      tier: body.tier || "intern",
+      industry: body.industry || "remote",
       source: "landing",
     };
 
-    if (!entry.name || !entry.email) {
+    if (!entry.name || !entry.email || !entry.tier || !entry.industry) {
       return NextResponse.json(
-        { error: "Nombre y email son requeridos" },
+        { error: "Nombre, email, tier e industria son requeridos" },
         { status: 400 }
       );
     }

@@ -14,9 +14,29 @@ interface WaitlistEntry {
   company?: string;
   tasks?: string;
   teamSize?: string;
+  tier: string;
+  industry: string;
   source?: string;
   createdAt: number;
 }
+
+const tierLabels: Record<string, string> = {
+  intern: "🌱 Intern",
+  assistant: "⚡ Assistant",
+  agent: "🚀 Agent",
+};
+
+const industryLabels: Record<string, string> = {
+  developers: "💻 Desarrolladores",
+  remote: "🏠 Trabajo Remoto",
+  creators: "🎬 Creadores",
+  realestate: "🏢 Real Estate",
+  freelancers: "🎯 Freelancers",
+  sales: "📈 Ventas",
+  legal: "⚖️ Legal",
+  consulting: "🧩 Consultoría",
+  marketing: "📣 Marketing",
+};
 
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -97,9 +117,9 @@ export default function AdminPage() {
         </div>
 
         {/* Stats cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
           <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-            <p className="text-white/50 text-sm">Total registros</p>
+            <p className="text-white/50 text-sm">Total</p>
             <p className="text-2xl font-bold text-white">{waitlistCount ?? 0}</p>
           </div>
           <div className="bg-white/5 border border-white/10 rounded-xl p-4">
@@ -112,9 +132,15 @@ export default function AdminPage() {
             </p>
           </div>
           <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-            <p className="text-white/50 text-sm">Con empresa</p>
+            <p className="text-white/50 text-sm">🌱 Intern</p>
+            <p className="text-2xl font-bold text-green-400">
+              {waitlistEntries?.filter(e => e.tier === "intern").length ?? 0}
+            </p>
+          </div>
+          <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+            <p className="text-white/50 text-sm">🚀 Agent</p>
             <p className="text-2xl font-bold text-violet">
-              {waitlistEntries?.filter(e => e.company).length ?? 0}
+              {waitlistEntries?.filter(e => e.tier === "agent").length ?? 0}
             </p>
           </div>
         </div>
@@ -127,8 +153,9 @@ export default function AdminPage() {
                 <tr className="border-b border-white/10">
                   <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Nombre</th>
                   <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Email</th>
+                  <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Tier</th>
+                  <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Industria</th>
                   <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Empresa</th>
-                  <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Equipo</th>
                   <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Fecha</th>
                 </tr>
               </thead>
@@ -137,8 +164,9 @@ export default function AdminPage() {
                   <tr key={entry._id} className="border-b border-white/5 hover:bg-white/5">
                     <td className="px-4 py-3 text-white">{entry.name}</td>
                     <td className="px-4 py-3 text-white/70">{entry.email}</td>
+                    <td className="px-4 py-3 text-white/70">{tierLabels[entry.tier] || entry.tier || "—"}</td>
+                    <td className="px-4 py-3 text-white/70">{industryLabels[entry.industry] || entry.industry || "—"}</td>
                     <td className="px-4 py-3 text-white/50">{entry.company || "—"}</td>
-                    <td className="px-4 py-3 text-white/50">{entry.teamSize || "—"}</td>
                     <td className="px-4 py-3 text-white/50 text-sm">
                       {new Date(entry.createdAt).toLocaleDateString("es-MX", {
                         day: "numeric",
@@ -150,7 +178,7 @@ export default function AdminPage() {
                 ))}
                 {(!waitlistEntries || waitlistEntries.length === 0) && (
                   <tr>
-                    <td colSpan={5} className="px-4 py-8 text-center text-white/30">
+                    <td colSpan={6} className="px-4 py-8 text-center text-white/30">
                       No hay registros aún
                     </td>
                   </tr>
