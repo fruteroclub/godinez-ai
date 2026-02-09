@@ -9,36 +9,101 @@ import AnimatedSection from "./AnimatedSection";
 // Success robot illustration
 function SuccessRobot() {
   return (
-    <svg viewBox="0 0 120 120" fill="none" className="w-32 h-32 mx-auto mb-6" aria-hidden="true">
+    <svg
+      viewBox="0 0 120 120"
+      fill="none"
+      className="w-32 h-32 mx-auto mb-6"
+      aria-hidden="true"
+    >
       {/* Body */}
-      <rect x="35" y="40" width="50" height="50" rx="12" fill="#111111" stroke="#8B5CF6" strokeWidth="2" />
+      <rect
+        x="35"
+        y="40"
+        width="50"
+        height="50"
+        rx="12"
+        fill="#111111"
+        stroke="#8B5CF6"
+        strokeWidth="2"
+      />
       {/* Screen */}
       <rect x="45" y="50" width="30" height="20" rx="4" fill="#0A0A0A" />
       {/* Happy eyes */}
-      <path d="M52 56C52 58 54 60 56 58" stroke="#E91E8C" strokeWidth="2" strokeLinecap="round" />
-      <path d="M68 56C68 58 66 60 64 58" stroke="#E91E8C" strokeWidth="2" strokeLinecap="round" />
+      <path
+        d="M52 56C52 58 54 60 56 58"
+        stroke="#E91E8C"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M68 56C68 58 66 60 64 58"
+        stroke="#E91E8C"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
       {/* Big smile */}
-      <path d="M52 66Q60 74 68 66" stroke="#FFB800" strokeWidth="2" strokeLinecap="round" fill="none" />
+      <path
+        d="M52 66Q60 74 68 66"
+        stroke="#FFB800"
+        strokeWidth="2"
+        strokeLinecap="round"
+        fill="none"
+      />
       {/* Antenna */}
       <line x1="60" y1="40" x2="60" y2="28" stroke="#8B5CF6" strokeWidth="2" />
       <circle cx="60" cy="24" r="4" fill="#E91E8C">
-        <animate attributeName="r" values="4;6;4" dur="1s" repeatCount="indefinite" />
+        <animate
+          attributeName="r"
+          values="4;6;4"
+          dur="1s"
+          repeatCount="indefinite"
+        />
       </circle>
       {/* Arms raised in celebration */}
-      <path d="M35 60L20 45" stroke="#E91E8C" strokeWidth="2" strokeLinecap="round" />
-      <path d="M85 60L100 45" stroke="#E91E8C" strokeWidth="2" strokeLinecap="round" />
+      <path
+        d="M35 60L20 45"
+        stroke="#E91E8C"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M85 60L100 45"
+        stroke="#E91E8C"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
       {/* Confetti */}
       <circle cx="25" cy="35" r="3" fill="#FFB800" opacity="0.8">
-        <animate attributeName="cy" values="35;25;35" dur="2s" repeatCount="indefinite" />
+        <animate
+          attributeName="cy"
+          values="35;25;35"
+          dur="2s"
+          repeatCount="indefinite"
+        />
       </circle>
       <circle cx="95" cy="40" r="2" fill="#E91E8C" opacity="0.6">
-        <animate attributeName="cy" values="40;30;40" dur="1.5s" repeatCount="indefinite" />
+        <animate
+          attributeName="cy"
+          values="40;30;40"
+          dur="1.5s"
+          repeatCount="indefinite"
+        />
       </circle>
       <circle cx="30" cy="55" r="2" fill="#8B5CF6" opacity="0.7">
-        <animate attributeName="cy" values="55;45;55" dur="1.8s" repeatCount="indefinite" />
+        <animate
+          attributeName="cy"
+          values="55;45;55"
+          dur="1.8s"
+          repeatCount="indefinite"
+        />
       </circle>
       <circle cx="90" cy="60" r="3" fill="#FFB800" opacity="0.5">
-        <animate attributeName="cy" values="60;50;60" dur="2.2s" repeatCount="indefinite" />
+        <animate
+          attributeName="cy"
+          values="60;50;60"
+          dur="2.2s"
+          repeatCount="indefinite"
+        />
       </circle>
     </svg>
   );
@@ -119,11 +184,13 @@ export default function WaitlistForm() {
           Recupera{" "}
           <span className="text-gold font-[family-name:var(--font-playfair)] italic font-black">
             tu tiempo
-          </span><br />
+          </span>
+          <br />
           Delega el resto
         </h2>
         <p className="text-center text-white/50 mb-12 text-lg">
-          Tu Godínez se encarga de lo que te quita energía, para que tú hagas lo que te llena.
+          Tu Godínez se encarga de lo que te quita energía, para que tú hagas lo
+          que te llena.
         </p>
 
         {/* Form card */}
@@ -217,10 +284,14 @@ export default function WaitlistForm() {
                 id="teamSize"
                 name="teamSize"
                 required
-                className="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 focus:border-magenta focus:ring-2 focus:ring-magenta/20 outline-none transition-all text-white"
+                className="w-full pl-4 pr-10 py-3.5 rounded-xl bg-white/5 border border-white/10 focus:border-magenta focus:ring-2 focus:ring-magenta/20 outline-none transition-all text-white/30 appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%23ffffff%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22m6%208%204%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.5rem] bg-[right_0.5rem_center] bg-no-repeat"
               >
                 {fields.teamSize.options.map((option) => (
-                  <option key={option.value} value={option.value} className="bg-[#111111] text-white">
+                  <option
+                    key={option.value}
+                    value={option.value}
+                    className="bg-[#111111] text-white"
+                  >
                     {option.label}
                   </option>
                 ))}
@@ -228,26 +299,44 @@ export default function WaitlistForm() {
             </div>
 
             {error && (
-              <p className="text-red-400 text-sm text-center bg-red-500/10 py-2 rounded-lg">{error}</p>
+              <p className="text-red-400 text-sm text-center bg-red-500/10 py-2 rounded-lg">
+                {error}
+              </p>
             )}
-
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="w-full bg-magenta hover:bg-magenta-dark text-white font-semibold py-4 rounded-full text-lg transition-all hover:shadow-lg hover:shadow-magenta/30 hover:-translate-y-0.5 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
-            >
-              {isLoading ? (
-                <span className="inline-flex items-center gap-2">
-                  <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24" fill="none">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                  </svg>
-                  Enviando...
-                </span>
-              ) : (
-                content.waitlist.submit
-              )}
-            </button>
+            <div className="w-full flex justify-center">
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="bg-magenta hover:bg-magenta-dark text-white font-semibold py-4 rounded-full text-lg transition-all hover:shadow-lg hover:shadow-magenta/30 hover:-translate-y-0.5 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 px-12"
+              >
+                {isLoading ? (
+                  <span className="inline-flex items-center gap-2">
+                    <svg
+                      className="animate-spin h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      />
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      />
+                    </svg>
+                    Enviando...
+                  </span>
+                ) : (
+                  content.waitlist.submit
+                )}
+              </button>
+            </div>
           </form>
         </div>
       </div>

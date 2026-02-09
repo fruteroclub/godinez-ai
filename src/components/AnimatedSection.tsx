@@ -14,36 +14,45 @@ export default function AnimatedSection({
   id,
 }: AnimatedSectionProps) {
   const ref = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true); // Start visible to prevent flash
 
   useEffect(() => {
-    // Fallback: show after delay if IntersectionObserver fails
-    const fallbackTimer = setTimeout(() => {
-      setIsVisible(true);
-    }, 1000);
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          clearTimeout(fallbackTimer);
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { 
-        threshold: 0,
-        rootMargin: "50px 0px 50px 0px"
-      }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
+    // Respect reduced motion preference
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) {
+      return; // Already visible
     }
 
-    return () => {
-      clearTimeout(fallbackTimer);
-      observer.disconnect();
-    };
+    // Check if element is in initial viewport - if so, stay visible
+    if (ref.current) {
+      const rect = ref.current.getBoundingClientRect();
+      const inInitialViewport = rect.top < window.innerHeight + 100;
+      
+      if (inInitialViewport) {
+        // Element is in or near viewport on load - keep visible
+        return;
+      }
+      
+      // Element is below viewport - set up animation
+      setIsVisible(false);
+      
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        },
+        { 
+          threshold: 0,
+          rootMargin: "50px 0px 50px 0px"
+        }
+      );
+
+      observer.observe(ref.current);
+
+      return () => observer.disconnect();
+    }
   }, []);
 
   return (

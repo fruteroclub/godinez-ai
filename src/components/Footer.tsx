@@ -1,23 +1,9 @@
 import { content } from "@/lib/content";
+import Image from "next/image";
 
 // Robot logo icon (matches Navbar)
 function FooterRobotIcon() {
-  return (
-    <svg
-      viewBox="0 0 28 28"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-7 h-7"
-      aria-hidden="true"
-    >
-      <rect x="2" y="6" width="24" height="18" rx="6" fill="#1A1A1A" stroke="#8B5CF6" strokeWidth="1.5" />
-      <circle cx="10" cy="14" r="2.5" fill="#E91E8C" />
-      <circle cx="18" cy="14" r="2.5" fill="#E91E8C" />
-      <path d="M10.5 19 Q14 22 17.5 19" stroke="#FFB800" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-      <line x1="14" y1="6" x2="14" y2="2" stroke="#8B5CF6" strokeWidth="1.5" />
-      <circle cx="14" cy="1" r="1.5" fill="#FFB800" />
-    </svg>
-  );
+  return <Image src="images/logo.svg" alt="Godínez" width={28} height={28} />;
 }
 
 export default function Footer() {
@@ -33,9 +19,16 @@ export default function Footer() {
             <a href="#" className="inline-flex items-center gap-2 mb-2 group">
               <FooterRobotIcon />
               <span className="text-xl">
-                <span className="font-[family-name:var(--font-plus-jakarta)] font-medium text-white">Godínez</span>
+                <span className="font-[family-name:var(--font-plus-jakarta)] font-medium text-white">
+                  Godínez
+                </span>
                 <span className="text-gold">.</span>
-                <span className="font-[family-name:var(--font-playfair)] italic font-bold text-magenta inline-block" style={{ transform: 'skewX(6deg)' }}>AI</span>
+                <span
+                  className="font-[family-name:var(--font-playfair)] italic font-bold text-magenta inline-block"
+                  style={{ transform: "skewX(6deg)" }}
+                >
+                  AI
+                </span>
               </span>
             </a>
             <p className="text-white/40 text-sm">{content.footer.tagline}</p>
@@ -71,9 +64,20 @@ export default function Footer() {
 
         {/* Bottom decoration */}
         <div className="mt-12 pt-8 border-t border-white/5 text-center">
-          <p className="text-white/20 text-xs font-[family-name:var(--font-playfair)] italic">
-            Hecho con 🤖 para PyMEs de LATAM
-          </p>
+          <a
+            href="https://frutero.club"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-white/30 hover:text-white/50 transition-colors text-xs"
+          >
+            <span>Construido por un</span>
+            <img
+              src="images/logo.svg"
+              alt="Godínez"
+              className="mb-1 h-6 w-auto"
+            />
+            <span className="font-semibold">de Frutero</span>
+          </a>
         </div>
       </div>
     </footer>

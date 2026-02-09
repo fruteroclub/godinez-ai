@@ -1,5 +1,6 @@
 import { content } from "@/lib/content";
 import AnimatedSection from "./AnimatedSection";
+import Image from "next/image";
 
 // Icon: Chat/Available
 function AvailableIcon() {
@@ -25,13 +26,30 @@ function AvailableIcon() {
       />
       {/* 24/7 dots */}
       <circle cx="18" cy="20" r="2" fill="#8B5CF6">
-        <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite" />
+        <animate
+          attributeName="opacity"
+          values="1;0.3;1"
+          dur="1.5s"
+          repeatCount="indefinite"
+        />
       </circle>
       <circle cx="24" cy="20" r="2" fill="#8B5CF6">
-        <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" begin="0.2s" repeatCount="indefinite" />
+        <animate
+          attributeName="opacity"
+          values="1;0.3;1"
+          dur="1.5s"
+          begin="0.2s"
+          repeatCount="indefinite"
+        />
       </circle>
       <circle cx="30" cy="20" r="2" fill="#8B5CF6">
-        <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" begin="0.4s" repeatCount="indefinite" />
+        <animate
+          attributeName="opacity"
+          values="1;0.3;1"
+          dur="1.5s"
+          begin="0.4s"
+          repeatCount="indefinite"
+        />
       </circle>
     </svg>
   );
@@ -63,7 +81,12 @@ function MemoryIcon() {
       <circle cx="18" cy="18" r="2" fill="#E91E8C" />
       <circle cx="30" cy="18" r="2" fill="#E91E8C" />
       <circle cx="24" cy="26" r="2" fill="#E91E8C" />
-      <path d="M18 18L24 26M30 18L24 26" stroke="#E91E8C" strokeWidth="1.5" opacity="0.6" />
+      <path
+        d="M18 18L24 26M30 18L24 26"
+        stroke="#E91E8C"
+        strokeWidth="1.5"
+        opacity="0.6"
+      />
       <circle cx="24" cy="34" r="1.5" fill="#E91E8C" opacity="0.5" />
       <path d="M24 26V34" stroke="#E91E8C" strokeWidth="1.5" opacity="0.4" />
     </svg>
@@ -81,7 +104,15 @@ function PersonalizedIcon() {
       aria-hidden="true"
     >
       {/* Palette shape */}
-      <circle cx="24" cy="24" r="16" fill="#FFB800" opacity="0.2" stroke="#FFB800" strokeWidth="2" />
+      <circle
+        cx="24"
+        cy="24"
+        r="16"
+        fill="#FFB800"
+        opacity="0.2"
+        stroke="#FFB800"
+        strokeWidth="2"
+      />
       {/* Color dots */}
       <circle cx="18" cy="18" r="3" fill="#E91E8C" />
       <circle cx="30" cy="18" r="3" fill="#8B5CF6" />
@@ -101,7 +132,10 @@ const icons = [AvailableIcon, MemoryIcon, PersonalizedIcon];
 
 export default function WhatIsSection() {
   return (
-    <AnimatedSection id="que-es" className="relative py-24 bg-dark overflow-hidden">
+    <AnimatedSection
+      id="que-es"
+      className="relative pt-24 pb-12 lg:pb-16 bg-dark overflow-hidden"
+    >
       {/* Subtle background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-violet/5 blur-[120px]" />
@@ -119,7 +153,7 @@ export default function WhatIsSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-4">
           <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">
             ¿Qué es un{" "}
             <span className="text-violet font-[family-name:var(--font-playfair)] italic font-black">
@@ -127,17 +161,28 @@ export default function WhatIsSection() {
             </span>
             ?
           </h2>
-          <p className="text-lg sm:text-xl text-white/50 max-w-3xl mx-auto leading-relaxed">
-            Un{" "}
-            <span className="text-gold font-[family-name:var(--font-playfair)] italic font-semibold">
-              Godínez
-            </span>
-            {" "}es un{" "}
-            <span className="text-magenta font-[family-name:var(--font-playfair)] italic font-semibold">
-              Agente IA
-            </span>
-            {" "}que hace el trabajo que te drena para que tú hagas el que te llena. Atiende clientes por WhatsApp, agenda citas, genera reportes, y responde emails. Todo en español, 24/7, personalizado.
+          <p className="text-lg sm:text-xl text-white/75 max-w-3xl mx-auto leading-relaxed">
+            Un <span className="text-gold font-semibold">Godínez</span> es un{" "}
+            <span className="text-magenta font-semibold">Agente IA</span> que
+            hace el trabajo que te drena para que tú hagas el que te llena.
+            Atiende clientes por WhatsApp, agenda citas, genera reportes, y
+            responde emails. Todo en español, 24/7, personalizado.
           </p>
+        </div>
+        <div className="flex justify-center mb-8">
+          <div className="relative">
+            {/* Glowing background */}
+            <div className="absolute inset-0 bg-magenta/20 blur-3xl rounded-full scale-110" />
+            {/* Image */}
+            <div className="relative">
+              <Image
+                src="/images/logo.svg"
+                alt="What is Godínez"
+                width={192}
+                height={192}
+              />
+            </div>
+          </div>
         </div>
 
         {/* Cards */}
@@ -161,7 +206,7 @@ export default function WhatIsSection() {
                 <h3 className="text-xl font-semibold text-white mb-3">
                   {card.title}
                 </h3>
-                <p className="text-white/50 leading-relaxed">
+                <p className="text-white/75 leading-relaxed">
                   {card.description}
                 </p>
               </div>
