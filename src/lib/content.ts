@@ -77,7 +77,7 @@ export const content = {
     note: "Todos los precios en MXN. IVA incluido.",
     plans: [
       {
-        name: "Intern",
+        name: "Becario",
         price: "$1,999",
         period: "MXN/mes",
         idealFor: "Ideal para: freelancers, negocios pequeños",

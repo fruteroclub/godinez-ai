@@ -9,6 +9,8 @@ export const add = mutation({
     company: v.optional(v.string()),
     tasks: v.optional(v.string()),
     teamSize: v.optional(v.string()),
+    tier: v.string(),
+    industry: v.string(),
     source: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
@@ -25,6 +27,8 @@ export const add = mutation({
         company: args.company,
         tasks: args.tasks,
         teamSize: args.teamSize,
+        tier: args.tier,
+        industry: args.industry,
         source: args.source,
       });
       return { success: true, updated: true, id: existing._id };
@@ -37,6 +41,8 @@ export const add = mutation({
       company: args.company,
       tasks: args.tasks,
       teamSize: args.teamSize,
+      tier: args.tier,
+      industry: args.industry,
       source: args.source,
       createdAt: Date.now(),
     });
@@ -63,5 +69,35 @@ export const list = query({
       .withIndex("by_createdAt")
       .order("desc")
       .collect();
+  },
+});
+
+// Backfill missing fields with defaults (run once for migrations)
+export const backfillDefaults = mutation({
+  args: {
+    defaultTier: v.optional(v.string()),
+    defaultIndustry: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    const entries = await ctx.db.query("waitlist").collect();
+    let updated = 0;
+
+    for (const entry of entries) {
+      const updates: Record<string, string> = {};
+      
+      if (!entry.tier && args.defaultTier) {
+        updates.tier = args.defaultTier;
+      }
+      if (!entry.industry && args.defaultIndustry) {
+        updates.industry = args.defaultIndustry;
+      }
+
+      if (Object.keys(updates).length > 0) {
+        await ctx.db.patch(entry._id, updates);
+        updated++;
+      }
+    }
+
+    return { total: entries.length, updated };
   },
 });
