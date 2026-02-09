@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+    
+    body {
+      width: 1500px;
+      height: 500px;
+      background: linear-gradient(135deg, #0A0A0A 0%, #111111 50%, #0A0A0A 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Background glows */
+    .glow-1 {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+      top: -200px;
+      right: 100px;
+    }
+    .glow-2 {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(233, 30, 140, 0.1) 0%, transparent 70%);
+      bottom: -150px;
+      left: 200px;
+    }
+    
+    /* Grid pattern */
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    
+    .content {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      z-index: 10;
+    }
+    
+    /* Robot SVG */
+    .robot {
+      width: 280px;
+      height: 280px;
+    }
+    
+    .text-content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .logo {
+      font-size: 72px;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+    .logo-godinez {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      color: white;
+    }
+    .logo-dot {
+      color: #FFB800;
+    }
+    .logo-ai {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 700;
+      color: #E91E8C;
+      transform: skewX(-6deg);
+      display: inline-block;
+    }
+    
+    .tagline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 28px;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 400;
+    }
+    
+    .tagline-accent {
+      color: #FFB800;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+  <div class="grid"></div>
+  
+  <div class="content">
+    <!-- Robot SVG -->
+    <svg class="robot" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Head -->
+      <rect x="130" y="60" width="140" height="120" rx="24" fill="#1A1A1A" stroke="#8B5CF6" stroke-width="3"/>
+      <rect x="145" y="75" width="110" height="80" rx="12" fill="#0A0A0A"/>
+      <!-- Eyes -->
+      <circle cx="175" cy="110" r="12" fill="#E91E8C"/>
+      <circle cx="225" cy="110" r="12" fill="#E91E8C"/>
+      <circle cx="175" cy="110" r="6" fill="#FF4DA6"/>
+      <circle cx="225" cy="110" r="6" fill="#FF4DA6"/>
+      <!-- Smile -->
+      <path d="M185 135 Q200 150 215 135" stroke="#FFB800" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <!-- Antenna -->
+      <line x1="200" y1="60" x2="200" y2="35" stroke="#8B5CF6" stroke-width="3"/>
+      <circle cx="200" cy="28" r="8" fill="#FFB800"/>
+      <!-- Body -->
+      <rect x="120" y="196" width="160" height="130" rx="24" fill="#1A1A1A" stroke="#8B5CF6" stroke-width="3"/>
+      <!-- Tie -->
+      <polygon points="200,210 190,235 200,260 210,235" fill="#E91E8C"/>
+      <!-- Badge -->
+      <rect x="225" y="240" width="40" height="22" rx="6" fill="#0A0A0A" stroke="#FFB800" stroke-width="2"/>
+      <text x="245" y="256" text-anchor="middle" fill="#FFB800" font-size="12" font-family="monospace" font-weight="bold">G.AI</text>
+      <!-- Arms -->
+      <rect x="75" y="206" width="45" height="90" rx="16" fill="#1A1A1A" stroke="#8B5CF6" stroke-width="3"/>
+      <rect x="280" y="206" width="45" height="90" rx="16" fill="#1A1A1A" stroke="#8B5CF6" stroke-width="3"/>
+      <!-- Thumbs up on right hand -->
+      <rect x="295" y="290" width="12" height="24" rx="6" fill="#1A1A1A" stroke="#FFB800" stroke-width="2"/>
+    </svg>
+    
+    <div class="text-content">
+      <div class="logo">
+        <span class="logo-godinez">Godínez</span>
+        <span class="logo-dot">.</span>
+        <span class="logo-ai">AI</span>
+      </div>
+      <div class="tagline">El asistente al que le <span class="tagline-accent">delegas todo</span></div>
+    </div>
+  </div>
+</body>
+</html>
