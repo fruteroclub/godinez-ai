@@ -14,56 +14,46 @@ export default function AnimatedSection({
   id,
 }: AnimatedSectionProps) {
   const ref = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const [hasHydrated, setHasHydrated] = useState(false);
+  const [isVisible, setIsVisible] = useState(true); // Start visible to prevent flash
 
   useEffect(() => {
-    setHasHydrated(true);
-    
     // Respect reduced motion preference
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) {
-      setIsVisible(true);
-      return;
+      return; // Already visible
     }
 
-    // Quick fallback for mobile (150ms instead of 1s)
-    const fallbackTimer = setTimeout(() => {
-      setIsVisible(true);
-    }, 150);
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          clearTimeout(fallbackTimer);
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { 
-        threshold: 0,
-        rootMargin: "100px 0px 100px 0px" // Larger margin for earlier trigger
-      }
-    );
-
+    // Check if element is in initial viewport - if so, stay visible
     if (ref.current) {
+      const rect = ref.current.getBoundingClientRect();
+      const inInitialViewport = rect.top < window.innerHeight + 100;
+      
+      if (inInitialViewport) {
+        // Element is in or near viewport on load - keep visible
+        return;
+      }
+      
+      // Element is below viewport - set up animation
+      setIsVisible(false);
+      
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        },
+        { 
+          threshold: 0,
+          rootMargin: "50px 0px 50px 0px"
+        }
+      );
+
       observer.observe(ref.current);
+
+      return () => observer.disconnect();
     }
-
-    return () => {
-      clearTimeout(fallbackTimer);
-      observer.disconnect();
-    };
   }, []);
-
-  // Before hydration, show content (no animation flicker)
-  if (!hasHydrated) {
-    return (
-      <section id={id} className={className}>
-        {children}
-      </section>
-    );
-  }
 
   return (
     <section

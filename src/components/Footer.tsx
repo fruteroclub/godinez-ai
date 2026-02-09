@@ -71,9 +71,16 @@ export default function Footer() {
 
         {/* Bottom decoration */}
         <div className="mt-12 pt-8 border-t border-white/5 text-center">
-          <p className="text-white/20 text-xs font-[family-name:var(--font-playfair)] italic">
-            Hecho con 🤖 para PyMEs de LATAM
-          </p>
+          <a 
+            href="https://frutero.club" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-white/30 hover:text-white/50 transition-colors text-xs"
+          >
+            <img src="/logo.svg" alt="Godínez" className="h-5 w-auto" />
+            <span>Un producto de</span>
+            <span className="font-semibold">Frutero</span>
+          </a>
         </div>
       </div>
     </footer>
