@@ -63,11 +63,14 @@ export default function AdminPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
+    // Debug: log password info (remove after fixing)
+    console.log("Input:", password, "Expected length:", ADMIN_PASSWORD?.length, "Input length:", password.length);
+    
     if (password === ADMIN_PASSWORD) {
       setIsAuthenticated(true);
       setError("");
     } else {
-      setError("Contraseña incorrecta");
+      setError(`Contraseña incorrecta (debug: expected ${ADMIN_PASSWORD?.length || 'undefined'} chars)`);
     }
   };
 
