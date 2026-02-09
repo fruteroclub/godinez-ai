@@ -13,13 +13,19 @@ Landing page for Godínez.AI — AI employee for Latin American SMBs.
 ## Development Commands
 
 ```bash
-bun install      # Install dependencies
-bun run dev      # Dev server on :3000
-bun run build    # Production build — MUST pass before deploying
-bun run start    # Start production server
+bun install         # Install dependencies
+bun run dev         # Dev server on :3000
+bun run build       # Production build — MUST pass before deploying
+bun run start       # Start production server
+bunx convex dev     # Start Convex backend (separate terminal)
+tsc --noEmit        # Type checking (no lint script)
 ```
 
-**Note:** No `lint` script configured. Use `tsc --noEmit` for type checking.
+**Convex Setup:**
+1. Install Convex CLI: `bun add -d convex` (already in package.json)
+2. Run `bunx convex dev` to initialize and start local development
+3. Copy deployment URL to `.env.local` as `NEXT_PUBLIC_CONVEX_URL`
+4. Schema and functions in `convex/` directory auto-deploy on save
 
 ## Architecture
 
@@ -49,10 +55,18 @@ HomePage (orchestrator)
 └── Footer
 ```
 
-### Data Persistence
-- Waitlist submissions saved to `data/waitlist.json` (local file storage)
-- Directory created automatically if missing
-- **For production:** Replace with proper database
+### Data Persistence (Convex Backend)
+- **Primary:** Convex database (serverless backend)
+  - Schema: `convex/schema.ts` — defines `waitlist` table with indexes
+  - Functions: `convex/waitlist.ts` — mutations (`add`) and queries (`count`, `list`)
+  - API route: `src/app/api/waitlist/route.ts` — calls Convex mutation via `ConvexHttpClient`
+- **Configuration:** Requires `NEXT_PUBLIC_CONVEX_URL` env var
+  - If not set, API route falls back to console logging
+  - Get URL from Convex dashboard or by running `bunx convex dev`
+- **Development workflow:**
+  - Run `bunx convex dev` in separate terminal to start Convex backend
+  - Schema changes in `convex/` auto-deploy to development deployment
+  - Use Convex MCP tools for querying data during development
 
 ## Design System
 
@@ -93,11 +107,26 @@ All icons are **inline SVGs** (no external files) with:
 
 ## Key Rules
 
-1. **Styling:** Tailwind CSS only — NO CSS modules, NO styled-components
-2. **Content:** All text strings go in `src/lib/content.ts` for i18n support
-3. **TypeScript:** Strict mode enabled — all types required
-4. **Components:** One component per file, client components marked with `"use client"`
-5. **Build validation:** Always run `bun run build` before pushing
+1. **Package Manager:** Bun only — enforced via `packageManager` field in package.json
+2. **Styling:** Tailwind CSS only — NO CSS modules, NO styled-components
+3. **Content:** All text strings go in `src/lib/content.ts` for i18n support
+4. **TypeScript:** Strict mode enabled — all types required
+5. **Components:** One component per file, client components marked with `"use client"`
+6. **Backend:** Convex for all data operations — schema changes require `convex/schema.ts` updates
+7. **Build validation:** Always run `bun run build` before pushing
+
+## Development Tools
+
+### Convex MCP Integration
+Claude Code has access to Convex MCP tools for inspecting and managing the backend:
+- `mcp__convex__status` — List deployments (dev/prod) with URLs
+- `mcp__convex__tables` — View schema and table structure
+- `mcp__convex__data` — Query table data with pagination
+- `mcp__convex__run` — Execute Convex functions (queries, mutations, actions)
+- `mcp__convex__logs` — Fetch execution logs
+- `mcp__convex__runOneoffQuery` — Run ad-hoc read-only queries
+
+**Usage:** These tools are available when helping debug waitlist issues, verify data structure, or test backend functionality.
 
 ## Documentation
 
@@ -107,7 +136,14 @@ All icons are **inline SVGs** (no external files) with:
 
 ## Deployment
 
-Configured for Vercel automatic deployments:
+### Vercel (Frontend)
 - Connect GitHub repo to Vercel project
 - Push to `main` branch triggers production deploy
 - Preview deployments on all branches
+- Add `NEXT_PUBLIC_CONVEX_URL` to Vercel environment variables
+
+### Convex (Backend)
+- Production deployment: `bunx convex deploy`
+- Get production URL and update Vercel env vars
+- Convex Cloud manages database, schema migrations, and function deployments
+- No additional server infrastructure needed
