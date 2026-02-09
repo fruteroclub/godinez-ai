@@ -1,5 +1,8 @@
 "use client";
 
+import { useState, useEffect } from "react";
+import { useQuery } from "convex/react";
+import { api } from "../../convex/_generated/api";
 import { content } from "@/lib/content";
 
 function GodinezIllustration({ className }: { className?: string }) {
@@ -86,8 +89,22 @@ function GodinezIllustration({ className }: { className?: string }) {
 }
 
 export default function Hero() {
+  const waitlistCount = useQuery(api.waitlist.count);
+  const [serverCount, setServerCount] = useState<number | null>(null);
+
+  // Fetch cached count from API on mount (server-side cache)
+  useEffect(() => {
+    fetch("/api/waitlist/count")
+      .then((res) => res.json())
+      .then((data) => setServerCount(data.count))
+      .catch(() => setServerCount(0));
+  }, []);
+
+  // Real-time count takes priority, then server cache, then 0
+  const displayCount = waitlistCount ?? serverCount ?? 0;
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 bg-dark">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 sm:pt-24 lg:pt-20 bg-dark">
       {/* Subtle background glow */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-violet/5 blur-[120px]" />
@@ -157,7 +174,7 @@ export default function Hero() {
                   />
                 ))}
               </div>
-              <span>+200 en lista de espera</span>
+              <span>+{displayCount} en lista de espera</span>
             </div>
           </div>
 

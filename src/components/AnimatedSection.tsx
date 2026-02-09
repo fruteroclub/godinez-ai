@@ -15,12 +15,22 @@ export default function AnimatedSection({
 }: AnimatedSectionProps) {
   const ref = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [hasHydrated, setHasHydrated] = useState(false);
 
   useEffect(() => {
-    // Fallback: show after delay if IntersectionObserver fails
+    setHasHydrated(true);
+    
+    // Respect reduced motion preference
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) {
+      setIsVisible(true);
+      return;
+    }
+
+    // Quick fallback for mobile (150ms instead of 1s)
     const fallbackTimer = setTimeout(() => {
       setIsVisible(true);
-    }, 1000);
+    }, 150);
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -32,7 +42,7 @@ export default function AnimatedSection({
       },
       { 
         threshold: 0,
-        rootMargin: "50px 0px 50px 0px"
+        rootMargin: "100px 0px 100px 0px" // Larger margin for earlier trigger
       }
     );
 
@@ -45,6 +55,15 @@ export default function AnimatedSection({
       observer.disconnect();
     };
   }, []);
+
+  // Before hydration, show content (no animation flicker)
+  if (!hasHydrated) {
+    return (
+      <section id={id} className={className}>
+        {children}
+      </section>
+    );
+  }
 
   return (
     <section
