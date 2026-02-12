@@ -31,7 +31,7 @@ export default function Footer() {
                 </span>
               </span>
             </a>
-            <p className="text-white/40 text-sm">{content.footer.tagline}</p>
+            <p className="text-gold text-sm">{content.footer.tagline}</p>
           </div>
 
           {/* Links */}
