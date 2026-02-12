@@ -15,6 +15,9 @@ This directory contains the research and technical exploration for the **Agent T
 | 01 | [OpenClaw Multi-Agent Capabilities](01-openclaw-multi-agent-capabilities.md) | What OpenClaw supports natively: routing, isolation, sandboxing, sub-agents |
 | 02 | [Architecture Impact Analysis](02-architecture-impact-analysis.md) | How multi-agent changes the Burrito model: cost, isolation, provisioning |
 | 03 | [Implementation Roadmap](03-implementation-roadmap.md) | Phased rollout plan, effort estimates, prerequisites, and go/no-go criteria |
+| 04 | [Kukulcán Avatar System Plan](04-kukulcan-avatar-system-plan.md) | Concrete implementation plan for K7 multi-avatar orchestrator-specialist setup |
+| 05 | [Plan Review Report](05-plan-review-report.md) | Technical review of doc 04: corrections, risks, swap memory analysis, Context Pyramid and Kanban concepts |
+| 06 | [TICK.md Initial Assessment](06-tick-md-initial-assessment.md) | Evaluation of [tick-md](https://github.com/Purple-Horizons/tick-md) for multi-agent task coordination |
 
 ---
 
