@@ -18,6 +18,7 @@ This directory contains the research and technical exploration for the **Agent T
 | 04 | [Kukulcán Avatar System Plan](04-kukulcan-avatar-system-plan.md) | Concrete implementation plan for K7 multi-avatar orchestrator-specialist setup |
 | 05 | [Plan Review Report](05-plan-review-report.md) | Technical review of doc 04: corrections, risks, swap memory analysis, Context Pyramid and Kanban concepts |
 | 06 | [TICK.md Initial Assessment](06-tick-md-initial-assessment.md) | Evaluation of [tick-md](https://github.com/Purple-Horizons/tick-md) for multi-agent task coordination |
+| 07 | [Multi-Agent Implementation Plan](07-multi-agent-implementation-plan.md) | Agent-agnostic, phased implementation plan: Agent Infra + tick-md Skill (parallel) → Troop UI |
 
 ---
 
