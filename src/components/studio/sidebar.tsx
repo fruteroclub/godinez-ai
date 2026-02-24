@@ -32,7 +32,13 @@ function getSecondaryNavItems(slug: string): NavItem[] {
   ];
 }
 
-export default function Sidebar({ workspaceSlug }: { workspaceSlug: string }) {
+export default function Sidebar({
+  workspaceSlug,
+  onNavigate,
+}: {
+  workspaceSlug: string;
+  onNavigate?: () => void;
+}) {
   const pathname = usePathname();
   const navItems = getNavItems(workspaceSlug);
   const secondaryItems = getSecondaryNavItems(workspaceSlug);
@@ -50,6 +56,7 @@ export default function Sidebar({ workspaceSlug }: { workspaceSlug: string }) {
       <div className="flex h-14 items-center border-b border-[hsl(var(--sidebar-border))] px-4">
         <Link
           href="/studio"
+          onClick={onNavigate}
           className="text-sm font-semibold text-[hsl(var(--sidebar-foreground))] hover:text-magenta transition-colors"
         >
           Godínez.AI
@@ -62,6 +69,7 @@ export default function Sidebar({ workspaceSlug }: { workspaceSlug: string }) {
           <Link
             key={item.href}
             href={item.href}
+            onClick={onNavigate}
             className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
               isActive(item.href)
                 ? "bg-[hsl(var(--sidebar-accent))] text-[hsl(var(--sidebar-primary))] font-medium"
@@ -80,6 +88,7 @@ export default function Sidebar({ workspaceSlug }: { workspaceSlug: string }) {
           <Link
             key={item.href}
             href={item.href}
+            onClick={onNavigate}
             className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
               isActive(item.href)
                 ? "bg-[hsl(var(--sidebar-accent))] text-[hsl(var(--sidebar-primary))] font-medium"

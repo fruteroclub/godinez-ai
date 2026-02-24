@@ -17,15 +17,38 @@ function getBreadcrumbs(pathname: string) {
   return crumbs;
 }
 
-export default function TopBar() {
+export default function TopBar({
+  onMenuToggle,
+}: {
+  onMenuToggle?: () => void;
+}) {
   const pathname = usePathname();
   const breadcrumbs = getBreadcrumbs(pathname);
 
   return (
-    <header className="flex h-14 items-center border-b border-[hsl(var(--border))] bg-[hsl(var(--background))] px-6">
-      <nav className="flex items-center gap-2 text-sm">
+    <header className="flex h-14 items-center border-b border-[hsl(var(--border))] bg-[hsl(var(--background))] px-4 sm:px-6">
+      {/* Mobile menu button */}
+      <button
+        onClick={onMenuToggle}
+        className="mr-3 rounded-md p-1.5 text-[hsl(var(--muted-foreground))] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--foreground))] transition-colors lg:hidden"
+        aria-label="Abrir menú"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        >
+          <path d="M3 5h14M3 10h14M3 15h14" />
+        </svg>
+      </button>
+
+      <nav className="flex items-center gap-2 text-sm overflow-x-auto">
         {breadcrumbs.map((crumb, i) => (
-          <span key={crumb.href} className="flex items-center gap-2">
+          <span key={crumb.href} className="flex items-center gap-2 shrink-0">
             {i > 0 && (
               <span className="text-[hsl(var(--muted-foreground))]">/</span>
             )}
