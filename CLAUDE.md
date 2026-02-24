@@ -3,45 +3,58 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Overview
+
 Landing page for Godínez.AI — AI employee for Latin American SMBs.
 
 **Stack:** Next.js 16, Tailwind CSS 4, TypeScript
 **Runtime:** Bun (exclusive — do NOT use npm/yarn/pnpm)
-**Live:** https://godinez-ai.vercel.app
+**Live:** https://godinez.ai
 **Repo:** fruteroclub/godinez-ai
 
 ## Development Commands
 
 ```bash
-bun install         # Install dependencies
-bun run dev         # Dev server on :3000
-bun run build       # Production build — MUST pass before deploying
-bun run start       # Start production server
-bunx convex dev     # Start Convex backend (separate terminal)
-tsc --noEmit        # Type checking (no lint script)
+bun install              # Install dependencies
+bun run dev              # Dev server on :3000
+bun run build            # Production build — MUST pass before deploying
+bun run start            # Start production server
+bun run convex:dev       # Start Convex backend (separate terminal)
+bun run convex:deploy    # Deploy Convex to production
+tsc --noEmit             # Type checking (no lint script)
 ```
 
 **Convex Setup:**
-1. Install Convex CLI: `bun add -d convex` (already in package.json)
-2. Run `bunx convex dev` to initialize and start local development
+
+1. `convex` is already in package.json dependencies
+2. Run `bun run convex:dev` to initialize and start local development
 3. Copy deployment URL to `.env.local` as `NEXT_PUBLIC_CONVEX_URL`
 4. Schema and functions in `convex/` directory auto-deploy on save
+
+**Environment Variables:**
+
+- `NEXT_PUBLIC_CONVEX_URL` — Convex deployment URL (required for backend)
+- `NEXT_PUBLIC_ADMIN_PASSWORD` — Admin dashboard password (defaults to `"frutero2026"` if unset)
 
 ## Architecture
 
 ### Next.js App Router (v16)
+
 - Uses **App Router** (`app/` directory, NOT `pages/`)
 - Uses **Turbopack** (Next.js 16 default) — DO NOT add webpack config
 - Server components by default; add `"use client"` only when needed
 
 ### Component Structure
+
 - **Page:** `src/app/page.tsx` → renders `HomePage` component
-- **Layout:** `src/app/layout.tsx` → configures fonts, metadata, root HTML
+- **Layout:** `src/app/layout.tsx` → configures fonts, metadata, root HTML; wraps with `ConvexClientProvider`
 - **Components:** `src/components/*.tsx` — one component per file
 - **Content:** `src/lib/content.ts` — ALL user-facing text (i18n-ready)
-- **API:** `src/app/api/waitlist/route.ts` — waitlist form handler
+- **API:** `src/app/api/waitlist/route.ts` — waitlist form POST handler
+- **API:** `src/app/api/waitlist/count/route.ts` — GET endpoint for waitlist count (60s in-memory cache)
+- **Admin:** `src/app/admin/page.tsx` — password-protected dashboard showing waitlist entries/stats; uses Convex `useQuery` for real-time data
 
 ### Landing Page Flow
+
 ```
 HomePage (orchestrator)
 ├── Navbar
@@ -56,22 +69,25 @@ HomePage (orchestrator)
 ```
 
 ### Data Persistence (Convex Backend)
+
 - **Primary:** Convex database (serverless backend)
-  - Schema: `convex/schema.ts` — defines `waitlist` table with indexes
+  - Schema: `convex/schema.ts` — `waitlist` table with indexes on `email`, `createdAt`, `tier`, `industry`
   - Functions: `convex/waitlist.ts` — mutations (`add`) and queries (`count`, `list`)
   - API route: `src/app/api/waitlist/route.ts` — calls Convex mutation via `ConvexHttpClient`
-- **Configuration:** Requires `NEXT_PUBLIC_CONVEX_URL` env var
-  - If not set, API route falls back to console logging
-  - Get URL from Convex dashboard or by running `bunx convex dev`
+- **Real-time (client-side):** `ConvexClientProvider` wraps the app; admin page uses `useQuery` for live data
+- **Tier values:** `becario` | `asistente` | `agente` (legacy: `intern` | `assistant` | `agent`)
+- **Industry values:** `finanzas` | `salud` | `ventas` | `founder` | `estudiante` | `remoto` | `freelancer` | `creativo` | `desarrollador` | `administracion`
 - **Development workflow:**
-  - Run `bunx convex dev` in separate terminal to start Convex backend
+  - Run `bun run convex:dev` in separate terminal to start Convex backend
   - Schema changes in `convex/` auto-deploy to development deployment
   - Use Convex MCP tools for querying data during development
 
 ## Design System
 
 ### Colors (Brand Identity)
+
 Defined in `src/app/globals.css` via `@theme inline`:
+
 - **magenta:** `#E91E8C` (primary accent)
 - **violet:** `#8B5CF6` (secondary)
 - **gold:** `#FFB800` (highlights, CTAs)
@@ -80,12 +96,15 @@ Defined in `src/app/globals.css` via `@theme inline`:
 - **cream:** `#FFF9F5` (unused currently, full dark mode)
 
 ### Typography
+
 - **Headers + body:** Plus Jakarta Sans (default)
 - **Italics/emphasis only:** Playfair Display
 - Configured in `layout.tsx` using `next/font/google`
 
 ### Animations
+
 All keyframes in `globals.css`:
+
 - `animate-glitch` — subtle text displacement with color shadows
 - `animate-pulse-glow` — pulsing glow for CTAs
 - `animate-gradient-shift` — moving gradient backgrounds
@@ -93,14 +112,18 @@ All keyframes in `globals.css`:
 - `animate-fade-in-up` — scroll-triggered entrance
 
 ### Custom Utility Classes
+
 Defined in `globals.css`:
+
 - `.bg-gradient-brand` — magenta to violet
 - `.text-gradient-brand` — gradient text effect
 - `.glow-magenta` / `.glow-violet` / `.glow-gold` — box shadows
 - `.delay-{100-800}` — staggered animation delays
 
 ### SVG Illustrations
+
 All icons are **inline SVGs** (no external files) with:
+
 - Custom colors matching brand palette
 - SMIL animations (e.g., pulsing eyes, rotating gears)
 - Hover state transitions
@@ -118,7 +141,9 @@ All icons are **inline SVGs** (no external files) with:
 ## Development Tools
 
 ### Convex MCP Integration
+
 Claude Code has access to Convex MCP tools for inspecting and managing the backend:
+
 - `mcp__convex__status` — List deployments (dev/prod) with URLs
 - `mcp__convex__tables` — View schema and table structure
 - `mcp__convex__data` — Query table data with pagination
@@ -137,13 +162,15 @@ Claude Code has access to Convex MCP tools for inspecting and managing the backe
 ## Deployment
 
 ### Vercel (Frontend)
+
 - Connect GitHub repo to Vercel project
 - Push to `main` branch triggers production deploy
 - Preview deployments on all branches
 - Add `NEXT_PUBLIC_CONVEX_URL` to Vercel environment variables
 
 ### Convex (Backend)
-- Production deployment: `bunx convex deploy`
+
+- Production deployment: `bun run convex:deploy`
 - Get production URL and update Vercel env vars
 - Convex Cloud manages database, schema migrations, and function deployments
 - No additional server infrastructure needed

@@ -1,0 +1,66 @@
+"use server";
+
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+import { db } from "@/lib/db";
+import { workspaces, workspaceMembers } from "../../../drizzle/schema";
+import { getUserByClerkId } from "@/lib/db/queries/users";
+import { eq } from "drizzle-orm";
+
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 60);
+}
+
+async function ensureUniqueSlug(baseSlug: string): Promise<string> {
+  let slug = baseSlug;
+  let attempt = 0;
+
+  while (true) {
+    const existing = await db.query.workspaces.findFirst({
+      where: eq(workspaces.slug, slug),
+    });
+    if (!existing) return slug;
+    attempt++;
+    slug = `${baseSlug}-${attempt}`;
+  }
+}
+
+export async function createWorkspace(formData: FormData) {
+  const { userId: clerkId } = await auth();
+  if (!clerkId) throw new Error("Unauthorized");
+
+  const name = (formData.get("name") as string)?.trim();
+  if (!name || name.length < 2) {
+    throw new Error("Workspace name must be at least 2 characters");
+  }
+
+  const user = await getUserByClerkId(clerkId);
+  if (!user) throw new Error("User not found. Please try signing out and back in.");
+
+  const slug = await ensureUniqueSlug(slugify(name));
+
+  const [workspace] = await db
+    .insert(workspaces)
+    .values({
+      name,
+      slug,
+      ownerId: user.id,
+      tier: "becario",
+      status: "active",
+    })
+    .returning();
+
+  await db.insert(workspaceMembers).values({
+    workspaceId: workspace.id,
+    userId: user.id,
+    role: "owner",
+  });
+
+  redirect(`/studio/${workspace.slug}`);
+}

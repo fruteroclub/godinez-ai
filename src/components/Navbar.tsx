@@ -30,6 +30,23 @@ export default function Navbar() {
           : "bg-transparent"
         }`}
     >
+      {/* Beta banner */}
+      {!isScrolled && (
+        <div className="bg-gradient-to-r from-violet-dark via-magenta-dark to-violet-dark">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-center gap-3 py-1.5 text-xs sm:text-sm">
+              <span className="text-white/80">{content.beta.banner}</span>
+              <a
+                href="/sign-in"
+                className="inline-flex items-center gap-1 rounded-full bg-white/10 px-3 py-0.5 text-xs font-semibold text-gold hover:bg-white/20 transition-colors"
+              >
+                {content.beta.bannerCta} →
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -61,6 +78,12 @@ export default function Navbar() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-magenta transition-all group-hover:w-full" />
               </a>
             ))}
+            <a
+              href="/sign-in"
+              className="text-sm font-semibold text-gold hover:text-gold-light transition-colors"
+            >
+              {content.nav.studio} →
+            </a>
           </div>
 
           {/* Mobile hamburger */}
@@ -102,12 +125,19 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="block py-3 text-white/75 hover:text-magenta transition-colors font-medium border-b border-white/5 last:border-0"
+              className="block py-3 text-white/75 hover:text-magenta transition-colors font-medium border-b border-white/5"
               onClick={() => setIsOpen(false)}
             >
               {link.label}
             </a>
           ))}
+          <a
+            href="/sign-in"
+            className="block py-3 text-gold hover:text-gold-light transition-colors font-semibold"
+            onClick={() => setIsOpen(false)}
+          >
+            {content.nav.studio} →
+          </a>
         </div>
       )}
     </nav>

@@ -388,6 +388,17 @@ export default function WaitlistForm() {
                 )}
               </button>
             </div>
+
+            {/* Beta access note */}
+            <p className="text-center text-sm text-white/40 pt-2">
+              {content.beta.waitlistNote}{" "}
+              <a
+                href="/sign-in"
+                className="text-gold hover:text-gold-light transition-colors font-medium underline underline-offset-2"
+              >
+                {content.beta.waitlistNoteCta}
+              </a>
+            </p>
           </form>
         </div>
       </div>

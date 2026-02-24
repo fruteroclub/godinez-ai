@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import { content } from "@/lib/content";
-import ConvexClientProvider from "@/components/ConvexClientProvider";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -80,14 +80,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+  const clerkKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+
+  const body = (
     <html lang="es">
       <body
         className={`${playfair.variable} ${plusJakarta.variable} antialiased`}
         style={{ fontFamily: "var(--font-plus-jakarta)" }}
       >
-        <ConvexClientProvider>{children}</ConvexClientProvider>
+        {children}
       </body>
     </html>
   );
+
+  if (!clerkKey) return body;
+
+  return <ClerkProvider>{body}</ClerkProvider>;
 }
