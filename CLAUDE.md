@@ -128,6 +128,15 @@ All icons are **inline SVGs** (no external files) with:
 - SMIL animations (e.g., pulsing eyes, rotating gears)
 - Hover state transitions
 
+## Git Commit Messages (Frutero Rules)
+
+- **Short:** max 50 characters
+- **Descriptive:** explains what changes were made
+- **Concise:** no fluff, to the point, brief
+- **No co-signatures nor attributions**
+- **Lowercase preferred:** uppercase reserved for proper nouns and required acronyms
+- **Conventional prefixes:** `feat`, `fix`, `chore`, `docs`, `refactor`, `style`, `test`
+
 ## Key Rules
 
 1. **Package Manager:** Bun only — enforced via `packageManager` field in package.json
