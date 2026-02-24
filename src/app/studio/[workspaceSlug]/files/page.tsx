@@ -1,21 +1,35 @@
 import { content } from "@/lib/content";
+import { resolveWorkspace } from "@/lib/auth";
+import { getFilesByWorkspaceId } from "@/lib/db/queries/files";
+import FileList from "@/components/studio/file-list";
 
-const { files } = content.studio;
+const { files: filesContent } = content.studio;
 
-export default function FilesPage() {
+export default async function FilesPage({
+  params,
+}: {
+  params: Promise<{ workspaceSlug: string }>;
+}) {
+  const { workspaceSlug } = await params;
+  const { workspace } = await resolveWorkspace(workspaceSlug);
+
+  const files = await getFilesByWorkspaceId(workspace.id);
+
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold text-[hsl(var(--foreground))]">
-          {files.title}
-        </h1>
-        <button className="rounded-md bg-magenta px-4 py-2 text-sm font-medium text-white hover:bg-magenta-dark transition-colors">
-          {files.upload}
-        </button>
-      </div>
-      <div className="flex h-64 items-center justify-center rounded-lg border border-dashed border-[hsl(var(--border))] bg-[hsl(var(--card))]">
-        <p className="text-[hsl(var(--muted-foreground))]">{files.empty}</p>
-      </div>
+      <h1 className="text-2xl font-semibold text-[hsl(var(--foreground))]">
+        {filesContent.title}
+      </h1>
+
+      <FileList
+        files={files.map((f) => ({
+          ...f,
+          createdAt: f.createdAt.toISOString(),
+        }))}
+        workspaceId={workspace.id}
+        workspaceSlug={workspaceSlug}
+        emptyMessage={filesContent.empty}
+      />
     </div>
   );
 }

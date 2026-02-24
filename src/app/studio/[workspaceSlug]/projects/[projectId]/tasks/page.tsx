@@ -1,21 +1,47 @@
 import { content } from "@/lib/content";
+import { resolveWorkspace } from "@/lib/auth";
+import { getProjectById } from "@/lib/db/queries/projects";
+import { getTasksByProjectId } from "@/lib/db/queries/tasks";
+import { notFound } from "next/navigation";
+import TaskBoard from "@/components/studio/task-board";
+import CreateTaskForm from "@/components/studio/create-task-form";
 
-const { tasks } = content.studio;
+const { tasks: tasksContent } = content.studio;
 
-export default function ProjectTasksPage() {
+export default async function ProjectTasksPage({
+  params,
+}: {
+  params: Promise<{ workspaceSlug: string; projectId: string }>;
+}) {
+  const { workspaceSlug, projectId } = await params;
+  const { workspace } = await resolveWorkspace(workspaceSlug);
+
+  const project = await getProjectById(projectId);
+  if (!project || project.workspaceId !== workspace.id) {
+    notFound();
+  }
+
+  const tasks = await getTasksByProjectId(projectId);
+
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold text-[hsl(var(--foreground))]">
-          {tasks.title}
-        </h1>
-        <button className="rounded-md bg-magenta px-4 py-2 text-sm font-medium text-white hover:bg-magenta-dark transition-colors">
-          {tasks.create}
-        </button>
-      </div>
-      <div className="flex h-64 items-center justify-center rounded-lg border border-dashed border-[hsl(var(--border))] bg-[hsl(var(--card))]">
-        <p className="text-[hsl(var(--muted-foreground))]">{tasks.empty}</p>
-      </div>
+      <h1 className="text-2xl font-semibold text-[hsl(var(--foreground))]">
+        {tasksContent.title} — {project.name}
+      </h1>
+
+      <CreateTaskForm
+        workspaceId={workspace.id}
+        workspaceSlug={workspaceSlug}
+        projectId={projectId}
+      />
+
+      <TaskBoard
+        tasks={tasks.map((t) => ({
+          ...t,
+          createdAt: t.createdAt.toISOString(),
+        }))}
+        workspaceSlug={workspaceSlug}
+      />
     </div>
   );
 }
