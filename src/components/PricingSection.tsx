@@ -1,4 +1,6 @@
-import { content } from "@/lib/content";
+"use client";
+
+import { useContent } from "@/lib/i18n";
 import AnimatedSection from "./AnimatedSection";
 
 // Custom check icon
@@ -23,6 +25,7 @@ function CheckIcon({ className }: { className?: string }) {
 }
 
 export default function PricingSection() {
+  const content = useContent();
   return (
     <AnimatedSection
       id="planes"

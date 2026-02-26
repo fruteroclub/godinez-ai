@@ -1,4 +1,6 @@
-import { content } from "@/lib/content";
+"use client";
+
+import { useContent } from "@/lib/i18n";
 import AnimatedSection from "./AnimatedSection";
 
 // Icons for each problem
@@ -51,6 +53,8 @@ const problemIcons = [
 ];
 
 export default function ProblemSection() {
+  const content = useContent();
+
   return (
     <AnimatedSection className="relative pt-24 pb-12 lg:pb-16 bg-dark overflow-hidden">
       {/* Subtle background glow */}

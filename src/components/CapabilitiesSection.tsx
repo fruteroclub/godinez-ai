@@ -1,4 +1,6 @@
-import { content } from "@/lib/content";
+"use client";
+
+import { useContent } from "@/lib/i18n";
 import AnimatedSection from "./AnimatedSection";
 
 // SVG icons for each capability
@@ -194,6 +196,7 @@ const capabilityIcons = [
 ];
 
 export default function CapabilitiesSection() {
+  const content = useContent();
   return (
     <AnimatedSection
       id="capacidades"

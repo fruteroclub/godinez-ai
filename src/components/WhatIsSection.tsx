@@ -1,4 +1,6 @@
-import { content } from "@/lib/content";
+"use client";
+
+import { useContent } from "@/lib/i18n";
 import AnimatedSection from "./AnimatedSection";
 import Image from "next/image";
 
@@ -131,6 +133,7 @@ function PersonalizedIcon() {
 const icons = [AvailableIcon, MemoryIcon, PersonalizedIcon];
 
 export default function WhatIsSection() {
+  const content = useContent();
   return (
     <AnimatedSection
       id="que-es"

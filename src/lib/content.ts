@@ -1,6 +1,6 @@
 // All text strings for i18n support
-// Currently: Spanish (es)
-// To add a new language, create a new object with the same keys
+// Spanish (es) — primary language
+// English translations: content-en.ts
 
 export const content = {
   meta: {
@@ -20,10 +20,13 @@ export const content = {
   },
 
   hero: {
-    headline: "Tu empleado AI que nunca falta al trabajo",
+    headlinePre: "El asistente al que le",
+    headlineAccent: "delegas todo",
     subtitle:
       "Agentes IA que aprenden de ti y hacen el trabajo que te drena. Más baratos que un intern. Más rápido que formar un equipo.",
     cta: "Únete a la lista de espera",
+    learnMore: "Conoce más",
+    socialProof: "en lista de espera",
   },
 
   problem: {
@@ -46,8 +49,28 @@ export const content = {
     ],
   },
 
+  bridge: {
+    statement: "Imagina hacer más, sin escalar tu esfuerzo y estrés.",
+    headlinePre: "Recupera lo que",
+    headlineAccent: "más importa",
+    withGodinez: "Con tu Godínez,",
+    canDoIt: "puedes hacerlo",
+    readyInPre: "Listo en minutos, sin código, con las",
+    readyInAccent: "Skills IA",
+    readyInSuffix: "más avanzadas",
+    cta: "Quiero el mío",
+  },
+
   whatIs: {
-    headline: "¿Qué es un Godínez?",
+    headlinePre: "¿Qué es un ",
+    headlineAccent: "Godínez",
+    headlineSuffix: "?",
+    descriptionPre: "Un ",
+    descriptionHighlight1: "Godínez",
+    descriptionMid: " es un ",
+    descriptionHighlight2: "Agente IA",
+    descriptionEnd:
+      " que hace el trabajo que te drena para que tú hagas el que te llena. Atiende clientes por WhatsApp, agenda citas, genera reportes, y responde emails. Todo en español, 24/7, personalizado.",
     cards: [
       {
         title: "Siempre disponible",
@@ -70,11 +93,12 @@ export const content = {
   },
 
   pricing: {
-    headline: "Planes",
-    headlineAccent: "café diario...",
     headlinePrefix: "Menos que un ",
+    headlineAccent: "café diario...",
     headlineSuffix: " bueno, casi",
     note: "Todos los precios en MXN. IVA incluido.",
+    ctaText: "Empezar",
+    popularBadge: "Popular",
     plans: [
       {
         name: "Becario",
@@ -119,7 +143,8 @@ export const content = {
   },
 
   capabilities: {
-    headline: "¿Qué puede hacer tu Godínez?",
+    headlinePre: "Qué puede hacer tu ",
+    headlineAccent: "Godínez",
     items: [
       {
         emoji: "💬",
@@ -164,9 +189,29 @@ export const content = {
     ],
   },
 
+  testimonials: {
+    headlinePre: "Otros ya ",
+    headlineAccent: "lo lograron",
+    items: [
+      {
+        quote:
+          "Godínez me ha reemplazado como dev principal del proyecto. Ahora dirijo el desarrollo, mientras me muevo en Uber o transporte público.",
+        author: "Mel",
+        role: "Founder",
+        company: "Frutero",
+        companyUrl: "https://frutero.club",
+      },
+    ],
+    cta: "Obtén tu Godínez →",
+    moreTestimonials: "Más testimonios",
+  },
+
   waitlist: {
-    headline: "Deja de perder clientes a las 2am",
-    subheadline: "Únete a +200 negocios que ya reservaron su Godínez",
+    headlinePre: "Recupera ",
+    headlineAccent: "tu tiempo",
+    headlineSuffix: "Delega el resto",
+    subheadline:
+      "Tu Godínez se encarga de lo que te quita energía, para que tú hagas lo que te llena.",
     fields: {
       name: { label: "Nombre", placeholder: "Tu nombre" },
       email: { label: "Email", placeholder: "tu@email.com" },
@@ -188,10 +233,37 @@ export const content = {
           { value: "20+", label: "20+" },
         ],
       },
+      tier: {
+        label: "Tier de interés",
+        options: [
+          { value: "", label: "Selecciona un tier" },
+          { value: "becario", label: "🌱 Becario" },
+          { value: "asistente", label: "⚡ Asistente" },
+          { value: "agente", label: "🚀 Agente" },
+        ],
+      },
+      industry: {
+        label: "Industria",
+        options: [
+          { value: "", label: "Selecciona tu industria" },
+          { value: "finanzas", label: "💰 Finanzas" },
+          { value: "salud", label: "🏥 Salud" },
+          { value: "ventas", label: "📈 Ventas" },
+          { value: "founder", label: "🚀 Founder" },
+          { value: "estudiante", label: "🎓 Estudiante" },
+          { value: "remoto", label: "🏠 Trabajo Remoto" },
+          { value: "freelancer", label: "🎯 Freelancer" },
+          { value: "creativo", label: "🎬 Creativo" },
+          { value: "desarrollador", label: "💻 Desarrollador" },
+          { value: "administracion", label: "📊 Administración" },
+        ],
+      },
     },
     submit: "Quiero mi Godínez",
+    submitting: "Enviando...",
     success:
       "¡Listo! Te avisaremos cuando tu Godínez esté listo para trabajar 🤖",
+    successFollowup: "Te contactaremos pronto con novedades.",
     error: "Hubo un error. Inténtalo de nuevo.",
   },
 
@@ -206,5 +278,9 @@ export const content = {
     poweredBy: "Powered by OpenClaw",
     poweredByUrl: "https://openclaw.ai",
     copyright: "© 2026 Godínez.AI por Frutero",
+    builtByPre: "Construido por un",
+    builtBySuffix: "de Frutero",
   },
 };
+
+export type Content = typeof content;

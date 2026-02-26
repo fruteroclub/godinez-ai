@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useMutation } from "convex/react";
 import { api } from "../../convex/_generated/api";
-import { content } from "@/lib/content";
+import { useContent } from "@/lib/i18n";
 import AnimatedSection from "./AnimatedSection";
 
 // Success robot illustration
@@ -110,6 +110,7 @@ function SuccessRobot() {
 }
 
 export default function WaitlistForm() {
+  const content = useContent();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
