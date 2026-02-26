@@ -1,6 +1,6 @@
 // All text strings for i18n support
-// Currently: Spanish (es)
-// To add a new language, create a new object with the same keys
+// Spanish (es) — primary language
+// English translations: content-en.ts
 
 export const content = {
   meta: {
@@ -20,10 +20,13 @@ export const content = {
   },
 
   hero: {
-    headline: "Tu empleado AI que nunca falta al trabajo",
+    headlinePre: "Tu empleado AI que",
+    headlineAccent: "nunca falla",
     subtitle:
-      "Agentes IA que aprenden de ti y hacen el trabajo que te drena. Más baratos que un intern. Más rápido que formar un equipo.",
+      "Un agente que aprende, ejecuta y crea. Apps, flujos, contenido, clientes — todo delegado. Más barato que un equipo. Más rápido que cualquier herramienta.",
     cta: "Únete a la lista de espera",
+    learnMore: "Conoce más",
+    socialProof: "en lista de espera",
   },
 
   problem: {
@@ -46,8 +49,31 @@ export const content = {
     ],
   },
 
+  bridge: {
+    line1: "Imagina hacer más, sin escalar tu esfuerzo y estrés.",
+    headline: "Recupera lo que",
+    headlineAccent: "más importa",
+    line2: "Con tu Godínez,",
+    line3: "puedes hacerlo",
+    subtext: "Listo en minutos, sin código, con las",
+    subtextAccent: "Skills IA",
+    subtextSuffix: "más avanzadas",
+    cta: "Quiero el mío",
+    ctaHref: "#lista-de-espera",
+  },
+
   whatIs: {
-    headline: "¿Qué es un Godínez?",
+    headlinePre: "¿Qué es un ",
+    headlineAccent: "Godínez",
+    headlineSuffix: "?",
+    descriptionPre: "Un ",
+    descriptionHighlight1: "Godínez",
+    descriptionMid: " es un ",
+    descriptionHighlight2: "Agente IA",
+    descriptionEnd:
+      " que hace el trabajo que te drena para que tú hagas el que te llena. Atiende clientes por WhatsApp, agenda citas, genera reportes, y responde emails. Todo en español, 24/7, personalizado.",
+    subtitle:
+      "Un Godínez es un Agente IA que hace el trabajo que te drena para que tú hagas el que te llena. Atiende clientes por WhatsApp, agenda citas, genera reportes, y responde emails. Todo en español, 24/7, personalizado.",
     cards: [
       {
         title: "Siempre disponible",
@@ -70,11 +96,12 @@ export const content = {
   },
 
   pricing: {
-    headline: "Planes",
-    headlineAccent: "café diario...",
     headlinePrefix: "Menos que un ",
+    headlineAccent: "café diario...",
     headlineSuffix: " bueno, casi",
     note: "Todos los precios en MXN. IVA incluido.",
+    ctaText: "Empezar",
+    popularBadge: "Popular",
     plans: [
       {
         name: "Becario",
@@ -119,12 +146,23 @@ export const content = {
   },
 
   capabilities: {
-    headline: "¿Qué puede hacer tu Godínez?",
+    headlinePre: "Qué puede hacer tu ",
+    headlineAccent: "Godínez",
     items: [
+      {
+        emoji: "🛠️",
+        title: "Crear apps y sitios web",
+        description: "Desde un MVP hasta un sitio completo",
+      },
+      {
+        emoji: "⚙️",
+        title: "Automatizar flujos",
+        description: "Workflows que corren solos, sin ti",
+      },
       {
         emoji: "💬",
         title: "Atención al cliente",
-        description: "WhatsApp, Telegram, Email",
+        description: "WhatsApp, Telegram, Email, Studio",
       },
       {
         emoji: "📅",
@@ -143,18 +181,8 @@ export const content = {
       },
       {
         emoji: "🧾",
-        title: "Facturación",
+        title: "Facturación y finanzas",
         description: "Seguimiento de pagos automático",
-      },
-      {
-        emoji: "🔍",
-        title: "Investigación de mercado",
-        description: "Inteligencia competitiva al instante",
-      },
-      {
-        emoji: "📣",
-        title: "Marketing digital",
-        description: "Redes sociales en piloto automático",
       },
       {
         emoji: "🤝",
@@ -164,9 +192,29 @@ export const content = {
     ],
   },
 
+  testimonials: {
+    headlinePre: "Otros ya ",
+    headlineAccent: "lo lograron",
+    items: [
+      {
+        quote:
+          "Godínez me ha reemplazado como dev principal del proyecto. Ahora dirijo el desarrollo, mientras me muevo en Uber o transporte público.",
+        author: "Mel",
+        role: "Founder",
+        company: "Frutero",
+        companyUrl: "https://frutero.club",
+      },
+    ],
+    cta: "Obtén tu Godínez →",
+    moreTestimonials: "Más testimonios",
+  },
+
   waitlist: {
-    headline: "Deja de perder clientes a las 2am",
-    subheadline: "Únete a +200 negocios que ya reservaron su Godínez",
+    headlinePre: "Recupera ",
+    headlineAccent: "tu tiempo",
+    headlineSuffix: "Delega el resto",
+    subheadline:
+      "Tu Godínez se encarga de lo que te quita energía, para que tú hagas lo que te llena.",
     fields: {
       name: { label: "Nombre", placeholder: "Tu nombre" },
       email: { label: "Email", placeholder: "tu@email.com" },
@@ -188,11 +236,68 @@ export const content = {
           { value: "20+", label: "20+" },
         ],
       },
+      tier: {
+        label: "Tier de interés",
+        options: [
+          { value: "", label: "Selecciona un tier" },
+          { value: "becario", label: "🌱 Becario" },
+          { value: "asistente", label: "⚡ Asistente" },
+          { value: "agente", label: "🚀 Agente" },
+        ],
+      },
+      industry: {
+        label: "Industria",
+        options: [
+          { value: "", label: "Selecciona tu industria" },
+          { value: "finanzas", label: "💰 Finanzas" },
+          { value: "salud", label: "🏥 Salud" },
+          { value: "ventas", label: "📈 Ventas" },
+          { value: "founder", label: "🚀 Founder" },
+          { value: "estudiante", label: "🎓 Estudiante" },
+          { value: "remoto", label: "🏠 Trabajo Remoto" },
+          { value: "freelancer", label: "🎯 Freelancer" },
+          { value: "creativo", label: "🎬 Creativo" },
+          { value: "desarrollador", label: "💻 Desarrollador" },
+          { value: "administracion", label: "📊 Administración" },
+        ],
+      },
     },
     submit: "Quiero mi Godínez",
+    submitting: "Enviando...",
     success:
       "¡Listo! Te avisaremos cuando tu Godínez esté listo para trabajar 🤖",
+    successFollowup: "Te contactaremos pronto con novedades.",
     error: "Hubo un error. Inténtalo de nuevo.",
+  },
+
+  faq: {
+    headline: "Preguntas frecuentes",
+    items: [
+      {
+        q: "¿Qué es exactamente un Godínez?",
+        a: "Un Godínez es un agente de IA personalizado que trabaja para ti 24/7. Desde tu Studio en studio.godinez.ai, puedes delegarle proyectos completos: crear apps, sitios web, flujos automatizados, contenido, reportes — y mucho más. También atiende a tus clientes en WhatsApp, Telegram y Email mientras tú haces lo que importa.",
+      },
+      {
+        q: "¿Necesito saber programar para usarlo?",
+        a: "No. Para empezar, llenas un formulario rápido y en menos de un minuto ya estás hablando con tu Godínez. Para proyectos más avanzados como crear una app o automatizar un flujo, le describes lo que necesitas en lenguaje natural — él lo ejecuta.",
+      },
+      {
+        q: "¿En qué canales funciona?",
+        a: "Tu Godínez vive en varios canales: tu Studio personal en studio.godinez.ai (chat + proyectos + archivos), WhatsApp, Telegram y Email. Siempre disponible, en el canal que prefieras.",
+      },
+      {
+        q: "¿Qué puede crear mi Godínez?",
+        a: "El cielo es el límite. Tu Godínez puede crear apps y sitios web funcionales, automatizar flujos de trabajo, generar reportes, redactar contenido, gestionar clientes y proyectos. Es como tener un equipo técnico y creativo disponible 24/7.",
+      },
+      {
+        q: "¿Qué tan diferente es a ChatGPT?",
+        a: "ChatGPT es una herramienta genérica de conversación. Tu Godínez es un agente personalizado para tu negocio — con memoria persistente de todo lo que hacen juntos, integrado a tus canales, con capacidad de ejecutar proyectos completos, y configurado para tu forma de trabajar.",
+      },
+      {
+        q: "¿Qué pasa con mis datos?",
+        a: "Tus datos son tuyos. Tu Godínez vive en un entorno privado y aislado — no compartimos información con terceros ni la usamos para entrenar modelos.",
+      },
+    ],
   },
 
   footer: {
@@ -206,5 +311,9 @@ export const content = {
     poweredBy: "Powered by OpenClaw",
     poweredByUrl: "https://openclaw.ai",
     copyright: "© 2026 Godínez.AI por Frutero",
+    builtByPre: "Construido por un",
+    builtBySuffix: "de Frutero",
   },
 };
+
+export type Content = typeof content;
