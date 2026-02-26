@@ -21,10 +21,10 @@ export const contentEn: Content = {
   },
 
   hero: {
-    headlinePre: "The assistant you",
-    headlineAccent: "delegate everything to",
+    headlinePre: "Your AI employee that",
+    headlineAccent: "never fails",
     subtitle:
-      "AI agents that learn how you work and handle everything that drains you. More affordable than a hire. More reliable than a tool.",
+      "An agent that learns, executes, and creates. Apps, workflows, content, clients — all delegated. More affordable than a team. Faster than any tool.",
     cta: "Join the waitlist",
     learnMore: "Learn more",
     socialProof: "on the waitlist",
@@ -152,14 +152,24 @@ export const contentEn: Content = {
     headlineAccent: "Godínez",
     items: [
       {
+        emoji: "🛠️",
+        title: "Build apps & websites",
+        description: "From MVP to full production site",
+      },
+      {
+        emoji: "⚙️",
+        title: "Automate workflows",
+        description: "Workflows that run themselves, without you",
+      },
+      {
         emoji: "💬",
         title: "Customer support",
-        description: "WhatsApp, Telegram, Email",
+        description: "WhatsApp, Telegram, Email, Studio",
       },
       {
         emoji: "📅",
-        title: "Calendar management",
-        description: "Organized schedule and appointments",
+        title: "Schedule management",
+        description: "Calendar and appointments organized",
       },
       {
         emoji: "📝",
@@ -169,27 +179,17 @@ export const contentEn: Content = {
       {
         emoji: "📊",
         title: "Reports & analytics",
-        description: "Clear data without the effort",
+        description: "Clear data without effort",
       },
       {
         emoji: "🧾",
-        title: "Invoicing",
+        title: "Invoicing & finance",
         description: "Automatic payment tracking",
-      },
-      {
-        emoji: "🔍",
-        title: "Market research",
-        description: "Competitive intelligence in an instant",
-      },
-      {
-        emoji: "📣",
-        title: "Digital marketing",
-        description: "Social media on autopilot",
       },
       {
         emoji: "🤝",
         title: "CRM & follow-up",
-        description: "No customer slips through the cracks",
+        description: "No client slips through the cracks",
       },
     ],
   },
@@ -277,27 +277,27 @@ export const contentEn: Content = {
     items: [
       {
         q: "What exactly is a Godínez?",
-        a: "A Godínez is a personalized AI agent that works for you 24/7. It learns from you, remembers previous conversations, and can handle clients, manage your schedule, create content and more — without you needing to be present.",
+        a: "A Godínez is a personalized AI agent that works for you 24/7. From your Studio at studio.godinez.ai, you can delegate full projects: build apps, websites, automated workflows, content, reports — and much more. It also handles your clients on WhatsApp, Telegram, and Email while you focus on what matters.",
       },
       {
         q: "Do I need to know how to code?",
-        a: "Not at all. Your Godínez is set up through a conversation, like explaining to a new hire how you work. No code, no technical setup.",
+        a: "Not at all. To get started, you fill out a quick form and in less than a minute you are already talking with your Godínez. For more advanced projects like building an app or automating a workflow, you describe what you need in plain language — your Godínez handles the execution.",
       },
       {
         q: "Which channels does it work on?",
-        a: "Depending on your plan: WhatsApp, Telegram, Email and more. Your Godínez lives where your clients live.",
+        a: "Your Godínez lives across multiple channels: your personal Studio at studio.godinez.ai (chat + projects + files), WhatsApp, Telegram, and Email. Always available, on whichever channel you prefer.",
       },
       {
-        q: "How is it different from ChatGPT or Copilot?",
-        a: "ChatGPT is a generic tool. Your Godínez is an agent personalized for your specific business — with long-term memory, integrated into your channels, and configured for your way of working.",
+        q: "What can my Godínez create?",
+        a: "The sky is the limit. Your Godínez can build functional apps and websites, automate workflows, generate reports, write content, manage clients and projects. It is like having a technical and creative team available 24/7.",
       },
       {
-        q: "How long does setup take?",
-        a: "Initial setup takes less than 30 minutes. Your Godínez learns and improves with every interaction.",
+        q: "How is it different from ChatGPT?",
+        a: "ChatGPT is a generic conversation tool. Your Godínez is an agent personalized for your business — with persistent memory of everything you build together, integrated into your channels, capable of executing full projects, and configured for your way of working.",
       },
       {
         q: "What happens to my data?",
-        a: "Your data is yours. We do not share it with third parties or use it to train models. Your Godínez lives in a private, isolated environment.",
+        a: "Your data is yours. Your Godínez lives in a private, isolated environment — we do not share your information with third parties or use it to train models.",
       },
     ],
   },

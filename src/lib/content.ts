@@ -20,10 +20,10 @@ export const content = {
   },
 
   hero: {
-    headlinePre: "El asistente al que le",
-    headlineAccent: "delegas todo",
+    headlinePre: "Tu empleado AI que",
+    headlineAccent: "nunca falla",
     subtitle:
-      "Agentes IA que aprenden de ti y hacen el trabajo que te drena. Más baratos que un intern. Más rápido que formar un equipo.",
+      "Un agente que aprende, ejecuta y crea. Apps, flujos, contenido, clientes — todo delegado. Más barato que un equipo. Más rápido que cualquier herramienta.",
     cta: "Únete a la lista de espera",
     learnMore: "Conoce más",
     socialProof: "en lista de espera",
@@ -150,9 +150,19 @@ export const content = {
     headlineAccent: "Godínez",
     items: [
       {
+        emoji: "🛠️",
+        title: "Crear apps y sitios web",
+        description: "Desde un MVP hasta un sitio completo",
+      },
+      {
+        emoji: "⚙️",
+        title: "Automatizar flujos",
+        description: "Workflows que corren solos, sin ti",
+      },
+      {
         emoji: "💬",
         title: "Atención al cliente",
-        description: "WhatsApp, Telegram, Email",
+        description: "WhatsApp, Telegram, Email, Studio",
       },
       {
         emoji: "📅",
@@ -171,18 +181,8 @@ export const content = {
       },
       {
         emoji: "🧾",
-        title: "Facturación",
+        title: "Facturación y finanzas",
         description: "Seguimiento de pagos automático",
-      },
-      {
-        emoji: "🔍",
-        title: "Investigación de mercado",
-        description: "Inteligencia competitiva al instante",
-      },
-      {
-        emoji: "📣",
-        title: "Marketing digital",
-        description: "Redes sociales en piloto automático",
       },
       {
         emoji: "🤝",
@@ -275,27 +275,27 @@ export const content = {
     items: [
       {
         q: "¿Qué es exactamente un Godínez?",
-        a: "Un Godínez es un agente de IA personalizado que trabaja para ti 24/7. Aprende de ti, recuerda el contexto de conversaciones anteriores, y puede atender clientes, gestionar tu agenda, crear contenido y más — todo sin que tú tengas que estar presente.",
+        a: "Un Godínez es un agente de IA personalizado que trabaja para ti 24/7. Desde tu Studio en studio.godinez.ai, puedes delegarle proyectos completos: crear apps, sitios web, flujos automatizados, contenido, reportes — y mucho más. También atiende a tus clientes en WhatsApp, Telegram y Email mientras tú haces lo que importa.",
       },
       {
         q: "¿Necesito saber programar para usarlo?",
-        a: "Para nada. Tu Godínez se configura en una conversación, como si le explicaras a un nuevo empleado cómo trabajas. Sin código, sin configuraciones técnicas.",
+        a: "No. Para empezar, llenas un formulario rápido y en menos de un minuto ya estás hablando con tu Godínez. Para proyectos más avanzados como crear una app o automatizar un flujo, le describes lo que necesitas en lenguaje natural — él lo ejecuta.",
       },
       {
         q: "¿En qué canales funciona?",
-        a: "Dependiendo de tu plan: WhatsApp, Telegram, Email y más. Tu Godínez vive donde viven tus clientes.",
+        a: "Tu Godínez vive en varios canales: tu Studio personal en studio.godinez.ai (chat + proyectos + archivos), WhatsApp, Telegram y Email. Siempre disponible, en el canal que prefieras.",
       },
       {
-        q: "¿Qué tan diferente es a ChatGPT o Copilot?",
-        a: "ChatGPT es una herramienta genérica. Tu Godínez es un agente personalizado para tu negocio específico — con memoria de largo plazo, integrado a tus canales, y configurado para tu forma de trabajar.",
+        q: "¿Qué puede crear mi Godínez?",
+        a: "El cielo es el límite. Tu Godínez puede crear apps y sitios web funcionales, automatizar flujos de trabajo, generar reportes, redactar contenido, gestionar clientes y proyectos. Es como tener un equipo técnico y creativo disponible 24/7.",
       },
       {
-        q: "¿Cuánto tiempo toma configurarlo?",
-        a: "El primer setup toma menos de 30 minutos. Tu Godínez aprende y mejora con cada interacción.",
+        q: "¿Qué tan diferente es a ChatGPT?",
+        a: "ChatGPT es una herramienta genérica de conversación. Tu Godínez es un agente personalizado para tu negocio — con memoria persistente de todo lo que hacen juntos, integrado a tus canales, con capacidad de ejecutar proyectos completos, y configurado para tu forma de trabajar.",
       },
       {
         q: "¿Qué pasa con mis datos?",
-        a: "Tus datos son tuyos. No los compartimos con terceros ni los usamos para entrenar modelos. Tu Godínez vive en un entorno privado y aislado.",
+        a: "Tus datos son tuyos. Tu Godínez vive en un entorno privado y aislado — no compartimos información con terceros ni la usamos para entrenar modelos.",
       },
     ],
   },
