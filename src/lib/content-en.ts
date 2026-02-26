@@ -24,7 +24,7 @@ export const contentEn: Content = {
     headlinePre: "The assistant you",
     headlineAccent: "delegate everything to",
     subtitle:
-      "AI agents that learn from you and do the work that drains you. Cheaper than an intern. Faster than building a team.",
+      "AI agents that learn how you work and handle everything that drains you. More affordable than a hire. More reliable than a tool.",
     cta: "Join the waitlist",
     learnMore: "Learn more",
     socialProof: "on the waitlist",
@@ -52,15 +52,16 @@ export const contentEn: Content = {
   },
 
   bridge: {
-    statement: "Imagine doing more, without scaling your effort and stress.",
-    headlinePre: "Reclaim what",
+    line1: "Imagine doing more, without scaling your effort and stress.",
+    headline: "Reclaim what",
     headlineAccent: "matters most",
-    withGodinez: "With your Godínez,",
-    canDoIt: "you can do it",
-    readyInPre: "Ready in minutes, no code, with the most advanced",
-    readyInAccent: "AI Skills",
-    readyInSuffix: "",
+    line2: "With your Godínez,",
+    line3: "you can do it",
+    subtext: "Ready in minutes, no code needed, with the most advanced",
+    subtextAccent: "AI Skills",
+    subtextSuffix: "",
     cta: "I want mine",
+    ctaHref: "#lista-de-espera",
   },
 
   whatIs: {
@@ -73,6 +74,8 @@ export const contentEn: Content = {
     descriptionHighlight2: "AI Agent",
     descriptionEnd:
       " that does the work that drains you so you can do the work that fulfills you. It handles customer service on WhatsApp, schedules appointments, generates reports, and answers emails. All in your language, 24/7, personalized.",
+    subtitle:
+      "A Godínez is an AI Agent that does the draining work so you can do the fulfilling work. Handles WhatsApp clients, schedules appointments, generates reports, replies to emails. All in your language, 24/7, personalized.",
     cards: [
       {
         title: "Always available",
@@ -269,9 +272,39 @@ export const contentEn: Content = {
     error: "Something went wrong. Please try again.",
   },
 
+  faq: {
+    headline: "Frequently asked questions",
+    items: [
+      {
+        q: "What exactly is a Godínez?",
+        a: "A Godínez is a personalized AI agent that works for you 24/7. It learns from you, remembers previous conversations, and can handle clients, manage your schedule, create content and more — without you needing to be present.",
+      },
+      {
+        q: "Do I need to know how to code?",
+        a: "Not at all. Your Godínez is set up through a conversation, like explaining to a new hire how you work. No code, no technical setup.",
+      },
+      {
+        q: "Which channels does it work on?",
+        a: "Depending on your plan: WhatsApp, Telegram, Email and more. Your Godínez lives where your clients live.",
+      },
+      {
+        q: "How is it different from ChatGPT or Copilot?",
+        a: "ChatGPT is a generic tool. Your Godínez is an agent personalized for your specific business — with long-term memory, integrated into your channels, and configured for your way of working.",
+      },
+      {
+        q: "How long does setup take?",
+        a: "Initial setup takes less than 30 minutes. Your Godínez learns and improves with every interaction.",
+      },
+      {
+        q: "What happens to my data?",
+        a: "Your data is yours. We do not share it with third parties or use it to train models. Your Godínez lives in a private, isolated environment.",
+      },
+    ],
+  },
+
   footer: {
     logo: "Godínez.AI",
-    tagline: "The assistant you delegate everything to",
+    tagline: "Your AI co-worker that never clocks out",
     links: [
       { label: "Terms", href: "/terms" },
       { label: "Privacy", href: "/privacy" },

@@ -6,6 +6,7 @@ import BridgeSection from "@/components/BridgeSection";
 import WhatIsSection from "@/components/WhatIsSection";
 import PricingSection from "@/components/PricingSection";
 import CapabilitiesSection from "@/components/CapabilitiesSection";
+import FAQSection from "@/components/FAQSection";
 import WaitlistForm from "@/components/WaitlistForm";
 import Footer from "@/components/Footer";
 
@@ -25,6 +26,7 @@ export default function HomePage({ fontVar }: HomePageProps) {
           <WhatIsSection />
           <PricingSection />
           <CapabilitiesSection />
+          <FAQSection />
           <WaitlistForm />
         </main>
         <Footer />

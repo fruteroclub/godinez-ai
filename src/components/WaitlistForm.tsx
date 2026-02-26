@@ -164,7 +164,7 @@ export default function WaitlistForm() {
             {content.waitlist.success}
           </p>
           <p className="text-white/50">
-            Te contactaremos pronto con novedades.
+            {content.waitlist.successFollowup}
           </p>
         </div>
       </AnimatedSection>
@@ -184,16 +184,15 @@ export default function WaitlistForm() {
       <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-center text-white mb-4">
-          Recupera{" "}
+          {content.waitlist.headlinePre}
           <span className="text-gold font-[family-name:var(--font-playfair)] italic font-black">
-            tu tiempo
+            {content.waitlist.headlineAccent}
           </span>
           <br />
-          Delega el resto
+          {content.waitlist.headlineSuffix}
         </h2>
         <p className="text-center text-white/50 mb-12 text-lg">
-          Tu Godínez se encarga de lo que te quita energía, para que tú hagas lo
-          que te llena.
+          {content.waitlist.subheadline}
         </p>
 
         {/* Form card */}
@@ -307,7 +306,7 @@ export default function WaitlistForm() {
                 htmlFor="tier"
                 className="block text-sm font-medium text-white/70 mb-2"
               >
-                Tier de interés
+                {fields.tier.label}
               </label>
               <select
                 id="tier"
@@ -315,10 +314,15 @@ export default function WaitlistForm() {
                 required
                 className="w-full pl-4 pr-10 py-3.5 rounded-xl bg-white/5 border border-white/10 focus:border-magenta focus:ring-2 focus:ring-magenta/20 outline-none transition-all text-white/30 appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%23ffffff%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22m6%208%204%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.5rem] bg-[right_0.5rem_center] bg-no-repeat"
               >
-                <option value="" className="bg-[#111111] text-white/30">Selecciona un tier</option>
-                <option value="becario" className="bg-[#111111] text-white">🌱 Becario</option>
-                <option value="asistente" className="bg-[#111111] text-white">⚡ Asistente</option>
-                <option value="agente" className="bg-[#111111] text-white">🚀 Agente</option>
+                {fields.tier.options.map((option) => (
+                  <option
+                    key={option.value}
+                    value={option.value}
+                    className="bg-[#111111] text-white"
+                  >
+                    {option.label}
+                  </option>
+                ))}
               </select>
             </div>
 
@@ -328,7 +332,7 @@ export default function WaitlistForm() {
                 htmlFor="industry"
                 className="block text-sm font-medium text-white/70 mb-2"
               >
-                Industria
+                {fields.industry.label}
               </label>
               <select
                 id="industry"
@@ -336,17 +340,15 @@ export default function WaitlistForm() {
                 required
                 className="w-full pl-4 pr-10 py-3.5 rounded-xl bg-white/5 border border-white/10 focus:border-magenta focus:ring-2 focus:ring-magenta/20 outline-none transition-all text-white/30 appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%23ffffff%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22m6%208%204%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.5rem] bg-[right_0.5rem_center] bg-no-repeat"
               >
-                <option value="" className="bg-[#111111] text-white/30">Selecciona tu industria</option>
-                <option value="finanzas" className="bg-[#111111] text-white">💰 Finanzas</option>
-                <option value="salud" className="bg-[#111111] text-white">🏥 Salud</option>
-                <option value="ventas" className="bg-[#111111] text-white">📈 Ventas</option>
-                <option value="founder" className="bg-[#111111] text-white">🚀 Founder</option>
-                <option value="estudiante" className="bg-[#111111] text-white">🎓 Estudiante</option>
-                <option value="remoto" className="bg-[#111111] text-white">🏠 Trabajo Remoto</option>
-                <option value="freelancer" className="bg-[#111111] text-white">🎯 Freelancer</option>
-                <option value="creativo" className="bg-[#111111] text-white">🎬 Creativo</option>
-                <option value="desarrollador" className="bg-[#111111] text-white">💻 Desarrollador</option>
-                <option value="administracion" className="bg-[#111111] text-white">📊 Administración</option>
+                {fields.industry.options.map((option) => (
+                  <option
+                    key={option.value}
+                    value={option.value}
+                    className="bg-[#111111] text-white"
+                  >
+                    {option.label}
+                  </option>
+                ))}
               </select>
             </div>
 
@@ -382,7 +384,7 @@ export default function WaitlistForm() {
                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                       />
                     </svg>
-                    Enviando...
+                    {content.waitlist.submitting}
                   </span>
                 ) : (
                   content.waitlist.submit

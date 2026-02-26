@@ -210,9 +210,9 @@ export default function CapabilitiesSection() {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-center text-white mb-16">
-          Qué puede hacer tu{" "}
+          {content.capabilities.headlinePre}
           <span className="text-violet font-[family-name:var(--font-playfair)] italic font-black">
-            Godínez
+            {content.capabilities.headlineAccent}
           </span>
         </h2>
 

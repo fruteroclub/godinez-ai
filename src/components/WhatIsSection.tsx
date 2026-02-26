@@ -158,18 +158,14 @@ export default function WhatIsSection() {
         {/* Header */}
         <div className="text-center mb-4">
           <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">
-            ¿Qué es un{" "}
+            {content.whatIs.headlinePre}
             <span className="text-violet font-[family-name:var(--font-playfair)] italic font-black">
-              Godínez
+              {content.whatIs.headlineAccent}
             </span>
-            ?
+            {content.whatIs.headlineSuffix}
           </h2>
           <p className="text-lg sm:text-xl text-white/75 max-w-3xl mx-auto leading-relaxed">
-            Un <span className="text-gold font-semibold">Godínez</span> es un{" "}
-            <span className="text-magenta font-semibold">Agente IA</span> que
-            hace el trabajo que te drena para que tú hagas el que te llena.
-            Atiende clientes por WhatsApp, agenda citas, genera reportes, y
-            responde emails. Todo en español, 24/7, personalizado.
+            {content.whatIs.subtitle}
           </p>
         </div>
         <div className="flex justify-center mb-8">
