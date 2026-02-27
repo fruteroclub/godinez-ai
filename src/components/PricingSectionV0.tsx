@@ -1,3 +1,4 @@
+// @ts-nocheck — Legacy 3-tier pricing component, kept for reference
 "use client";
 
 import { useContent } from "@/lib/i18n";

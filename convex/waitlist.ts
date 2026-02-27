@@ -1,6 +1,25 @@
 import { v } from "convex/values";
 import { mutation, query } from "./_generated/server";
 
+const tier = v.union(
+  v.literal("becario"),
+  v.literal("asistente"),
+  v.literal("agente"),
+);
+
+const industry = v.union(
+  v.literal("finanzas"),
+  v.literal("salud"),
+  v.literal("ventas"),
+  v.literal("founder"),
+  v.literal("estudiante"),
+  v.literal("remoto"),
+  v.literal("freelancer"),
+  v.literal("creativo"),
+  v.literal("desarrollador"),
+  v.literal("administracion"),
+);
+
 // Add a new waitlist entry
 export const add = mutation({
   args: {
@@ -9,8 +28,8 @@ export const add = mutation({
     company: v.optional(v.string()),
     tasks: v.optional(v.string()),
     teamSize: v.optional(v.string()),
-    tier: v.string(),
-    industry: v.string(),
+    tier,
+    industry,
     source: v.optional(v.string()),
   },
   handler: async (ctx, args) => {

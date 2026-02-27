@@ -131,8 +131,8 @@ export default function WaitlistForm() {
         company: (formData.get("company") as string) || undefined,
         tasks: (formData.get("tasks") as string) || undefined,
         teamSize: (formData.get("teamSize") as string) || undefined,
-        tier: formData.get("tier") as string,
-        industry: formData.get("industry") as string,
+        tier: formData.get("tier") as "becario" | "asistente" | "agente",
+        industry: formData.get("industry") as "finanzas" | "salud" | "ventas" | "founder" | "estudiante" | "remoto" | "freelancer" | "creativo" | "desarrollador" | "administracion",
         source: "landing-page",
       });
 

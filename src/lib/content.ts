@@ -103,7 +103,7 @@ export const content = {
     features: [
       "Acceso completo a tu Studio personal",
       "Chat con tu Godínez, 24/7",
-      "Proyectos, tareas y archivos ilimitados",
+      "Más que conversaciones — gestiona proyectos, asigna tareas y organiza mejor",
       "Crea apps, sitios web y flujos automatizados",
       "WhatsApp, Telegram y Email incluidos",
       "Memoria persistente — aprende de ti con el tiempo",

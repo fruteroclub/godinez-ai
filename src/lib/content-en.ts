@@ -21,8 +21,8 @@ export const contentEn: Content = {
   },
 
   hero: {
-    headlinePre: "Your AI employee that",
-    headlineAccent: "never fails",
+    headlinePre: "The assistant you",
+    headlineAccent: "delegate it all",
     subtitle:
       "An agent that learns, executes, and creates. Apps, workflows, content, clients — all delegated. More affordable than a team. Faster than any tool.",
     cta: "Join the waitlist",
@@ -105,7 +105,7 @@ export const contentEn: Content = {
     features: [
       "Full access to your personal Studio",
       "Chat with your Godínez, 24/7",
-      "Unlimited projects, tasks and files",
+      "More than conversations — manage projects, assign tasks, and stay organized",
       "Build apps, websites and automated workflows",
       "WhatsApp, Telegram and Email included",
       "Persistent memory — learns from you over time",

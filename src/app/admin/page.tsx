@@ -4,8 +4,6 @@ import { useState } from "react";
 import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 
-const ADMIN_PASSWORD = (process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "frutero2026").trim();
-
 interface WaitlistEntry {
   _id: string;
   _creationTime: number;
@@ -57,17 +55,32 @@ export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isChecking, setIsChecking] = useState(false);
 
   const waitlistEntries = useQuery(api.waitlist.list) as WaitlistEntry[] | undefined;
   const waitlistCount = useQuery(api.waitlist.count);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === ADMIN_PASSWORD) {
-      setIsAuthenticated(true);
-      setError("");
-    } else {
-      setError("Contraseña incorrecta");
+    setIsChecking(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/admin/auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
+
+      if (res.ok) {
+        setIsAuthenticated(true);
+      } else {
+        setError("Contraseña incorrecta");
+      }
+    } catch {
+      setError("Error de conexión");
+    } finally {
+      setIsChecking(false);
     }
   };
 
@@ -98,9 +111,10 @@ export default function AdminPage() {
 
             <button
               type="submit"
-              className="w-full bg-magenta hover:bg-magenta-dark text-white font-semibold py-3 rounded-full transition-all"
+              disabled={isChecking}
+              className="w-full bg-magenta hover:bg-magenta-dark text-white font-semibold py-3 rounded-full transition-all disabled:opacity-60"
             >
-              Entrar
+              {isChecking ? "Verificando..." : "Entrar"}
             </button>
           </form>
         </div>

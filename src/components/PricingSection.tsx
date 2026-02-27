@@ -43,7 +43,8 @@ export default function PricingSection() {
             {/* Price */}
             <div className='mb-8'>
               <div className='flex items-baseline justify-center gap-2 mb-2'>
-                <span className='text-6xl sm:text-7xl font-bold text-white'>49</span>
+                <span className='text-white/40 text-3xl font-medium mr-1'>$</span>
+                <span className='text-6xl sm:text-7xl font-bold text-white'>249</span>
                 <div className='text-left'>
                   <div className='text-magenta font-semibold'>MXN</div>
                   <div className='text-white/40 text-sm'>/mes</div>
