@@ -20,10 +20,10 @@ export const content = {
   },
 
   hero: {
-    headlinePre: "Tu empleado AI que",
-    headlineAccent: "nunca falla",
+    headlinePre: "El asistente al que le",
+    headlineAccent: "delegas todo",
     subtitle:
-      "Un agente que aprende, ejecuta y crea. Apps, flujos, contenido, clientes — todo delegado. Más barato que un equipo. Más rápido que cualquier herramienta.",
+      "Agentes IA que aprenden de ti y hacen el trabajo que te drena. Más baratos que un intern. Más rápido que formar un equipo.",
     cta: "Únete a la lista de espera",
     learnMore: "Conoce más",
     socialProof: "en lista de espera",
@@ -96,53 +96,21 @@ export const content = {
   },
 
   pricing: {
-    headlinePrefix: "Menos que un ",
-    headlineAccent: "café diario...",
-    headlineSuffix: " bueno, casi",
-    note: "Todos los precios en MXN. IVA incluido.",
-    ctaText: "Empezar",
-    popularBadge: "Popular",
-    plans: [
-      {
-        name: "Becario",
-        price: "$1,999",
-        period: "MXN/mes",
-        idealFor: "Ideal para: freelancers, negocios pequeños",
-        features: [
-          "1 canal de comunicación",
-          "Tareas básicas: responder mensajes, agendar, buscar info",
-          "Horario de oficina (9am-6pm)",
-        ],
-        tagline: "Como un becario, pero que sí trabaja",
-        popular: false,
-      },
-      {
-        name: "Asistente",
-        price: "$3,499",
-        period: "MXN/mes",
-        idealFor: "Ideal para: PyMEs, equipos en crecimiento",
-        features: [
-          "Multi-canal (WhatsApp + Email + más)",
-          "Tareas avanzadas: reportes, seguimiento de clientes, contenido",
-          "Disponible 18 horas",
-        ],
-        tagline: "Tu mano derecha que nunca pide vacaciones",
-        popular: true,
-      },
-      {
-        name: "Agente",
-        price: "$9,999",
-        period: "MXN/mes",
-        idealFor: "Ideal para: empresas, founders, power users",
-        features: [
-          "Todos los canales",
-          "Autonomía total: toma decisiones, ejecuta workflows complejos",
-          "24/7 sin límites",
-        ],
-        tagline: "Prácticamente un co-founder que no pide equity",
-        popular: false,
-      },
+    headline: "Planes",
+    subheadline: "Mejor que ChatGPT. Con menor precio.",
+    badge: "Precio de lanzamiento",
+    priceNote: "Precio de lanzamiento — sube pronto",
+    features: [
+      "Acceso completo a tu Studio personal",
+      "Chat con tu Godínez, 24/7",
+      "Proyectos, tareas y archivos ilimitados",
+      "Crea apps, sitios web y flujos automatizados",
+      "WhatsApp, Telegram y Email incluidos",
+      "Memoria persistente — aprende de ti con el tiempo",
     ],
+    cta: "Quiero el mío",
+    tagline: "Más barato que un café al día. Más poderoso que un equipo.",
+    note: "Todos los precios en MXN. IVA incluido.",
   },
 
   capabilities: {
