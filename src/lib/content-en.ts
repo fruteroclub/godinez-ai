@@ -21,8 +21,8 @@ export const contentEn: Content = {
   },
 
   hero: {
-    headlinePre: "Your AI employee that",
-    headlineAccent: "never fails",
+    headlinePre: "The assistant you",
+    headlineAccent: "delegate it all",
     subtitle:
       "An agent that learns, executes, and creates. Apps, workflows, content, clients — all delegated. More affordable than a team. Faster than any tool.",
     cta: "Join the waitlist",
@@ -98,53 +98,21 @@ export const contentEn: Content = {
   },
 
   pricing: {
-    headlinePrefix: "Less than a ",
-    headlineAccent: "daily coffee...",
-    headlineSuffix: " well, almost",
-    note: "All prices in MXN. Tax included.",
-    ctaText: "Get started",
-    popularBadge: "Popular",
-    plans: [
-      {
-        name: "Intern",
-        price: "$1,999",
-        period: "MXN/mo",
-        idealFor: "Ideal for: freelancers, small businesses",
-        features: [
-          "1 communication channel",
-          "Basic tasks: reply to messages, schedule, search info",
-          "Office hours (9am-6pm)",
-        ],
-        tagline: "Like an intern, but one that actually works",
-        popular: false,
-      },
-      {
-        name: "Assistant",
-        price: "$3,499",
-        period: "MXN/mo",
-        idealFor: "Ideal for: SMBs, growing teams",
-        features: [
-          "Multi-channel (WhatsApp + Email + more)",
-          "Advanced tasks: reports, client follow-up, content",
-          "Available 18 hours",
-        ],
-        tagline: "Your right hand that never asks for vacation",
-        popular: true,
-      },
-      {
-        name: "Agent",
-        price: "$9,999",
-        period: "MXN/mo",
-        idealFor: "Ideal for: companies, founders, power users",
-        features: [
-          "All channels",
-          "Full autonomy: makes decisions, runs complex workflows",
-          "24/7 unlimited",
-        ],
-        tagline: "Basically a co-founder that doesn't ask for equity",
-        popular: false,
-      },
+    headline: "Plans",
+    subheadline: "Better than ChatGPT. At a lower price.",
+    badge: "Launch price",
+    priceNote: "Launch price — going up soon",
+    features: [
+      "Full access to your personal Studio",
+      "Chat with your Godínez, 24/7",
+      "More than conversations — manage projects, assign tasks, and stay organized",
+      "Build apps, websites and automated workflows",
+      "WhatsApp, Telegram and Email included",
+      "Persistent memory — learns from you over time",
     ],
+    cta: "I want mine",
+    tagline: "Less than a coffee a day. More powerful than a team.",
+    note: "All prices in MXN. VAT included.",
   },
 
   capabilities: {

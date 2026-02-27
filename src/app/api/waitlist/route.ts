@@ -1,53 +1,51 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ConvexHttpClient } from "convex/browser";
 
-// Initialize Convex client if configured
 const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL;
-const convex = convexUrl ? new ConvexHttpClient(convexUrl) : null;
 
-interface WaitlistEntry {
-  name: string;
-  email: string;
-  company?: string;
-  tasks?: string;
-  teamSize?: string;
-  tier: string;
-  industry: string;
-  source?: string;
+if (!convexUrl) {
+  throw new Error("NEXT_PUBLIC_CONVEX_URL is not configured");
 }
+
+const convex = new ConvexHttpClient(convexUrl);
+
+const VALID_TIERS = ["becario", "asistente", "agente"] as const;
+const VALID_INDUSTRIES = [
+  "finanzas", "salud", "ventas", "founder", "estudiante",
+  "remoto", "freelancer", "creativo", "desarrollador", "administracion",
+] as const;
+
+type Tier = (typeof VALID_TIERS)[number];
+type Industry = (typeof VALID_INDUSTRIES)[number];
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
-    const entry: WaitlistEntry = {
-      name: body.name || "",
-      email: body.email || "",
-      company: body.company || undefined,
-      tasks: body.tasks || undefined,
-      teamSize: body.teamSize || undefined,
-      tier: body.tier || "becario",
-      industry: body.industry || "remoto",
-      source: "landing",
-    };
+    const name: string = body.name || "";
+    const email: string = body.email || "";
+    const tier = VALID_TIERS.includes(body.tier) ? (body.tier as Tier) : "becario";
+    const industry = VALID_INDUSTRIES.includes(body.industry) ? (body.industry as Industry) : "remoto";
 
-    if (!entry.name || !entry.email || !entry.tier || !entry.industry) {
+    if (!name || !email) {
       return NextResponse.json(
-        { error: "Nombre, email, tier e industria son requeridos" },
+        { error: "Nombre y email son requeridos" },
         { status: 400 }
       );
     }
 
-    if (convex) {
-      // Use Convex
-      const { api } = await import("../../../../convex/_generated/api");
-      const result = await convex.mutation(api.waitlist.add, entry);
-      return NextResponse.json(result);
-    } else {
-      // Fallback: log to console (Vercel logs)
-      console.log("[WAITLIST]", JSON.stringify(entry));
-      return NextResponse.json({ success: true, fallback: true });
-    }
+    const { api } = await import("../../../../convex/_generated/api");
+    const result = await convex.mutation(api.waitlist.add, {
+      name,
+      email,
+      company: body.company || undefined,
+      tasks: body.tasks || undefined,
+      teamSize: body.teamSize || undefined,
+      tier,
+      industry,
+      source: "landing",
+    });
+    return NextResponse.json(result);
   } catch (error) {
     console.error("Waitlist error:", error);
     return NextResponse.json(
