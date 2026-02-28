@@ -211,9 +211,10 @@ export default function CapabilitiesSection() {
         {/* Header */}
         <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-center text-white mb-16">
           {content.capabilities.headlinePre}
-          <span className="text-violet font-[family-name:var(--font-playfair)] italic font-black">
+          <span className="text-magenta font-[family-name:var(--font-playfair)] italic font-black">
             {content.capabilities.headlineAccent}
           </span>
+          {content.capabilities.headlineSuffix}
         </h2>
 
         {/* Capabilities grid */}

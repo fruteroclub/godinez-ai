@@ -116,6 +116,7 @@ export const content = {
   capabilities: {
     headlinePre: "Qué puede hacer tu ",
     headlineAccent: "Godínez",
+    headlineSuffix: "",
     items: [
       {
         emoji: "🛠️",
@@ -156,6 +157,32 @@ export const content = {
         emoji: "🤝",
         title: "CRM y seguimiento",
         description: "Ningún cliente se te escapa",
+      },
+    ],
+  },
+
+  howItWorks: {
+    headlinePre: "Cómo funciona ",
+    headlineAccent: "Godínez.AI",
+    headlineSuffix: "",
+    steps: [
+      {
+        number: "01",
+        title: "Regístrate en la lista de espera",
+        description:
+          "Llena el formulario con tu info básica y te avisamos cuando tu Godínez esté listo.",
+      },
+      {
+        number: "02",
+        title: "Configura tu Godínez",
+        description:
+          "Dile quién eres, qué hace tu negocio, y qué quieres delegar. Él aprende de ti desde el primer día.",
+      },
+      {
+        number: "03",
+        title: "Delega y crece",
+        description:
+          "Tu Godínez trabaja 24/7 — atiende clientes, crea contenido, automatiza flujos, y más. Tú te enfocas en lo que importa.",
       },
     ],
   },

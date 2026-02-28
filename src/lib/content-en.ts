@@ -116,8 +116,9 @@ export const contentEn: Content = {
   },
 
   capabilities: {
-    headlinePre: "What your ",
+    headlinePre: "What can your ",
     headlineAccent: "Godínez",
+    headlineSuffix: " do?",
     items: [
       {
         emoji: "🛠️",
@@ -158,6 +159,32 @@ export const contentEn: Content = {
         emoji: "🤝",
         title: "CRM & follow-up",
         description: "No client slips through the cracks",
+      },
+    ],
+  },
+
+  howItWorks: {
+    headlinePre: "How does ",
+    headlineAccent: "Godínez.AI",
+    headlineSuffix: " work?",
+    steps: [
+      {
+        number: "01",
+        title: "Sign up for the waitlist",
+        description:
+          "Fill out the form with your basic info and we'll let you know when your Godínez is ready.",
+      },
+      {
+        number: "02",
+        title: "Configure your Godínez",
+        description:
+          "Tell it who you are, what your business does, and what you want to delegate. It learns from you from day one.",
+      },
+      {
+        number: "03",
+        title: "Delegate and grow",
+        description:
+          "Your Godínez works 24/7 — handles clients, creates content, automates workflows, and more. You focus on what matters.",
       },
     ],
   },
@@ -260,7 +287,7 @@ export const contentEn: Content = {
 
   footer: {
     logo: "Godínez.AI",
-    tagline: "Your AI co-worker that never clocks out",
+    tagline: "The assistant you delegate it all",
     links: [
       { label: "Terms", href: "/terms" },
       { label: "Privacy", href: "/privacy" },
