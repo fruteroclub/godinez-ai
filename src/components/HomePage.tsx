@@ -4,8 +4,9 @@ import Hero from "@/components/Hero";
 import ProblemSection from "@/components/ProblemSection";
 import BridgeSection from "@/components/BridgeSection";
 import WhatIsSection from "@/components/WhatIsSection";
-import PricingSection from "@/components/PricingSection";
 import CapabilitiesSection from "@/components/CapabilitiesSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
 import WaitlistForm from "@/components/WaitlistForm";
 import Footer from "@/components/Footer";
@@ -24,8 +25,9 @@ export default function HomePage({ fontVar }: HomePageProps) {
           <ProblemSection />
           <BridgeSection />
           <WhatIsSection />
-          <PricingSection />
           <CapabilitiesSection />
+          <HowItWorksSection />
+          <PricingSection />
           <FAQSection />
           <WaitlistForm />
         </main>

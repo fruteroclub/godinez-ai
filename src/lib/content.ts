@@ -116,6 +116,7 @@ export const content = {
   capabilities: {
     headlinePre: "Qué puede hacer tu ",
     headlineAccent: "Godínez",
+    headlineSuffix: "",
     items: [
       {
         emoji: "🛠️",
@@ -160,6 +161,39 @@ export const content = {
     ],
   },
 
+  howItWorks: {
+    headlinePre: "Tu agente listo en ",
+    headlineAccent: "3 minutos",
+    headlineSuffix: "",
+    subtitle: "Sin código. Sin configuración técnica. Solo responde unas preguntas y tu Godínez empieza a trabajar.",
+    steps: [
+      {
+        number: "01",
+        title: "Cuéntanos sobre ti",
+        description:
+          "Tu nombre, tu negocio, tu rol. En 30 segundos ya sabemos cómo ayudarte.",
+      },
+      {
+        number: "02",
+        title: "Elige qué quieres delegar",
+        description:
+          "¿Vender más? ¿Automatizar lo repetitivo? ¿Crear contenido? Selecciona y listo.",
+      },
+      {
+        number: "03",
+        title: "Personaliza tu agente",
+        description:
+          "Dale nombre y personalidad — profesional, amigable, creativo o técnico. Tú decides.",
+      },
+      {
+        number: "04",
+        title: "Activa y delega",
+        description:
+          "Un clic y tu Godínez está vivo. Te saluda, propone su primer proyecto, y empieza a trabajar.",
+      },
+    ],
+  },
+
   testimonials: {
     headlinePre: "Otros ya ",
     headlineAccent: "lo lograron",
@@ -191,8 +225,21 @@ export const content = {
         placeholder: "Nombre de tu empresa",
       },
       tasks: {
-        label: "¿Qué tareas te gustaría automatizar?",
+        label: "¿Qué te gustaría delegar?",
         placeholder: "Cuéntanos qué te quita más tiempo...",
+      },
+      role: {
+        label: "¿Cuál es tu rol?",
+        options: [
+          { value: "", label: "Selecciona tu rol" },
+          { value: "founder", label: "🚀 Fundador/CEO" },
+          { value: "marketing", label: "📣 Marketing" },
+          { value: "sales", label: "💼 Ventas" },
+          { value: "operations", label: "⚙️ Operaciones" },
+          { value: "tech", label: "💻 Tecnología" },
+          { value: "support", label: "🎧 Soporte" },
+          { value: "other", label: "🧩 Otro" },
+        ],
       },
       teamSize: {
         label: "¿Cuántas personas hay en tu equipo?",
@@ -202,31 +249,6 @@ export const content = {
           { value: "2-5", label: "2-5" },
           { value: "6-20", label: "6-20" },
           { value: "20+", label: "20+" },
-        ],
-      },
-      tier: {
-        label: "Tier de interés",
-        options: [
-          { value: "", label: "Selecciona un tier" },
-          { value: "becario", label: "🌱 Becario" },
-          { value: "asistente", label: "⚡ Asistente" },
-          { value: "agente", label: "🚀 Agente" },
-        ],
-      },
-      industry: {
-        label: "Industria",
-        options: [
-          { value: "", label: "Selecciona tu industria" },
-          { value: "finanzas", label: "💰 Finanzas" },
-          { value: "salud", label: "🏥 Salud" },
-          { value: "ventas", label: "📈 Ventas" },
-          { value: "founder", label: "🚀 Founder" },
-          { value: "estudiante", label: "🎓 Estudiante" },
-          { value: "remoto", label: "🏠 Trabajo Remoto" },
-          { value: "freelancer", label: "🎯 Freelancer" },
-          { value: "creativo", label: "🎬 Creativo" },
-          { value: "desarrollador", label: "💻 Desarrollador" },
-          { value: "administracion", label: "📊 Administración" },
         ],
       },
     },

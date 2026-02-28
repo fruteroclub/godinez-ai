@@ -131,8 +131,7 @@ export default function WaitlistForm() {
         company: (formData.get("company") as string) || undefined,
         tasks: (formData.get("tasks") as string) || undefined,
         teamSize: (formData.get("teamSize") as string) || undefined,
-        tier: formData.get("tier") as "becario" | "asistente" | "agente",
-        industry: formData.get("industry") as "finanzas" | "salud" | "ventas" | "founder" | "estudiante" | "remoto" | "freelancer" | "creativo" | "desarrollador" | "administracion",
+        role: (formData.get("role") as string) || undefined,
         source: "landing-page",
       });
 
@@ -300,47 +299,21 @@ export default function WaitlistForm() {
               </select>
             </div>
 
-            {/* Tier */}
+            {/* Role */}
             <div>
               <label
-                htmlFor="tier"
+                htmlFor="role"
                 className="block text-sm font-medium text-white/70 mb-2"
               >
-                {fields.tier.label}
+                {fields.role.label}
               </label>
               <select
-                id="tier"
-                name="tier"
+                id="role"
+                name="role"
                 required
                 className="w-full pl-4 pr-10 py-3.5 rounded-xl bg-white/5 border border-white/10 focus:border-magenta focus:ring-2 focus:ring-magenta/20 outline-none transition-all text-white/30 appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%23ffffff%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22m6%208%204%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.5rem] bg-[right_0.5rem_center] bg-no-repeat"
               >
-                {fields.tier.options.map((option) => (
-                  <option
-                    key={option.value}
-                    value={option.value}
-                    className="bg-[#111111] text-white"
-                  >
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Industry */}
-            <div>
-              <label
-                htmlFor="industry"
-                className="block text-sm font-medium text-white/70 mb-2"
-              >
-                {fields.industry.label}
-              </label>
-              <select
-                id="industry"
-                name="industry"
-                required
-                className="w-full pl-4 pr-10 py-3.5 rounded-xl bg-white/5 border border-white/10 focus:border-magenta focus:ring-2 focus:ring-magenta/20 outline-none transition-all text-white/30 appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%23ffffff%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22m6%208%204%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.5rem] bg-[right_0.5rem_center] bg-no-repeat"
-              >
-                {fields.industry.options.map((option) => (
+                {fields.role.options.map((option) => (
                   <option
                     key={option.value}
                     value={option.value}

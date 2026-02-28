@@ -116,8 +116,9 @@ export const contentEn: Content = {
   },
 
   capabilities: {
-    headlinePre: "What your ",
+    headlinePre: "What can your ",
     headlineAccent: "Godínez",
+    headlineSuffix: " do?",
     items: [
       {
         emoji: "🛠️",
@@ -162,6 +163,39 @@ export const contentEn: Content = {
     ],
   },
 
+  howItWorks: {
+    headlinePre: "Your agent ready in ",
+    headlineAccent: "3 minutes",
+    headlineSuffix: "",
+    subtitle: "No code. No technical setup. Just answer a few questions and your Godínez starts working.",
+    steps: [
+      {
+        number: "01",
+        title: "Tell us about yourself",
+        description:
+          "Your name, your business, your role. In 30 seconds we already know how to help you.",
+      },
+      {
+        number: "02",
+        title: "Choose what to delegate",
+        description:
+          "Sell more? Automate the repetitive stuff? Create content? Select and done.",
+      },
+      {
+        number: "03",
+        title: "Personalize your agent",
+        description:
+          "Give it a name and personality — professional, friendly, creative, or technical. You decide.",
+      },
+      {
+        number: "04",
+        title: "Activate and delegate",
+        description:
+          "One click and your Godínez is live. It greets you, proposes its first project, and gets to work.",
+      },
+    ],
+  },
+
   testimonials: {
     headlinePre: "Others already ",
     headlineAccent: "made it happen",
@@ -193,8 +227,21 @@ export const contentEn: Content = {
         placeholder: "Your company name",
       },
       tasks: {
-        label: "What tasks would you like to automate?",
+        label: "What would you like to delegate?",
         placeholder: "Tell us what takes up most of your time...",
+      },
+      role: {
+        label: "What's your role?",
+        options: [
+          { value: "", label: "Select your role" },
+          { value: "founder", label: "🚀 Founder/CEO" },
+          { value: "marketing", label: "📣 Marketing" },
+          { value: "sales", label: "💼 Sales" },
+          { value: "operations", label: "⚙️ Operations" },
+          { value: "tech", label: "💻 Technology" },
+          { value: "support", label: "🎧 Support" },
+          { value: "other", label: "🧩 Other" },
+        ],
       },
       teamSize: {
         label: "How many people are on your team?",
@@ -204,31 +251,6 @@ export const contentEn: Content = {
           { value: "2-5", label: "2-5" },
           { value: "6-20", label: "6-20" },
           { value: "20+", label: "20+" },
-        ],
-      },
-      tier: {
-        label: "Tier of interest",
-        options: [
-          { value: "", label: "Select a tier" },
-          { value: "becario", label: "🌱 Intern" },
-          { value: "asistente", label: "⚡ Assistant" },
-          { value: "agente", label: "🚀 Agent" },
-        ],
-      },
-      industry: {
-        label: "Industry",
-        options: [
-          { value: "", label: "Select your industry" },
-          { value: "finanzas", label: "💰 Finance" },
-          { value: "salud", label: "🏥 Healthcare" },
-          { value: "ventas", label: "📈 Sales" },
-          { value: "founder", label: "🚀 Founder" },
-          { value: "estudiante", label: "🎓 Student" },
-          { value: "remoto", label: "🏠 Remote Work" },
-          { value: "freelancer", label: "🎯 Freelancer" },
-          { value: "creativo", label: "🎬 Creative" },
-          { value: "desarrollador", label: "💻 Developer" },
-          { value: "administracion", label: "📊 Administration" },
         ],
       },
     },
@@ -272,7 +294,7 @@ export const contentEn: Content = {
 
   footer: {
     logo: "Godínez.AI",
-    tagline: "Your AI co-worker that never clocks out",
+    tagline: "The assistant you delegate it all",
     links: [
       { label: "Terms", href: "/terms" },
       { label: "Privacy", href: "/privacy" },

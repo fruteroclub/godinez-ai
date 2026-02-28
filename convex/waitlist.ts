@@ -1,25 +1,6 @@
 import { v } from "convex/values";
 import { mutation, query } from "./_generated/server";
 
-const tier = v.union(
-  v.literal("becario"),
-  v.literal("asistente"),
-  v.literal("agente"),
-);
-
-const industry = v.union(
-  v.literal("finanzas"),
-  v.literal("salud"),
-  v.literal("ventas"),
-  v.literal("founder"),
-  v.literal("estudiante"),
-  v.literal("remoto"),
-  v.literal("freelancer"),
-  v.literal("creativo"),
-  v.literal("desarrollador"),
-  v.literal("administracion"),
-);
-
 // Add a new waitlist entry
 export const add = mutation({
   args: {
@@ -28,8 +9,7 @@ export const add = mutation({
     company: v.optional(v.string()),
     tasks: v.optional(v.string()),
     teamSize: v.optional(v.string()),
-    tier,
-    industry,
+    role: v.optional(v.string()),
     source: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
@@ -46,8 +26,7 @@ export const add = mutation({
         company: args.company,
         tasks: args.tasks,
         teamSize: args.teamSize,
-        tier: args.tier,
-        industry: args.industry,
+        role: args.role,
         source: args.source,
       });
       return { success: true, updated: true, id: existing._id };
@@ -60,8 +39,7 @@ export const add = mutation({
       company: args.company,
       tasks: args.tasks,
       teamSize: args.teamSize,
-      tier: args.tier,
-      industry: args.industry,
+      role: args.role,
       source: args.source,
       createdAt: Date.now(),
     });
@@ -103,7 +81,7 @@ export const backfillDefaults = mutation({
 
     for (const entry of entries) {
       const updates: Record<string, string> = {};
-      
+
       if (!entry.tier && args.defaultTier) {
         updates.tier = args.defaultTier;
       }
