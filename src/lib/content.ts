@@ -99,6 +99,9 @@ export const content = {
     headline: "Planes",
     subheadline: "Mejor que ChatGPT. Con menor precio.",
     badge: "Precio de lanzamiento",
+    price: "249",
+    currency: "MXN",
+    period: "/mes",
     priceNote: "Precio de lanzamiento — sube pronto",
     features: [
       "Acceso completo a tu Studio personal",

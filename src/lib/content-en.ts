@@ -101,6 +101,9 @@ export const contentEn: Content = {
     headline: "Plans",
     subheadline: "Better than ChatGPT. At a lower price.",
     badge: "Launch price",
+    price: "15",
+    currency: "USD",
+    period: "/mo",
     priceNote: "Launch price — going up soon",
     features: [
       "Full access to your personal Studio",
@@ -112,7 +115,7 @@ export const contentEn: Content = {
     ],
     cta: "I want mine",
     tagline: "Less than a coffee a day. More powerful than a team.",
-    note: "All prices in MXN. VAT included.",
+    note: "All prices in USD.",
   },
 
   capabilities: {
