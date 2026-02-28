@@ -175,8 +175,21 @@ export const content = {
         placeholder: "Nombre de tu empresa",
       },
       tasks: {
-        label: "¿Qué tareas te gustaría automatizar?",
+        label: "¿Qué te gustaría delegar?",
         placeholder: "Cuéntanos qué te quita más tiempo...",
+      },
+      role: {
+        label: "¿Cuál es tu rol?",
+        options: [
+          { value: "", label: "Selecciona tu rol" },
+          { value: "founder", label: "🚀 Fundador/CEO" },
+          { value: "marketing", label: "📣 Marketing" },
+          { value: "sales", label: "💼 Ventas" },
+          { value: "operations", label: "⚙️ Operaciones" },
+          { value: "tech", label: "💻 Tecnología" },
+          { value: "support", label: "🎧 Soporte" },
+          { value: "other", label: "🧩 Otro" },
+        ],
       },
       teamSize: {
         label: "¿Cuántas personas hay en tu equipo?",

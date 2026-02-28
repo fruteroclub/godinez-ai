@@ -9,8 +9,7 @@ export const add = mutation({
     company: v.optional(v.string()),
     tasks: v.optional(v.string()),
     teamSize: v.optional(v.string()),
-    tier: v.string(),
-    industry: v.string(),
+    role: v.optional(v.string()),
     source: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
@@ -27,8 +26,7 @@ export const add = mutation({
         company: args.company,
         tasks: args.tasks,
         teamSize: args.teamSize,
-        tier: args.tier,
-        industry: args.industry,
+        role: args.role,
         source: args.source,
       });
       return { success: true, updated: true, id: existing._id };
@@ -41,8 +39,7 @@ export const add = mutation({
       company: args.company,
       tasks: args.tasks,
       teamSize: args.teamSize,
-      tier: args.tier,
-      industry: args.industry,
+      role: args.role,
       source: args.source,
       createdAt: Date.now(),
     });

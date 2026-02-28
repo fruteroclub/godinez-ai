@@ -14,43 +14,22 @@ interface WaitlistEntry {
   company?: string;
   tasks?: string;
   teamSize?: string;
-  tier: string;
-  industry: string;
+  role?: string;
+  // legacy fields
+  tier?: string;
+  industry?: string;
   source?: string;
   createdAt: number;
 }
 
-const tierLabels: Record<string, string> = {
-  becario: "🌱 Becario",
-  asistente: "⚡ Asistente",
-  agente: "🚀 Agente",
-  // legacy
-  intern: "🌱 Becario",
-  assistant: "⚡ Asistente",
-  agent: "🚀 Agente",
-};
-
-const industryLabels: Record<string, string> = {
-  finanzas: "💰 Finanzas",
-  salud: "🏥 Salud",
-  ventas: "📈 Ventas",
-  founder: "🚀 Founder",
-  estudiante: "🎓 Estudiante",
-  remoto: "🏠 Trabajo Remoto",
-  freelancer: "🎯 Freelancer",
-  creativo: "🎬 Creativo",
-  desarrollador: "💻 Desarrollador",
-  administracion: "📊 Administración",
-  // legacy values
-  developers: "💻 Desarrollador",
-  remote: "🏠 Trabajo Remoto",
-  creators: "🎬 Creativo",
-  realestate: "🏢 Real Estate",
-  freelancers: "🎯 Freelancer",
-  sales: "📈 Ventas",
-  legal: "⚖️ Legal",
-  consulting: "🧩 Consultoría",
+const roleLabels: Record<string, string> = {
+  founder: "🚀 Fundador/CEO",
   marketing: "📣 Marketing",
+  sales: "💼 Ventas",
+  operations: "⚙️ Operaciones",
+  tech: "💻 Tecnología",
+  support: "🎧 Soporte",
+  other: "🧩 Otro",
 };
 
 export default function AdminPage() {
@@ -147,15 +126,15 @@ export default function AdminPage() {
             </p>
           </div>
           <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-            <p className="text-white/50 text-sm">🌱 Becario</p>
-            <p className="text-2xl font-bold text-green-400">
-              {waitlistEntries?.filter(e => e.tier === "becario" || e.tier === "intern").length ?? 0}
+            <p className="text-white/50 text-sm">🚀 Founders</p>
+            <p className="text-2xl font-bold text-magenta">
+              {waitlistEntries?.filter(e => e.role === "founder").length ?? 0}
             </p>
           </div>
           <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-            <p className="text-white/50 text-sm">🚀 Agente</p>
+            <p className="text-white/50 text-sm">💻 Tech</p>
             <p className="text-2xl font-bold text-violet">
-              {waitlistEntries?.filter(e => e.tier === "agente" || e.tier === "agent").length ?? 0}
+              {waitlistEntries?.filter(e => e.role === "tech").length ?? 0}
             </p>
           </div>
         </div>
@@ -168,8 +147,7 @@ export default function AdminPage() {
                 <tr className="border-b border-white/10">
                   <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Nombre</th>
                   <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Email</th>
-                  <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Tier</th>
-                  <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Industria</th>
+                  <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Rol</th>
                   <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Empresa</th>
                   <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Fecha</th>
                 </tr>
@@ -179,8 +157,7 @@ export default function AdminPage() {
                   <tr key={entry._id} className="border-b border-white/5 hover:bg-white/5">
                     <td className="px-4 py-3 text-white">{entry.name}</td>
                     <td className="px-4 py-3 text-white/70">{entry.email}</td>
-                    <td className="px-4 py-3 text-white/70">{tierLabels[entry.tier] || entry.tier || "—"}</td>
-                    <td className="px-4 py-3 text-white/70">{industryLabels[entry.industry] || entry.industry || "—"}</td>
+                    <td className="px-4 py-3 text-white/70">{entry.role ? (roleLabels[entry.role] || entry.role) : "—"}</td>
                     <td className="px-4 py-3 text-white/50">{entry.company || "—"}</td>
                     <td className="px-4 py-3 text-white/50 text-sm">
                       {new Date(entry.createdAt).toLocaleDateString("es-MX", {
@@ -193,7 +170,7 @@ export default function AdminPage() {
                 ))}
                 {(!waitlistEntries || waitlistEntries.length === 0) && (
                   <tr>
-                    <td colSpan={6} className="px-4 py-8 text-center text-white/30">
+                    <td colSpan={5} className="px-4 py-8 text-center text-white/30">
                       No hay registros aún
                     </td>
                   </tr>

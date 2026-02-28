@@ -8,13 +8,14 @@ export default defineSchema({
     company: v.optional(v.string()),
     tasks: v.optional(v.string()),
     teamSize: v.optional(v.string()),
-    tier: v.string(), // "becario" | "asistente" | "agente"
-    industry: v.string(), // "finanzas" | "salud" | "ventas" | "founder" | "estudiante" | "remoto" | "freelancer" | "creativo" | "desarrollador" | "administracion"
+    role: v.optional(v.string()), // "founder" | "marketing" | "sales" | "operations" | "tech" | "support" | "other"
+    // legacy fields (kept for existing data)
+    tier: v.optional(v.string()),
+    industry: v.optional(v.string()),
     createdAt: v.number(),
     source: v.optional(v.string()),
   })
     .index("by_email", ["email"])
     .index("by_createdAt", ["createdAt"])
-    .index("by_tier", ["tier"])
-    .index("by_industry", ["industry"]),
+    .index("by_role", ["role"]),
 });
