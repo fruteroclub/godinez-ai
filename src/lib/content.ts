@@ -26,8 +26,8 @@ export const content = {
     logo: "Godínez.AI",
     links: [
       { label: "Qué es", href: `#${sectionIds.whatIs}` },
-      { label: "Planes", href: `#${sectionIds.pricing}` },
       { label: "Capacidades", href: `#${sectionIds.capabilities}` },
+      { label: "Planes", href: `#${sectionIds.pricing}` },
       { label: "Lista de Espera", href: `#${sectionIds.waitlist}` },
     ],
   },
