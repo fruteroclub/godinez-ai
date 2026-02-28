@@ -2,6 +2,19 @@
 // Spanish (es) — primary language
 // English translations: content-en.ts
 
+// Stable section IDs — shared across all locales.
+// Used for both HTML id attributes and anchor hrefs.
+// NEVER translate these — add new entries here when adding sections.
+export const sectionIds = {
+  whatIs: "que-es",
+  capabilities: "capacidades",
+  howItWorks: "como-funciona",
+  pricing: "planes",
+  faq: "faq",
+  waitlist: "lista-de-espera",
+  testimonials: "testimonios",
+} as const;
+
 export const content = {
   meta: {
     title: "Godínez.AI — Tu empleado AI que nunca falta al trabajo",
@@ -12,10 +25,10 @@ export const content = {
   nav: {
     logo: "Godínez.AI",
     links: [
-      { label: "Qué es", href: "#que-es" },
-      { label: "Planes", href: "#planes" },
-      { label: "Capacidades", href: "#capacidades" },
-      { label: "Lista de Espera", href: "#lista-de-espera" },
+      { label: "Qué es", href: `#${sectionIds.whatIs}` },
+      { label: "Planes", href: `#${sectionIds.pricing}` },
+      { label: "Capacidades", href: `#${sectionIds.capabilities}` },
+      { label: "Lista de Espera", href: `#${sectionIds.waitlist}` },
     ],
   },
 
@@ -59,7 +72,7 @@ export const content = {
     subtextAccent: "Skills IA",
     subtextSuffix: "más avanzadas",
     cta: "Quiero el mío",
-    ctaHref: "#lista-de-espera",
+    ctaHref: `#${sectionIds.waitlist}`,
   },
 
   whatIs: {

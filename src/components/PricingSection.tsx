@@ -1,6 +1,7 @@
 'use client'
 
 import { useContent } from '@/lib/i18n'
+import { sectionIds } from '@/lib/content'
 import AnimatedSection from './AnimatedSection'
 
 function CheckIcon({ className }: { className?: string }) {
@@ -65,7 +66,7 @@ export default function PricingSection() {
 
             {/* CTA */}
             <a
-              href='#lista-de-espera'
+              href={`#${sectionIds.waitlist}`}
               className='inline-block w-full bg-magenta text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 hover:bg-magenta-dark hover:shadow-lg hover:shadow-magenta/30 hover:-translate-y-0.5'
             >
               {content.pricing.cta}

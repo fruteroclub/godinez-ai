@@ -1,7 +1,7 @@
 // English translations
 // Structure must match content.ts exactly
 
-import type { Content } from "./content";
+import { sectionIds, type Content } from "./content";
 
 export const contentEn: Content = {
   meta: {
@@ -13,10 +13,10 @@ export const contentEn: Content = {
   nav: {
     logo: "Godínez.AI",
     links: [
-      { label: "What is it", href: "#what-is-it" },
-      { label: "Plans", href: "#plans" },
-      { label: "Capabilities", href: "#capabilities" },
-      { label: "Waitlist", href: "#waitlist" },
+      { label: "What is it", href: `#${sectionIds.whatIs}` },
+      { label: "Plans", href: `#${sectionIds.pricing}` },
+      { label: "Capabilities", href: `#${sectionIds.capabilities}` },
+      { label: "Waitlist", href: `#${sectionIds.waitlist}` },
     ],
   },
 
@@ -61,7 +61,7 @@ export const contentEn: Content = {
     subtextAccent: "AI Skills",
     subtextSuffix: "",
     cta: "I want mine",
-    ctaHref: "#lista-de-espera",
+    ctaHref: `#${sectionIds.waitlist}`,
   },
 
   whatIs: {

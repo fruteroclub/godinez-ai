@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import { useContent } from "@/lib/i18n";
+import { sectionIds } from "@/lib/content";
 
 function GodinezIllustration({ className }: { className?: string }) {
   return (
@@ -367,19 +368,19 @@ export default function Hero() {
 
             <div className="flex flex-col sm:flex-row items-center gap-4 lg:justify-start justify-center">
               <a
-                href="#lista-de-espera"
+                href={`#${sectionIds.waitlist}`}
                 className="inline-block bg-magenta hover:bg-magenta-dark text-white font-semibold px-8 py-4 rounded-full text-lg transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-magenta/30 cursor-pointer"
               >
                 {content.hero.cta} →
               </a>
 
               <a
-                href="#que-es"
+                href={`#${sectionIds.whatIs}`}
                 className="inline-flex items-center gap-2 text-white/50 hover:text-white transition-colors text-sm font-medium px-4 py-3 -mx-4 -my-3"
                 onClick={(e) => {
                   e.preventDefault();
                   document
-                    .getElementById("que-es")
+                    .getElementById(sectionIds.whatIs)
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
               >

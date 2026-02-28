@@ -1,4 +1,5 @@
 import AnimatedSection from "./AnimatedSection";
+import { sectionIds } from "@/lib/content";
 
 const testimonials = [
   {
@@ -79,7 +80,7 @@ export default function TestimonialsSection() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="#lista-de-espera"
+            href={`#${sectionIds.waitlist}`}
             className="inline-block bg-magenta hover:bg-magenta-dark text-white font-semibold px-8 py-4 rounded-full text-lg transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-magenta/30 cursor-pointer"
           >
             Obtén tu Godínez →
