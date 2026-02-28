@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { content } from "@/lib/content";
+import { useContent } from "@/lib/i18n";
 import Image from "next/image";
+import LanguageToggle from "./LanguageToggle";
 
 // Robot logo icon
 function RobotLogo() {
@@ -14,6 +15,7 @@ function RobotLogo() {
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const content = useContent();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,6 +63,7 @@ export default function Navbar() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-magenta transition-all group-hover:w-full" />
               </a>
             ))}
+            <LanguageToggle />
           </div>
 
           {/* Mobile hamburger */}
@@ -108,6 +111,9 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          <div className="pt-3">
+            <LanguageToggle />
+          </div>
         </div>
       )}
     </nav>

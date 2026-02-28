@@ -1,4 +1,6 @@
-import { content } from "@/lib/content";
+"use client";
+
+import { useContent } from "@/lib/i18n";
 import Image from "next/image";
 
 // Robot logo icon (matches Navbar)
@@ -7,6 +9,7 @@ function FooterRobotIcon() {
 }
 
 export default function Footer() {
+  const content = useContent();
   return (
     <footer className="relative bg-dark text-white py-16 overflow-hidden">
       {/* Subtle gradient line at top */}

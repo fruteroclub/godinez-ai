@@ -8,7 +8,7 @@ export default defineSchema({
     company: v.optional(v.string()),
     tasks: v.optional(v.string()),
     teamSize: v.optional(v.string()),
-    role: v.optional(v.string()), // "founder" | "marketing" | "sales" | "operations" | "tech" | "support" | "other"
+    role: v.optional(v.string()),
     // legacy fields (kept for existing data)
     tier: v.optional(v.string()),
     industry: v.optional(v.string()),

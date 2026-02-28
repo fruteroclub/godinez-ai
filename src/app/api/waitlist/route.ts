@@ -1,9 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ConvexHttpClient } from "convex/browser";
 
-// Initialize Convex client if configured
 const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL;
-const convex = convexUrl ? new ConvexHttpClient(convexUrl) : null;
+
+if (!convexUrl) {
+  throw new Error("NEXT_PUBLIC_CONVEX_URL is not configured");
+}
+
+const convex = new ConvexHttpClient(convexUrl);
 
 interface WaitlistEntry {
   name: string;
@@ -36,16 +40,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (convex) {
-      // Use Convex
-      const { api } = await import("../../../../convex/_generated/api");
-      const result = await convex.mutation(api.waitlist.add, entry);
-      return NextResponse.json(result);
-    } else {
-      // Fallback: log to console (Vercel logs)
-      console.log("[WAITLIST]", JSON.stringify(entry));
-      return NextResponse.json({ success: true, fallback: true });
-    }
+    const { api } = await import("../../../../convex/_generated/api");
+    const result = await convex.mutation(api.waitlist.add, entry);
+    return NextResponse.json(result);
   } catch (error) {
     console.error("Waitlist error:", error);
     return NextResponse.json(

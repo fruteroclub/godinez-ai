@@ -81,7 +81,7 @@ export const backfillDefaults = mutation({
 
     for (const entry of entries) {
       const updates: Record<string, string> = {};
-      
+
       if (!entry.tier && args.defaultTier) {
         updates.tier = args.defaultTier;
       }

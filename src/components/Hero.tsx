@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
-import { content } from "@/lib/content";
+import { useContent } from "@/lib/i18n";
 
 function GodinezIllustration({ className }: { className?: string }) {
   return (
@@ -319,6 +319,7 @@ function GodinezIllustration({ className }: { className?: string }) {
 export default function Hero() {
   const waitlistCount = useQuery(api.waitlist.count);
   const [serverCount, setServerCount] = useState<number | null>(null);
+  const content = useContent();
 
   // Fetch cached count from API on mount (server-side cache)
   useEffect(() => {
@@ -354,9 +355,9 @@ export default function Hero() {
           {/* Text content */}
           <div className="flex-1 text-center lg:text-left">
             <h1 className="font-[family-name:var(--font-heading)] text-4xl sm:text-5xl md:text-6xl font-medium text-white leading-[1.1] mb-6">
-              El asistente al que le <br className="lg:hidden" />
+              {content.hero.headlinePre} <br className="lg:hidden" />
               <span className="text-gold font-[family-name:var(--font-playfair)] italic font-black">
-                delegas todo
+                {content.hero.headlineAccent}
               </span>
             </h1>
 
@@ -382,7 +383,7 @@ export default function Hero() {
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                Conoce más
+                {content.hero.learnMore}
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -414,7 +415,7 @@ export default function Hero() {
                   />
                 ))}
               </div>
-              <span>+{displayCount} en lista de espera</span>
+              <span>+{displayCount} {content.hero.socialProof}</span>
             </div>
           </div>
 

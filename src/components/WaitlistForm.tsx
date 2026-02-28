@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useMutation } from "convex/react";
 import { api } from "../../convex/_generated/api";
-import { content } from "@/lib/content";
+import { useContent } from "@/lib/i18n";
 import AnimatedSection from "./AnimatedSection";
 
 // Success robot illustration
@@ -110,6 +110,7 @@ function SuccessRobot() {
 }
 
 export default function WaitlistForm() {
+  const content = useContent();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -162,7 +163,7 @@ export default function WaitlistForm() {
             {content.waitlist.success}
           </p>
           <p className="text-white/50">
-            Te contactaremos pronto con novedades.
+            {content.waitlist.successFollowup}
           </p>
         </div>
       </AnimatedSection>
@@ -182,16 +183,15 @@ export default function WaitlistForm() {
       <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-medium text-center text-white mb-4">
-          Recupera{" "}
+          {content.waitlist.headlinePre}
           <span className="text-gold font-[family-name:var(--font-playfair)] italic font-black">
-            tu tiempo
+            {content.waitlist.headlineAccent}
           </span>
           <br />
-          Delega el resto
+          {content.waitlist.headlineSuffix}
         </h2>
         <p className="text-center text-white/50 mb-12 text-lg">
-          Tu Godínez se encarga de lo que te quita energía, para que tú hagas lo
-          que te llena.
+          {content.waitlist.subheadline}
         </p>
 
         {/* Form card */}
@@ -357,7 +357,7 @@ export default function WaitlistForm() {
                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                       />
                     </svg>
-                    Enviando...
+                    {content.waitlist.submitting}
                   </span>
                 ) : (
                   content.waitlist.submit
