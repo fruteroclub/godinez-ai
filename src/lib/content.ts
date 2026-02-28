@@ -28,8 +28,8 @@ export const content = {
       { label: "Qué es", href: `#${sectionIds.whatIs}` },
       { label: "Capacidades", href: `#${sectionIds.capabilities}` },
       { label: "Planes", href: `#${sectionIds.pricing}` },
-      { label: "Lista de Espera", href: `#${sectionIds.waitlist}` },
     ],
+    cta: { label: "Quiero el mío", href: `#${sectionIds.waitlist}` },
   },
 
   hero: {

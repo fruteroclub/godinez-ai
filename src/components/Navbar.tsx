@@ -64,6 +64,12 @@ export default function Navbar() {
               </a>
             ))}
             <LanguageToggle />
+            <a
+              href={content.nav.cta.href}
+              className="bg-magenta hover:bg-magenta-dark text-white font-semibold text-sm px-5 py-2 rounded-full transition-all hover:shadow-lg hover:shadow-magenta/30"
+            >
+              {content.nav.cta.label}
+            </a>
           </div>
 
           {/* Mobile hamburger */}
@@ -105,14 +111,21 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="block py-3 text-white/75 hover:text-magenta transition-colors font-medium border-b border-white/5 last:border-0"
+              className="block py-3 text-white/75 hover:text-magenta transition-colors font-medium border-b border-white/5"
               onClick={() => setIsOpen(false)}
             >
               {link.label}
             </a>
           ))}
-          <div className="pt-3">
+          <div className="flex items-center justify-between pt-4">
             <LanguageToggle />
+            <a
+              href={content.nav.cta.href}
+              className="bg-magenta hover:bg-magenta-dark text-white font-semibold text-sm px-5 py-2 rounded-full transition-all"
+              onClick={() => setIsOpen(false)}
+            >
+              {content.nav.cta.label}
+            </a>
           </div>
         </div>
       )}

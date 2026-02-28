@@ -16,8 +16,8 @@ export const contentEn: Content = {
       { label: "What is it", href: `#${sectionIds.whatIs}` },
       { label: "Capabilities", href: `#${sectionIds.capabilities}` },
       { label: "Plans", href: `#${sectionIds.pricing}` },
-      { label: "Waitlist", href: `#${sectionIds.waitlist}` },
     ],
+    cta: { label: "I want mine", href: `#${sectionIds.waitlist}` },
   },
 
   hero: {
