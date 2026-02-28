@@ -17,7 +17,7 @@ export const contentEn: Content = {
       { label: "Capabilities", href: `#${sectionIds.capabilities}` },
       { label: "Plans", href: `#${sectionIds.pricing}` },
     ],
-    cta: { label: "I want mine", href: `#${sectionIds.waitlist}` },
+    cta: { label: "I want my Godínez", href: `#${sectionIds.waitlist}` },
   },
 
   hero: {

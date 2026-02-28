@@ -29,7 +29,7 @@ export const content = {
       { label: "Capacidades", href: `#${sectionIds.capabilities}` },
       { label: "Planes", href: `#${sectionIds.pricing}` },
     ],
-    cta: { label: "Quiero el mío", href: `#${sectionIds.waitlist}` },
+    cta: { label: "Quiero mi Godínez", href: `#${sectionIds.waitlist}` },
   },
 
   hero: {
