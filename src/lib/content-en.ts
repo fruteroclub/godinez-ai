@@ -164,27 +164,34 @@ export const contentEn: Content = {
   },
 
   howItWorks: {
-    headlinePre: "How does ",
-    headlineAccent: "Godínez.AI",
-    headlineSuffix: " work?",
+    headlinePre: "Your agent ready in ",
+    headlineAccent: "3 minutes",
+    headlineSuffix: "",
+    subtitle: "No code. No technical setup. Just answer a few questions and your Godínez starts working.",
     steps: [
       {
         number: "01",
-        title: "Sign up for the waitlist",
+        title: "Tell us about yourself",
         description:
-          "Fill out the form with your basic info and we'll let you know when your Godínez is ready.",
+          "Your name, your business, your role. In 30 seconds we already know how to help you.",
       },
       {
         number: "02",
-        title: "Configure your Godínez",
+        title: "Choose what to delegate",
         description:
-          "Tell it who you are, what your business does, and what you want to delegate. It learns from you from day one.",
+          "Sell more? Automate the repetitive stuff? Create content? Select and done.",
       },
       {
         number: "03",
-        title: "Delegate and grow",
+        title: "Personalize your agent",
         description:
-          "Your Godínez works 24/7 — handles clients, creates content, automates workflows, and more. You focus on what matters.",
+          "Give it a name and personality — professional, friendly, creative, or technical. You decide.",
+      },
+      {
+        number: "04",
+        title: "Activate and delegate",
+        description:
+          "One click and your Godínez is live. It greets you, proposes its first project, and gets to work.",
       },
     ],
   },

@@ -24,6 +24,9 @@ export default function HowItWorksSection() {
           </span>
           {content.howItWorks.headlineSuffix}
         </h2>
+        <p className="text-center text-white/50 mb-16 text-lg max-w-2xl mx-auto -mt-10">
+          {content.howItWorks.subtitle}
+        </p>
 
         {/* Steps */}
         <div className="space-y-8 sm:space-y-12">

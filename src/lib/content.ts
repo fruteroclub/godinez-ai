@@ -162,27 +162,34 @@ export const content = {
   },
 
   howItWorks: {
-    headlinePre: "Cómo funciona ",
-    headlineAccent: "Godínez.AI",
+    headlinePre: "Tu agente listo en ",
+    headlineAccent: "3 minutos",
     headlineSuffix: "",
+    subtitle: "Sin código. Sin configuración técnica. Solo responde unas preguntas y tu Godínez empieza a trabajar.",
     steps: [
       {
         number: "01",
-        title: "Regístrate en la lista de espera",
+        title: "Cuéntanos sobre ti",
         description:
-          "Llena el formulario con tu info básica y te avisamos cuando tu Godínez esté listo.",
+          "Tu nombre, tu negocio, tu rol. En 30 segundos ya sabemos cómo ayudarte.",
       },
       {
         number: "02",
-        title: "Configura tu Godínez",
+        title: "Elige qué quieres delegar",
         description:
-          "Dile quién eres, qué hace tu negocio, y qué quieres delegar. Él aprende de ti desde el primer día.",
+          "¿Vender más? ¿Automatizar lo repetitivo? ¿Crear contenido? Selecciona y listo.",
       },
       {
         number: "03",
-        title: "Delega y crece",
+        title: "Personaliza tu agente",
         description:
-          "Tu Godínez trabaja 24/7 — atiende clientes, crea contenido, automatiza flujos, y más. Tú te enfocas en lo que importa.",
+          "Dale nombre y personalidad — profesional, amigable, creativo o técnico. Tú decides.",
+      },
+      {
+        number: "04",
+        title: "Activa y delega",
+        description:
+          "Un clic y tu Godínez está vivo. Te saluda, propone su primer proyecto, y empieza a trabajar.",
       },
     ],
   },
