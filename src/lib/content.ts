@@ -29,7 +29,7 @@ export const content = {
       { label: "Capacidades", href: `#${sectionIds.capabilities}` },
       { label: "Planes", href: `#${sectionIds.pricing}` },
     ],
-    cta: { label: "Quiero mi Godínez", href: `#${sectionIds.waitlist}` },
+    cta: { label: "Quiero el mío", href: `#${sectionIds.waitlist}` },
   },
 
   hero: {
@@ -37,7 +37,7 @@ export const content = {
     headlineAccent: "delegas todo",
     subtitle:
       "Agentes IA que aprenden de ti y hacen el trabajo que te drena. Más baratos que un intern. Más rápido que formar un equipo.",
-    cta: "Únete a la lista de espera",
+    cta: "Quiero mi Godínez",
     learnMore: "Conoce más",
     socialProof: "en lista de espera",
   },

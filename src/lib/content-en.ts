@@ -17,7 +17,7 @@ export const contentEn: Content = {
       { label: "Capabilities", href: `#${sectionIds.capabilities}` },
       { label: "Plans", href: `#${sectionIds.pricing}` },
     ],
-    cta: { label: "I want my Godínez", href: `#${sectionIds.waitlist}` },
+    cta: { label: "I want mine", href: `#${sectionIds.waitlist}` },
   },
 
   hero: {
@@ -25,7 +25,7 @@ export const contentEn: Content = {
     headlineAccent: "delegate it all",
     subtitle:
       "An agent that learns, executes, and creates. Apps, workflows, content, clients — all delegated. More affordable than a team. Faster than any tool.",
-    cta: "Join the waitlist",
+    cta: "I want my Godínez",
     learnMore: "Learn more",
     socialProof: "on the waitlist",
   },
