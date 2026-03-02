@@ -78,7 +78,7 @@ export default function AdminPage() {
     }
   };
 
-  const handleInvite = async (entry: WaitlistEntry) => {
+  const handleInvite = async (entry: WaitlistEntry, source?: string) => {
     setInvitingId(entry._id);
     setInviteError((prev) => ({ ...prev, [entry._id]: "" }));
 
@@ -93,6 +93,7 @@ export default function AdminPage() {
           waitlistId: entry._id,
           email: entry.email,
           name: entry.name,
+          source,
         }),
       });
 

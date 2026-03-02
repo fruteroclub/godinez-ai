@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const { waitlistId, email, name } = await request.json();
+    const { waitlistId, email, name, source } = await request.json();
 
     if (!waitlistId || !email) {
       return NextResponse.json(
@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
         "Content-Type": "application/json",
         "X-Service-Key": STUDIO_SERVICE_KEY,
       },
-      body: JSON.stringify({ email, name }),
+      body: JSON.stringify({ email, name, source }),
     });
 
     if (!codeRes.ok) {
