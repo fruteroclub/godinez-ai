@@ -18,6 +18,10 @@ interface WaitlistEntry {
   industry?: string;
   source?: string;
   createdAt: number;
+  // referral fields
+  status?: string;
+  referralCode?: string;
+  invitedAt?: number;
 }
 
 const roleLabels: Record<string, string> = {
@@ -30,14 +34,25 @@ const roleLabels: Record<string, string> = {
   other: "🧩 Otro",
 };
 
+const statusStyles: Record<string, string> = {
+  pending: "bg-white/10 text-white/60",
+  invited: "bg-violet/20 text-violet border border-violet/30",
+  signed_up: "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30",
+};
+
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isChecking, setIsChecking] = useState(false);
+  const [invitingId, setInvitingId] = useState<string | null>(null);
+  const [inviteError, setInviteError] = useState<Record<string, string>>({});
+  const [inviteSuccess, setInviteSuccess] = useState<Record<string, boolean>>({});
 
   const waitlistEntries = useQuery(api.waitlist.list) as WaitlistEntry[] | undefined;
   const waitlistCount = useQuery(api.waitlist.count);
+
+  const invitedCount = waitlistEntries?.filter(e => e.status === "invited" || e.status === "signed_up").length ?? 0;
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,6 +75,45 @@ export default function AdminPage() {
       setError("Error de conexión");
     } finally {
       setIsChecking(false);
+    }
+  };
+
+  const handleInvite = async (entry: WaitlistEntry, source?: string) => {
+    setInvitingId(entry._id);
+    setInviteError((prev) => ({ ...prev, [entry._id]: "" }));
+
+    try {
+      const res = await fetch("/api/admin/invite", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Admin-Password": password,
+        },
+        body: JSON.stringify({
+          waitlistId: entry._id,
+          email: entry.email,
+          name: entry.name,
+          source,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setInviteError((prev) => ({
+          ...prev,
+          [entry._id]: data.error || "Error al invitar",
+        }));
+        return;
+      }
+
+      setInviteSuccess((prev) => ({ ...prev, [entry._id]: true }));
+    } catch {
+      setInviteError((prev) => ({
+        ...prev,
+        [entry._id]: "Error de conexión",
+      }));
+    } finally {
+      setInvitingId(null);
     }
   };
 
@@ -125,7 +179,7 @@ export default function AdminPage() {
         </div>
 
         {/* Stats cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 mb-8">
           <div className="bg-white/5 border border-white/10 rounded-xl p-4">
             <p className="text-white/50 text-sm">Total</p>
             <p className="text-2xl font-bold text-white">{waitlistCount ?? 0}</p>
@@ -138,6 +192,10 @@ export default function AdminPage() {
                 return new Date(e.createdAt).toDateString() === today;
               }).length ?? 0}
             </p>
+          </div>
+          <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+            <p className="text-white/50 text-sm">Invitados</p>
+            <p className="text-2xl font-bold text-violet">{invitedCount}</p>
           </div>
           <div className="bg-white/5 border border-white/10 rounded-xl p-4">
             <p className="text-white/50 text-sm">🚀 Founders</p>
@@ -163,28 +221,63 @@ export default function AdminPage() {
                   <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Email</th>
                   <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Rol</th>
                   <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Empresa</th>
+                  <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Estado</th>
                   <th className="text-left text-white/50 text-sm font-medium px-4 py-3">Fecha</th>
+                  <th className="text-right text-white/50 text-sm font-medium px-4 py-3">Acción</th>
                 </tr>
               </thead>
               <tbody>
-                {waitlistEntries?.map((entry) => (
-                  <tr key={entry._id} className="border-b border-white/5 hover:bg-white/5">
-                    <td className="px-4 py-3 text-white">{entry.name}</td>
-                    <td className="px-4 py-3 text-white/70">{entry.email}</td>
-                    <td className="px-4 py-3 text-white/70">{entry.role ? (roleLabels[entry.role] || entry.role) : "—"}</td>
-                    <td className="px-4 py-3 text-white/50">{entry.company || "—"}</td>
-                    <td className="px-4 py-3 text-white/50 text-sm">
-                      {new Date(entry.createdAt).toLocaleDateString("es-MX", {
-                        day: "numeric",
-                        month: "short",
-                        year: "numeric",
-                      })}
-                    </td>
-                  </tr>
-                ))}
+                {waitlistEntries?.map((entry) => {
+                  const status = entry.status || "pending";
+                  const isInvited = status === "invited" || status === "signed_up";
+                  const isThisInviting = invitingId === entry._id;
+                  const didSucceed = inviteSuccess[entry._id];
+                  const entryError = inviteError[entry._id];
+
+                  return (
+                    <tr key={entry._id} className="border-b border-white/5 hover:bg-white/5">
+                      <td className="px-4 py-3 text-white">{entry.name}</td>
+                      <td className="px-4 py-3 text-white/70">{entry.email}</td>
+                      <td className="px-4 py-3 text-white/70">{entry.role ? (roleLabels[entry.role] || entry.role) : "—"}</td>
+                      <td className="px-4 py-3 text-white/50">{entry.company || "—"}</td>
+                      <td className="px-4 py-3">
+                        <span className={`inline-block text-xs font-medium px-2 py-1 rounded-full ${statusStyles[status] || statusStyles.pending}`}>
+                          {status === "pending" && "Pendiente"}
+                          {status === "invited" && "Invitado"}
+                          {status === "signed_up" && "Registrado"}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 text-white/50 text-sm">
+                        {new Date(entry.createdAt).toLocaleDateString("es-MX", {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric",
+                        })}
+                      </td>
+                      <td className="px-4 py-3 text-right">
+                        {isInvited || didSucceed ? (
+                          <span className="text-xs text-violet">Invitado ✓</span>
+                        ) : (
+                          <div className="flex items-center justify-end gap-2">
+                            {entryError && (
+                              <span className="text-xs text-red-400">{entryError}</span>
+                            )}
+                            <button
+                              onClick={() => handleInvite(entry)}
+                              disabled={isThisInviting}
+                              className="text-xs bg-magenta/20 hover:bg-magenta/30 text-magenta border border-magenta/30 px-3 py-1.5 rounded-full transition-all disabled:opacity-60"
+                            >
+                              {isThisInviting ? "Enviando..." : "Invitar"}
+                            </button>
+                          </div>
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })}
                 {(!waitlistEntries || waitlistEntries.length === 0) && (
                   <tr>
-                    <td colSpan={5} className="px-4 py-8 text-center text-white/30">
+                    <td colSpan={7} className="px-4 py-8 text-center text-white/30">
                       No hay registros aún
                     </td>
                   </tr>
