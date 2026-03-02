@@ -14,8 +14,13 @@ export default defineSchema({
     industry: v.optional(v.string()),
     createdAt: v.number(),
     source: v.optional(v.string()),
+    // referral system fields
+    status: v.optional(v.string()), // "pending" | "invited" | "signed_up"
+    referralCode: v.optional(v.string()),
+    invitedAt: v.optional(v.number()),
   })
     .index("by_email", ["email"])
     .index("by_createdAt", ["createdAt"])
-    .index("by_role", ["role"]),
+    .index("by_role", ["role"])
+    .index("by_status", ["status"]),
 });

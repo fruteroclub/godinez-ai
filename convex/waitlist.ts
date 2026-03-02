@@ -69,6 +69,26 @@ export const list = query({
   },
 });
 
+// Mark a waitlist entry as invited with a referral code
+export const markInvited = mutation({
+  args: {
+    id: v.id("waitlist"),
+    referralCode: v.string(),
+  },
+  handler: async (ctx, args) => {
+    const entry = await ctx.db.get(args.id);
+    if (!entry) throw new Error("Waitlist entry not found");
+
+    await ctx.db.patch(args.id, {
+      status: "invited",
+      referralCode: args.referralCode,
+      invitedAt: Date.now(),
+    });
+
+    return { success: true };
+  },
+});
+
 // Backfill missing fields with defaults (run once for migrations)
 export const backfillDefaults = mutation({
   args: {
